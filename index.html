@@ -9,56 +9,52 @@
 
 <body>
 
+    <!Intro to programming>
     <details>
 
     <summary>Introduction - Binary, Hexadecimal, Flow Charts, Pseudo Code, Logic</summary>
+
     <h2>Binary</h2>
     <p>
     <ul>
-    <li>A system of numerical notation with BASE 2, in which each place of a number is expressed as a 0 or 1 and corresponds
-        to a power of two.
-    </li> 
+    <li>A system of numerical notation with <b>base 2</b>, in which each place of a number is expressed as a 0 or 1 and corresponds to a power of two. </li> 
     <li>Computers "think" and communicate in binary</li>
-    <li>0 - off/false, 1 - on/true</li><br>
-    <li>
-        <table>
-        <tr>
-            <td>2<sup>7</sup></td>
-            <td>2<sup>6</sup></td>
-            <td>2<sup>5</sup></td>
-            <td>2<sup>4</sup></td>
-            <td>2<sup>3</sup></td>
-            <td>2<sup>2</sup></td>
-            <td>2<sup>1</sup></td>
-            <td>2<sup>0</sup></td>
-        </tr>
-            <td>128</td>
-            <td>64</td>
-            <td>32</td>
-            <td>16</td>
-            <td>8</td>
-            <td>4</td>
-            <td>2</td>
-            <td>1</td>
-        </table><br>
-    </li>
-    <li>
-        <table style="width:40%">
-            <tr>
-                <th>Bit:</th>
-                <th>Byte:</th>
-            </tr>
-                <td>
-                    - a single binary digit (0 or 1)<br><br><br><br>
-                </td>
-                <td>
-                    - 8 bits<br>
-                    - can be used to represent a letter/symbol<br>
-                    - 256 diff combos<br>
-                    - largest possible val: 255, smallest: 0
-                </td>
-        </table>
-    </li>
+    <li><b>0 - off/false, 1 - on/true</b></li><br>
+    <table>
+    <tr>
+        <td>2<sup>7</sup></td>
+        <td>2<sup>6</sup></td>
+        <td>2<sup>5</sup></td>
+        <td>2<sup>4</sup></td>
+        <td>2<sup>3</sup></td>
+        <td>2<sup>2</sup></td>
+        <td>2<sup>1</sup></td>
+        <td>2<sup>0</sup></td>
+    </tr>
+        <td>128</td>
+        <td>64</td>
+        <td>32</td>
+        <td>16</td>
+        <td>8</td>
+        <td>4</td>
+        <td>2</td>
+        <td>1</td>
+    </table><br>
+    <table>
+    <tr>
+        <th>Bit:</th>
+        <th>Byte:</th>
+    </tr>
+        <td>
+            - a single binary digit (0 or 1)<br><br><br><br>
+        </td>
+        <td>
+            - 8 bits<br>
+            - can be used to represent a letter/symbol<br>
+            - 256 diff combos<br>
+            - largest possible val: 255, smallest: 0
+        </td>
+    </table>
     </ul>
     </p>
 
@@ -66,70 +62,66 @@
 
     <h2>Decimal</h2>
     <p>
-        <li>BASE 10 number system where each digit can be 0-9</li>
+        <li><b>base 10</b> number system where each digit can be 0-9</li>
     </p>
 
     <!--------------------------------------------------------------->
 
     <h2>Hexadecimal</h2>
     <p>
-    <li>Number system with BASE 16</li>
+    <li>Number system with <b>base 16</b>></li>
     <li>2 digits can represent values 0-255, it is the same as one byte of binary</li>
-    <li>6 digits - often used for colors</li>
-    <li>
-        <table style = "width: 50%;">
-        <tr>
-            <th>Hex</th>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-            <td>F</td>
-        </tr>
-            <th>Binary</th>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-        </table>
-    </li>
-    <li>
-        <table>
-        <tr>
-            <td>16<sup>3</sup></td>
-            <td>16<sup>2</sup></td>
-            <td>16<sup>1</sup></td>
-            <td>16<sup>0</sup></td>
-        </tr>
-            <td>4096</td>
-            <td>256</td>
-            <td>16</td>
-            <td>1</td>
-        </table><br>
-    </li>
+    <li>6 digits - often used for colors</li><br>
+    <table>
+    <tr>
+        <th>Hex</th>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+    </tr>
+        <th>Binary</th>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+    </table> <br>
+    <table>
+    <tr>
+        <td>16<sup>3</sup></td>
+        <td>16<sup>2</sup></td>
+        <td>16<sup>1</sup></td>
+        <td>16<sup>0</sup></td>
+    </tr>
+        <td>4096</td>
+        <td>256</td>
+        <td>16</td>
+        <td>1</td>
+    </table><br>
     </p>
 
     <!--------------------------------------------------------------->
@@ -143,65 +135,51 @@
     <!--------------------------------------------------------------->
     
     <h2>Converting</h2>
-
-    <h3>Binary to Decimal</h3>
     <p>
-        Add up all the values with 1s:<br>
-        1001 1011 -> 1 + 2+ 8 + 16 + 128 = 155<sub>10</sub>
-    </p>
+        <h3>Binary to Decimal</h3>
+            Add up all the values with 1s:<br>
+            1001 1011 -> 1 + 2+ 8 + 16 + 128 = 155<sub>10</sub> <br>
 
-    <h3>Binary to ASCII</h3>
-    <p>
-        binary -> decimal -> ASCII<br>
-        0010 1001 -> 1 + 8 + 32 = 41 = ')'
-    </p>
+        <h3>Binary to ASCII</h3>
+            binary -> decimal -> ASCII<br>
+            0010 1001 -> 1 + 8 + 32 = 41 = ')' <br>
 
-    <h3>Decimal to Hexadecimal</h3>
-    <p>
-        binary -> decimal -> hex<br>
-        0110 0110 -> 2 + 4 + 32 + 64 = 102<sub>10</sub> = 66<sub>16</sub><br>
-        TRICK: split in half<br>
-        0001 0111 -> [0001 = (1)], [0111 = (7)] -> 17
-        0011 1010 -> [0011 = (3)], [1010 = (10)] -> 3A
-    </p>
+        <h3>Decimal to Hexadecimal</h3>
+            binary -> decimal -> hex<br>
+            0110 0110 -> 2 + 4 + 32 + 64 = 102<sub>10</sub> = 66<sub>16</sub><br>
+            TRICK: split in half<br>
+            0001 0111 -> [0001 = (1)], [0111 = (7)] -> 17 <br>
+            0011 1010 -> [0011 = (3)], [1010 = (10)] -> 3A <br>
 
-    <h3>Decimal to Binary</h3>
-    <p>
-        Turn on all powers of 2 that are used<br>
-        42 -> 0010 1010
-    </p>
+        <h3>Decimal to Binary</h3>
+            Turn on all powers of 2 that are used<br>
+            42 -> 0010 1010 <br>
 
-    <h3>Decimal to ASCII</h3>
-    <p>
-        Look in chart
-    </p>
+        <h3>Decimal to ASCII</h3>
+            Look in ASCII chart <br>
 
-    <h3>Decimal to Hexadecimal</h3>
-    <p>
-        4097<sub>10</sub> -> 1001<sub>16</sub><br>
-        1111<sub>10</sub> -> 457<sub>16</sub>
-    </p>
+        <h3>Decimal to Hexadecimal</h3>
+            4097<sub>10</sub> -> 1001<sub>16</sub> <br>
+            1111<sub>10</sub> -> 457<sub>16</sub> <br>
 
-    <h3>Hexadecimal to Decimal</h3>
-    <p>
-        AA0 -> 256(10) + 16(10) + 16(0) = 2720<br>
-        If two digits - split (trick)<br>
-        FF -> [F = 1111][F = 1111] = 255
-    </p>
+        <h3>Hexadecimal to Decimal</h3>
+            AA0 -> 256(10) + 16(10) + 16(0) = 2720<br>
+            If two digits - split (trick)<br>
+            FF -> [F = 1111][F = 1111] = 255 <br>
 
-    <h3>Hexadecimal to Binary</h3>
-    <p>
-        hex -> decimal -> binary<br>
-        or just hex -> binary (cut in half)<br>
-        23 -> [2 - 0010][3 - 0011] = 0010 0011<br>
-        AB -> 10101011<br>
+        <h3>Hexadecimal to Binary</h3>
+            hex -> decimal -> binary<br>
+            or just hex -> binary (cut in half)<br>
+            23 -> [2 - 0010][3 - 0011] = 0010 0011<br>
+            AB -> 10101011<br>
     </p>
+    
 
     <!--------------------------------------------------------------->
 
     <h2>Adding Binary</h2>
     <p>
-        Rules:<br>
+        <u>Rules</u> <br> 
         0 + 1 = 1<br>
         1 + 1 = 0, CARRY 1<br>
         1 + 1 + 1 = 1, CARRY 1<br>
@@ -217,23 +195,23 @@
     <h2>Truth Tables - Logic</h2>
     <p>
         3 logical connectives:<br>
-        AND = ∧ = &&<br>
-        OR = ∨ = || <br>
-        NOT = ¬,˜ = ! <br><br>
+        AND = <mark>∧</mark> = &&<br>
+        OR = <mark>∨</mark> = || <br>
+        NOT = <mark>¬,˜</mark> = ! <br><br>
 
-        # of COLS in a truth table:<br>
+        <b># of COLS in a truth table:</b><br>
         <ul>
             <li>1 for each variable</li>
             <li>1 fir single not variables</li>
             <li>1 for each operation working inside out </li>
         </ul>
-        # of ROWS in a truth table:<br>
+        <b># of ROWS in a truth table:</b><br>
         <ul>
             <li>2<sup>n</sup> rows</li>
             <li>n = number of variables</li>
         </ul>
 
-        EXAMPLE:<br>
+        <b>EXAMPLE:</b><br>
         ¬((A ∨ B) ∧ ¬C)<br>
         <table>
             <tr>
@@ -271,8 +249,8 @@
             </tr>
         </table><br>
 
-        Tautology - proposition that is always true so p ∨ ¬p <br>
-        Contradition - proposition that is always false so p ∧ ¬p
+        <u><b>Tautology</b></u> - proposition that is always true so p ∨ ¬p <br>
+        <u><b>Contradition</b></u> - proposition that is always false so p ∧ ¬p
     </p>
 
     <!--------------------------------------------------------------->
@@ -280,11 +258,11 @@
     <h2>English to Propositional Logic</h2>
     <p>
         English sentences can be converted to logical operators to determine truth value.<br>
-        Steps<br>
+        <u>Steps</u><br>
         1) let statements<br>
         2) determine propositions<br>
-        3) determine logical operators<br>
-        Example:<br>
+        3) determine logical operators<br><br>
+        <u>Example:</u><br>
         The cat is not brown or the truck flies.<br>
         1) let p represent "the cat is brown"<br>
         2) let q represent "the truck flies"<br>
@@ -295,19 +273,17 @@
     <!--------------------------------------------------------------->
 
     <h2>Types of Operators</h2>
-    <p>
+    <p> <mark>
         Logical: and, or, not<br>
         Arithmetic: +, -, *, /, %<br>
         Assignment: = <br>
         Relational: <, >, <=, >=, !=, ==<br>
-    </p>
+    </p></mark>
 
     <!--------------------------------------------------------------->
 
     <h2>Logical Properties</h2>
     <p>
-        I am not typing this out<br><br>
-
         <img src="logical_properties.png" alt="Logical Properties" width="240.5" height="305">
 
         <br>
@@ -320,11 +296,14 @@
     <!--------------------------------------------------------------->
 
     <h2>WRITTEN SUMMARY</h2>
+    <iframe src="written review.pdf" width = "500" height="500"></iframe> <br>
+    
     <!Do this >
     <!img src="logical_properties.png" alt="Logical Properties" width="240.5" height="305">
 
     </details>
 
+    <!Unit 1 - Basics>
     <details>
     
     <summary>Unit 1 - Intro to Programming </summary>
@@ -440,6 +419,7 @@
     </details>
 
 
+    <!Unit 2 - Ifs and Whiles> 
     <details>
     
     <summary>Unit 2 - Input, Decisions and Loops</summary>
