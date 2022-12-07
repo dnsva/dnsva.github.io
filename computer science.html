@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Computer Science</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <details>
+
+    <summary>Introduction - Binary, Hexadecimal, Flow Charts, Pseudo Code, Logic</summary>
+    <h2>Binary</h2>
+    <p>
+    <ul>
+    <li>A system of numerical notation with BASE 2, in which each place of a number is expressed as a 0 or 1 and corresponds
+        to a power of two.
+    </li> 
+    <li>Computers "think" and communicate in binary</li>
+    <li>0 - off/false, 1 - on/true</li><br>
+    <li>
+        <table>
+        <tr>
+            <td>2<sup>7</sup></td>
+            <td>2<sup>6</sup></td>
+            <td>2<sup>5</sup></td>
+            <td>2<sup>4</sup></td>
+            <td>2<sup>3</sup></td>
+            <td>2<sup>2</sup></td>
+            <td>2<sup>1</sup></td>
+            <td>2<sup>0</sup></td>
+        </tr>
+            <td>128</td>
+            <td>64</td>
+            <td>32</td>
+            <td>16</td>
+            <td>8</td>
+            <td>4</td>
+            <td>2</td>
+            <td>1</td>
+        </table><br>
+    </li>
+    <li>
+        <table style="width:40%">
+            <tr>
+                <th>Bit:</th>
+                <th>Byte:</th>
+            </tr>
+                <td>
+                    - a single binary digit (0 or 1)<br><br><br><br>
+                </td>
+                <td>
+                    - 8 bits<br>
+                    - can be used to represent a letter/symbol<br>
+                    - 256 diff combos<br>
+                    - largest possible val: 255, smallest: 0
+                </td>
+        </table>
+    </li>
+    </ul>
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>Decimal</h2>
+    <p>
+        <li>BASE 10 number system where each digit can be 0-9</li>
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>Hexadecimal</h2>
+    <p>
+    <li>Number system with BASE 16</li>
+    <li>2 digits can represent values 0-255, it is the same as one byte of binary</li>
+    <li>6 digits - often used for colors</li>
+    <li>
+        <table style = "width: 50%;">
+        <tr>
+            <th>Hex</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+        </tr>
+            <th>Binary</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </table>
+    </li>
+    <li>
+        <table>
+        <tr>
+            <td>16<sup>3</sup></td>
+            <td>16<sup>2</sup></td>
+            <td>16<sup>1</sup></td>
+            <td>16<sup>0</sup></td>
+        </tr>
+            <td>4096</td>
+            <td>256</td>
+            <td>16</td>
+            <td>1</td>
+        </table><br>
+    </li>
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <p>
+        To identify which number system, we use a subscript:<br>
+        (Note: you don't need leading zeros in binary)<br>
+        110 0111<sub>2</sub>, 64<sub>10</sub>, A4<sub>16</sub><br>
+    </p>
+
+    <!--------------------------------------------------------------->
+    
+    <h2>Converting</h2>
+
+    <h3>Binary to Decimal</h3>
+    <p>
+        Add up all the values with 1s:<br>
+        1001 1011 -> 1 + 2+ 8 + 16 + 128 = 155<sub>10</sub>
+    </p>
+
+    <h3>Binary to ASCII</h3>
+    <p>
+        binary -> decimal -> ASCII<br>
+        0010 1001 -> 1 + 8 + 32 = 41 = ')'
+    </p>
+
+    <h3>Decimal to Hexadecimal</h3>
+    <p>
+        binary -> decimal -> hex<br>
+        0110 0110 -> 2 + 4 + 32 + 64 = 102<sub>10</sub> = 66<sub>16</sub><br>
+        TRICK: split in half<br>
+        0001 0111 -> [0001 = (1)], [0111 = (7)] -> 17
+        0011 1010 -> [0011 = (3)], [1010 = (10)] -> 3A
+    </p>
+
+    <h3>Decimal to Binary</h3>
+    <p>
+        Turn on all powers of 2 that are used<br>
+        42 -> 0010 1010
+    </p>
+
+    <h3>Decimal to ASCII</h3>
+    <p>
+        Look in chart
+    </p>
+
+    <h3>Decimal to Hexadecimal</h3>
+    <p>
+        4097<sub>10</sub> -> 1001<sub>16</sub><br>
+        1111<sub>10</sub> -> 457<sub>16</sub>
+    </p>
+
+    <h3>Hexadecimal to Decimal</h3>
+    <p>
+        AA0 -> 256(10) + 16(10) + 16(0) = 2720<br>
+        If two digits - split (trick)<br>
+        FF -> [F = 1111][F = 1111] = 255
+    </p>
+
+    <h3>Hexadecimal to Binary</h3>
+    <p>
+        hex -> decimal -> binary<br>
+        or just hex -> binary (cut in half)<br>
+        23 -> [2 - 0010][3 - 0011] = 0010 0011<br>
+        AB -> 10101011<br>
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>Adding Binary</h2>
+    <p>
+        Rules:<br>
+        0 + 1 = 1<br>
+        1 + 1 = 0, CARRY 1<br>
+        1 + 1 + 1 = 1, CARRY 1<br>
+        &nbsp;&nbsp;&nbsp;<sub>111</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub>111</sub><br>
+        &nbsp;&nbsp;&nbsp;1011 0111<br>
+        &nbsp;+0111 0011<br>
+        &nbsp;-----------<br>
+        1 0010 1010
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>Truth Tables - Logic</h2>
+    <p>
+        3 logical connectives:<br>
+        AND = ∧ = &&<br>
+        OR = ∨ = || <br>
+        NOT = ¬,˜ = ! <br><br>
+
+        # of COLS in a truth table:<br>
+        <ul>
+            <li>1 for each variable</li>
+            <li>1 fir single not variables</li>
+            <li>1 for each operation working inside out </li>
+        </ul>
+        # of ROWS in a truth table:<br>
+        <ul>
+            <li>2<sup>n</sup> rows</li>
+            <li>n = number of variables</li>
+        </ul>
+
+        EXAMPLE:<br>
+        ¬((A ∨ B) ∧ ¬C)<br>
+        <table>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>¬C</th>
+                <th>A∨B</th>
+                <th>(A∨B)∧¬C</th>
+                <th>¬((A∨B)∧¬C)</th>
+            </tr>
+            <tr>
+                <td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+            </tr>
+            <tr>
+                <td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+            </tr>
+            <tr>
+                <td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+            </tr>
+            <tr>
+                <td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+            </tr>
+            <tr>
+                <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+            </tr>
+            <tr>
+                <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+            </tr>
+            <tr>
+                <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
+            </tr>
+            <tr>
+                <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+            </tr>
+        </table><br>
+
+        Tautology - proposition that is always true so p ∨ ¬p <br>
+        Contradition - proposition that is always false so p ∧ ¬p
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>English to Propositional Logic</h2>
+    <p>
+        English sentences can be converted to logical operators to determine truth value.<br>
+        Steps<br>
+        1) let statements<br>
+        2) determine propositions<br>
+        3) determine logical operators<br>
+        Example:<br>
+        The cat is not brown or the truck flies.<br>
+        1) let p represent "the cat is brown"<br>
+        2) let q represent "the truck flies"<br>
+        ¬p ∨ q<br>
+        SINCE trucks can't fly, THEREFORE true when the cat is not brown
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>Types of Operators</h2>
+    <p>
+        Logical: and, or, not<br>
+        Arithmetic: +, -, *, /, %<br>
+        Assignment: = <br>
+        Relational: <, >, <=, >=, !=, ==<br>
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>Logical Properties</h2>
+    <p>
+        I am not typing this out<br><br>
+
+        <img src="logical_properties.png" alt="Logical Properties" width="240.5" height="305">
+
+        <br>
+        <h3>How to do a proof:</h3>
+        1) Split into LS and RS <br>
+        2) Goals: Work on one (or both) sides until they are equal. Start with the more complex side. <br>
+        3) Make a conclusion (since & therefore) <br>
+    </p>
+
+    <!--------------------------------------------------------------->
+
+    <h2>WRITTEN SUMMARY</h2>
+    <!Do this >
+    <!img src="logical_properties.png" alt="Logical Properties" width="240.5" height="305">
+
+    </details>
+
+    <details>
+    
+    <summary>Unit 1 - Intro to Programming </summary>
+
+    <h2>Ch 1 - Intro</h2>
+    <p>
+        Programmer -> Compiler -> Machine language <br> 
+        First we wrote in: <br>
+        1 - Machine language - binary <br> 
+        2 - Then assembly and other low level <br> 
+        3 - Then high level langs like C, Pascal, Java, Go, ... <br> 
+        
+        <u>Steps:</u><br>
+        1) Think <br>
+        2) Organize your thoughts <br> 
+        3) Write them down (pseudo code) <br>
+        4) Translate into C++ <br> 
+
+    </p>
+
+    <h2>Ch 2 - Basics</h2>
+    <p>
+        Hello World <br> 
+        <code><pre>
+        #include <iostream> //header
+        int main(){
+            std::cout<<"Hello World\n";
+            return 0;
+        } 
+        </pre></code>
+        Syntax errors - when you spell things incorrectly <br> 
+        Logical errors - compilers can't help you, the order of commadns are incorrect or the program does not do as required <br> 
+        
+    </p>
+
+    <h2>Ch 3 - Style</h2>
+    <p>
+        Comments <br> 
+        Single line - // <br>
+        Multitline - /* */ <br>
+        Header comment format: <br> 
+        name: <br>
+        date: <br>
+        title: <br> 
+        description <br> 
+        <br>
+        Make your program as clear and as simple as possible <br> 
+        <br>
+        <u>Escape Sequences</u><br> 
+        <img src="escape sequences.png">
+        <br> 
+        output - cout <br> 
+        input - cin <br> 
+    </p>
+
+    <h2>Ch 4 - Basic Expressions & Declarations & Structure & Math Functions</h2>
+    <p>
+        <u>Basic Program Structure</u><br>
+         Heading Comments <br>
+         Data Declarations <br> 
+         Executable Statements <br> 
+        <br>
+
+        * Multiply <br> 
+        / Divide <br>
+        + Add <br> 
+        - Subtract <br>
+        % Modulus <br> <br> 
+
+        *Note - integer division cuts off decimal places <br><br> 
+
+        <code>type name;</code><br><br>
+
+        <u>Types of Variables</u> <br>
+        char - character <br> 
+        wchar_t - wide character <br> 
+        int - integer <br> 
+        float - floating point <br>
+        double - double floating point <br> 
+        bool - boolean <br> 
+        void - no value <br> <br>
+
+        By convention, variable names are lowercase. <br> 
+        <u>BAD:</u><br>
+        3rd_entry - Begins with a number <br>
+        all$done - Contains a "$" <br> 
+        the end - Contains a space <br> 
+        intt - Reserved word <br> <br> 
+
+        <u>Constants</u><br>
+        Declared with <b>const</b> C++ keyword and usually named in caps: <br> 
+        const double PI = 3.14; <br> <br>
+        
+        Declare first: <br> 
+        <code>int answer;</code><br>
+        Assign: <br> 
+        <code>answer = (1+2)*4;</code><br><br>
+
+        DECLARE VARIABLES AT THE TOP OF PROGRAM <br><br>
+        <u>General Structure</u><br>
+        1) Declare variables <br> 
+        2) Initialize variables <br> 
+        3) Do calculations <br> 
+        4) Output answers <br> 
+
+        <h4>Math Functions</h4>
+        <code>#include <math.h> OR #include <cmath></code><br>
+        <img src="math functions.png">
+        
+
+    </p>
+
+    </details>
+
+
+    <details>
+    
+    <summary>Unit 2 - Input, Decisions and Loops</summary>
+
+    <h2>Ch 5 - Reading Data</h2>
+    <p>
+        std::cout (<<), reading data - std::cin (>>) <br>
+        - Cin skips whitespaces <br>
+
+        <br>
+        int alpha = 10.5 will actually store 10 <br> 
+
+    </p>
+
+    <h2>Ch 6 - Decision Statements</h2>
+    <p>
+        Decision and control statements allow us to change the flow of a program. <br> 
+
+        <br>
+        <u>Relational Operators</u> <br>
+        <= - Less than or equal to <br> 
+        < - Less than <br>
+        > - Greater than <br> 
+        >= - Greater than or equal to <br> 
+        == - Equal <br> 
+        != - Not equal <br> 
+        <br>
+        <u>Increment & Decrement Shortcut</u><br>
+        ++a or a++, --a or a-- <br> 
+        <br> 
+        <u>Compound Operators</u><br>
+        Combines the = operator with another arithmetic operator <br>
+        a += 5.67 is equivalemnt to a = a + 5.67 <br> 
+        -=, *=, /=, %= <br><br>
+        <u>Logical Operators</u><br>
+        Logical or - || - (expr1) || (expr2)<br> 
+        Logical and - && - (expr1) && (expr2) <br>
+        Logical not - ! - !(expr)<br> <br>
+
+        <u>If statement</u><br>
+        <pre><code>
+        if(condition){
+            statement;
+        }else if (another condition){
+            statement;
+        }else{
+            statement;
+        }
+        </code></pre>
+
+        <br>
+        Nested if statements are if statements inside of if statements <br> 
+        <br>
+
+        <u>Control Statements</u><br>
+        <u>While Statement</u><br>
+        General format: <br> 
+        <pre><code>
+            while(condition){
+                statement;
+            }
+        </code></pre>
+        While loops as error checks - continue to loop while they enter a wrong value <br> 
+        <br>
+        Break statement <br> 
+        - Will cause the program to exit the intermost loop <br> 
+        <pre><code>
+            if(item == 0){
+                break;
+            }
+        </code></pre><br>
+
+        <u>Do - While</u><br>
+        - The loop is always executed at least once <br> 
+        <pre><code>
+        do{
+            statements(s); //body of loop
+        }while(condititon); //test
+        </code></pre>
+        - The condition is tested after the loop is executed once <br> 
+        Example: <br> 
+        <code><pre>
+            counter = 0; 
+            do{
+                total += counter;
+                counter++;
+            }while (counter < 5);
+        </pre></code>
+        This will loop five times <br> <br>
+        <u>Do - While VS While </u><br>
+        Good: Using do while you do not tneed tot ask before entering tthe loop since it will always enter once. <br> 
+        Bad: The condittiton is checked at the end which can be bad if you do not want it to enter once. <br> 
+        
+    </p>
+
+    </details>
+    
+
+
+
+</body>
+<script src="script.js"></script> 
