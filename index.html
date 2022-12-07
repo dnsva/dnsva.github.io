@@ -173,7 +173,6 @@
             23 -> [2 - 0010][3 - 0011] = 0010 0011<br>
             AB -> 10101011<br>
     </p>
-    
 
     <!--------------------------------------------------------------->
 
@@ -296,11 +295,19 @@
     <!--------------------------------------------------------------->
 
     <h2>WRITTEN SUMMARY</h2>
-    <iframe src="written review.pdf" width = "500" height="500"></iframe> <br>
+    <iframe src="written review.pdf" width = "500" height="500"></iframe> <br> <br>
     
-    <!Do this >
-    <!img src="logical_properties.png" alt="Logical Properties" width="240.5" height="305">
+    <!--------------------------------------------------------------->
 
+    <h2>FLOW CHARTS AND PSEUDO CODE</h2>
+    <p>
+        <img src="flow charts.jpg" width = "500" height="480">
+        <br><br>
+    
+        <img src="pseudo code.jpg" width="480" height="500">
+        <br><br>
+    </p>
+    
     </details>
 
     <!Unit 1 - Basics>
@@ -311,22 +318,21 @@
     <h2>Ch 1 - Intro</h2>
     <p>
         Programmer -> Compiler -> Machine language <br> 
-        First we wrote in: <br>
+        <u>First we wrote in: </u><br>
         1 - Machine language - binary <br> 
         2 - Then assembly and other low level <br> 
-        3 - Then high level langs like C, Pascal, Java, Go, ... <br> 
+        3 - Then high level langs like C, Pascal, Java, Go, ... <br><br>
         
         <u>Steps:</u><br>
         1) Think <br>
         2) Organize your thoughts <br> 
         3) Write them down (pseudo code) <br>
         4) Translate into C++ <br> 
-
     </p>
 
     <h2>Ch 2 - Basics</h2>
     <p>
-        Hello World <br> 
+        <b>Hello World:</b><br>
         <code><pre>
         #include <iostream> //header
         int main(){
@@ -334,27 +340,27 @@
             return 0;
         } 
         </pre></code>
-        Syntax errors - when you spell things incorrectly <br> 
-        Logical errors - compilers can't help you, the order of commadns are incorrect or the program does not do as required <br> 
-        
+        <b>Syntax errors</b> - when you spell things incorrectly <br> 
+        <b>Logical errors</b> - compilers can't help you, the order of commadns are incorrect or the program does not do as required <br> 
     </p>
 
     <h2>Ch 3 - Style</h2>
     <p>
-        Comments <br> 
+        <u>Comments</u> <br> 
         Single line - // <br>
-        Multitline - /* */ <br>
-        Header comment format: <br> 
+        Multitline - /* */ <br><br>
+
+        <u>Header comment format</u> <br> 
         name: <br>
         date: <br>
         title: <br> 
-        description <br> 
-        <br>
-        Make your program as clear and as simple as possible <br> 
-        <br>
+        description <br><br>
+
+        Make your program as clear and as simple as possible <br><br>
+
         <u>Escape Sequences</u><br> 
-        <img src="escape sequences.png">
-        <br> 
+        <img src="escape sequences.png" height="400" width="600"> <br><br>
+
         output - cout <br> 
         input - cin <br> 
     </p>
@@ -362,10 +368,9 @@
     <h2>Ch 4 - Basic Expressions & Declarations & Structure & Math Functions</h2>
     <p>
         <u>Basic Program Structure</u><br>
-         Heading Comments <br>
-         Data Declarations <br> 
-         Executable Statements <br> 
-        <br>
+        1) Heading Comments <br>
+        2) Data Declarations <br> 
+        3) Executable Statements <br><br>
 
         * Multiply <br> 
         / Divide <br>
@@ -378,31 +383,32 @@
         <code>type name;</code><br><br>
 
         <u>Types of Variables</u> <br>
-        char - character <br> 
-        wchar_t - wide character <br> 
-        int - integer <br> 
-        float - floating point <br>
-        double - double floating point <br> 
-        bool - boolean <br> 
-        void - no value <br> <br>
+        <b>char</b> - character <br> 
+        <b>wchar_t</b> - wide character <br> 
+        <b>int</b> - integer <br> 
+        <b>float</b> - floating point <br>
+        <b>double</b> - double floating point <br> 
+        <b>bool</b> - boolean <br> 
+        <b>void</b> - no value <br> <br>
 
-        By convention, variable names are lowercase. <br> 
+        By convention, variable names are lowercase. <br><br>
+
         <u>BAD:</u><br>
-        3rd_entry - Begins with a number <br>
-        all$done - Contains a "$" <br> 
-        the end - Contains a space <br> 
-        intt - Reserved word <br> <br> 
+        <b>3rd_entry</b> - Begins with a number <br>
+        <b>all$done</b> - Contains a "$" <br> 
+        <b>the end</b> - Contains a space <br> 
+        <b>int</b> - Reserved word <br> <br> 
 
         <u>Constants</u><br>
         Declared with <b>const</b> C++ keyword and usually named in caps: <br> 
         const double PI = 3.14; <br> <br>
         
+        DECLARE VARIABLES AT THE TOP OF PROGRAM <br>
         Declare first: <br> 
         <code>int answer;</code><br>
         Assign: <br> 
         <code>answer = (1+2)*4;</code><br><br>
-
-        DECLARE VARIABLES AT THE TOP OF PROGRAM <br><br>
+        
         <u>General Structure</u><br>
         1) Declare variables <br> 
         2) Initialize variables <br> 
@@ -411,9 +417,8 @@
 
         <h4>Math Functions</h4>
         <code>#include <math.h> OR #include <cmath></code><br>
-        <img src="math functions.png">
+        <img src="math functions.png" width="500" height="400"> <br>
         
-
     </p>
 
     </details>
@@ -426,34 +431,32 @@
 
     <h2>Ch 5 - Reading Data</h2>
     <p>
-        std::cout (<<), reading data - std::cin (>>) <br>
-        - Cin skips whitespaces <br>
+        <code>std::cout</code> (<<), reading data - <code>std::cin</code> (>>) <br>
+        - Cin skips whitespaces <br><br>
 
-        <br>
-        int alpha = 10.5 will actually store 10 <br> 
-
+        <code>int alpha = 10.5</code> will actually store 10 <br> 
     </p>
 
     <h2>Ch 6 - Decision Statements</h2>
     <p>
-        Decision and control statements allow us to change the flow of a program. <br> 
+        Decision and control statements allow us to change the flow of a program. <br><br> 
 
-        <br>
         <u>Relational Operators</u> <br>
         <= - Less than or equal to <br> 
         < - Less than <br>
         > - Greater than <br> 
         >= - Greater than or equal to <br> 
         == - Equal <br> 
-        != - Not equal <br> 
-        <br>
+        != - Not equal <br> <br>
+        
         <u>Increment & Decrement Shortcut</u><br>
-        ++a or a++, --a or a-- <br> 
-        <br> 
+        ++a or a++, --a or a-- <br> <br>
+        
         <u>Compound Operators</u><br>
         Combines the = operator with another arithmetic operator <br>
         a += 5.67 is equivalemnt to a = a + 5.67 <br> 
         -=, *=, /=, %= <br><br>
+
         <u>Logical Operators</u><br>
         Logical or - || - (expr1) || (expr2)<br> 
         Logical and - && - (expr1) && (expr2) <br>
@@ -468,11 +471,9 @@
         }else{
             statement;
         }
-        </code></pre>
+        </code></pre><br>
 
-        <br>
-        Nested if statements are if statements inside of if statements <br> 
-        <br>
+        Nested if statements are if statements inside of if statements <br> <br>
 
         <u>Control Statements</u><br>
         <u>While Statement</u><br>
@@ -481,9 +482,10 @@
             while(condition){
                 statement;
             }
-        </code></pre>
-        While loops as error checks - continue to loop while they enter a wrong value <br> 
-        <br>
+        </code></pre><br>
+
+        While loops as error checks - continue to loop while they enter a wrong value <br> <br>
+
         Break statement <br> 
         - Will cause the program to exit the intermost loop <br> 
         <pre><code>
@@ -507,8 +509,10 @@
                 total += counter;
                 counter++;
             }while (counter < 5);
-        </pre></code>
+        </pre></code><br>
+
         This will loop five times <br> <br>
+
         <u>Do - While VS While </u><br>
         Good: Using do while you do not tneed tot ask before entering tthe loop since it will always enter once. <br> 
         Bad: The condittiton is checked at the end which can be bad if you do not want it to enter once. <br> 
@@ -516,9 +520,6 @@
     </p>
 
     </details>
-    
-
-
 
 </body>
 <script src="script.js"></script> 
