@@ -1,12 +1,31 @@
-/*FOR GRADIENTS*/
-#grad1 {
-height: 200px;
-background-color: red; /* For browsers that do not support gradients */
-background-image: linear-gradient(to bottom right, red, yellow);
+
+body {
+    font-family: system-ui;
+	background: linear-gradient(-45deg, #ffffff, #f5e3fe, #ffb4d7);
+	/*background-size: 1000%;*/
+    background-size:10000%;
+	animation: gradient 30s ease infinite;
+	height: 100vh;
+	
+	padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+
 }
 
-body { background-image: linear-gradient(to bottom right, royalblue, white);}
-/*background-image:linear-gradient(to bottom right, royalblue blue);*/
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 /*FOR TABLE*/
 table, th, td {
@@ -37,9 +56,9 @@ background-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 }
 .content {
-padding: 0 18px;
+padding: 30px;
 display: none;
 overflow: hidden;
 /*background-color: lavenderblush;*/
-background-image: linear-gradient(to right, mediumslateblue, lavender);
+background-color: ghostwhite;
 }
