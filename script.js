@@ -1,15 +1,16 @@
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
+var images = [
+  "Pictures/a.jpg",
+  "Pictures/b.jpg",
+  "Pictures/c.png",
+  "Pictures/d.jpg",
+  "Pictures/e.jpg", 
+  "Pictures/f.jpg",
+  "Pictures/g.jpg"];
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
+function randImg() {
+  var size = images.length
+  var x = Math.floor(size * Math.random())
+  document.getElementById('image').src = images[x];
 }
+randImg();
