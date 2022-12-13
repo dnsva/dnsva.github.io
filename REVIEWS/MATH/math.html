@@ -137,7 +137,7 @@
       <!----------------------------------------------------------------->
       <h2>Graphing Lines</h2>
       <p>
-        <img src="linear-systems/quadrants.png" alt="Quadrants" width="100" height="100"> <br>
+        <img src="linear-systems/quadrants.png" alt="Quadrants" width="100" height="100" style="float: left; padding-right: 10px;" > <br>
         1) <b>Table of Values</b> (x = -2, -1, 0, 1, 2, make table) <br>
         2) <b>Intercept Method</b> (2 points: let y=0, solve x, (x,0) AND let x=0, solve y, (0,y)) <br>
         3) <b>Slope-Intercept</b> (y = mx+b, start at (0,b) and use m = rise/run to get more points) <br>
@@ -147,16 +147,16 @@
       <p>
         <table>
         <tr>
-          <td>H - horizontal</th>
-          <td>V - vertical</th>
+          <td>H - horizontal</td>
+          <td>V - vertical</td>
         </tr>
         <tr>
-          <td>O - 0 slope</th>
-          <td>U - undefined ∞ slope</th>
+          <td>O - 0 slope</td>
+          <td>U - undefined ∞ slope</td>
         </tr>
         <tr>
-          <td>Y - y-axis, "y=b"</th>
-          <td>X - x-axis, "x=a"</th>
+          <td>Y - y-axis, "y=b"</td>
+          <td>X - x-axis, "x=a"</td>
         </tr>
         </table>
       </p>
@@ -212,21 +212,36 @@
 
     <button type="button" class="collapsible">Unit 2 - Analytical Geometry</button>
     <div class="content">
-      <iframe src="analytical geometry/geometry.pdf" width = "500" height="700"></iframe> <br> <br>
+      <details>
+        <summary>Summary Note - Online</summary>
+        <p>
+          <iframe src="analytical geometry/geometry.pdf" width = "500" height="700"></iframe> <br> <br>
+        </p>
+      </details>
     </div>
 
     <!----------------------------------------------------------------->
 
     <button type="button" class="collapsible">Unit 3 - Geometric Properties</button>
     <div class="content">
-      <iframe src="geometric properties/geometry.pdf" width = "500" height="700"></iframe> <br> <br>
+      <details>
+        <summary>Summary Note - Written</summary>
+        <p>
+          <iframe src="geometric properties/geometry.pdf" width = "500" height="700"></iframe> <br> <br>
+        </p>
+      </details>
     </div>
 
     <!----------------------------------------------------------------->
 
     <button type="button" class="collapsible">Unit 4 - Algebra Topics</button>
     <div class="content">
-      <iframe src="algebra/algebra.pdf" width = "500" height="700"></iframe> <br> <br>
+      <details>
+        <summary>Summary Note - Online</summary>
+        <p>
+          <iframe src="algebra/algebra.pdf" width = "500" height="700"></iframe> <br> <br>
+        </p>
+      </details>
     </div>
 
     <!----------------------------------------------------------------->
@@ -348,37 +363,37 @@
     <div class="content">
       <h2>Terminology of Quadratics</h2>
       <p>
-        <u>Quadratic Function</u> - A function of degree <u>2</u>. <br>
-        - The equation is in the form <b>ax<sup>2</sup>+bx+c</b> <br>
-        <u>Parabola</u> - the general shape of a quadratic function. Used to describe the graph. <br> 
-        <u>Vertex</u> - the point at which the curve changes direction <br> 
-        If the parabola opens UP, the vertex is a MINIMUM <br> 
-        If the parabola opens DOWN, the vertex is a MAXIMUM <br>
+        <u>Quadratic Function</u> - A function of degree <u>2</u> in the form <b>ax<sup>2</sup>+bx+c</b> <br>
+        <u>Parabola</u> - the general shape of a quadratic function. <br> 
+        <u>Vertex</u> - the point at which the curve changes direction (if the parabola opens up, the vertex is a <b>min</b>; if the parabola opens up, the vertex is a <b>max</b>) <br> 
         <u>Axis of Symetry</u> - the graph is symetrical about a <u>vertical</u> line drawn through the <u>vertex</u>. <br>
-        <br><img src="quadratic-equations/up.png" alt="Labeled Graph" width="100" height="100"> <br>
+
+        <br><img src="quadratic-equations/up.png" alt="Labeled Graph" width="200" height="200"> <br><br>
 
         <u>y-intercept</u> - A point at which the graph crosses the y-axis in the form (0,y) <br>
         <u>x-intercept/zeroes/roots</u> - A point at which the graph crosses the x-axis in the form (x,0) <br>
         <u>Direction of Opening</u> - The direction that the parabola opens <br>
-        <br><img src="quadratic-equations/direction of opening.png" alt = "DofO" width="100" height="80"> <br>
-
-        CONSIDERING THE PARABOLA IN THE FORM OF y = ax<sup>2</sup><br>
-        <u>Reflection</u> - A transformation that maps the function by a reflection over the line. Generally represents a reflection over the x-axis <br>
         If <b>a>0</b> then the parabola opens up (y = x<sup>2</sup>)<br>
         If <b>a<0</b> then the parabola opens down (y = -x<sup>2</sup>)<br>
+        <br><img src="quadratic-equations/direction of opening.png" alt = "DofO" width="100" height="80"> <br><br>
+
+        
+        Considering the parabola in the form of <b>y = ax<sup>2</sup></b><br>
+        <u>Reflection</u> - A transformation that maps the function by a reflection over the x-axis <br>
         <u>Vertical Stretch</u> - If |a| > 1 then the parabola is stretched vertically and the graph <u>narrows</u> (gets skinnier) <br>
         <u>Vertical Compression</u> - If 0 < |a| < 1 then the parabola is compressed vertically and the graph <u>widens</u> <br>
         <br><img src="quadratic-equations/stretch-compress.png" alt = "Comparing stretches/comressions" width = "230" height = "150"> <br><br>
 
-        <u>DIFFERENT FORMS OF QUADRATICS</u> <br>
+        <u><b>Different Forms of Quadratics</b></u> <br>
         <b>Standard Form</b>: y = ax<sup>2</sup>+bx+c <br>
         - - helpful to know the y-int (c-value) <br>
         <b>Factored Form</b>: y = a(x-s)(x-t) <br>
         - - helpful to know the x ints ((s,0), (t,0)) <br>
         <b>Vertex Form</b>: y = a(x-h)<sup>2</sup>+k <br>
-        - - helpful to know the vertex (h, k) and used for graphing <br> <br>
+        - - helpful to know the vertex (h, k) and used for graphing <br><br>
 
         Parent function: y = x<sup>2</sup><br>
+
       </p>
 
       <h2>Quadratic Functions</h2>
@@ -496,12 +511,6 @@
 
       </p>
 
-      <h2>Easy Word Problems</h2>
-      <p>
-        Equation given - use vertex <br>
-        //add photo of questions
-      </p>
-
       <h2>Complete the Square</h2>
       <p>
         - used to convert from standart to vertex form (we want vertex form to graph) <br> 
@@ -560,8 +569,7 @@
         Quadrantic formula - used to determine the x intercepts of a parabola <br> <br>
 
         "A negative boy couldn't decide whether or not to go to a radical party. The square boy didn't go and missed out on 4 awesome chicks and it was all over by 2am. " <br> 
-
-        INSERT FORMYLA HERE
+        <b>x = [-b ± √(b2 - 4ac)]/2a</b> <br><br>
 
         <u>Form</u><br>
         - write the formula every time <br> 
@@ -600,14 +608,12 @@
 
     <button type="button" class="collapsible">Unit 8 - Trigonometry</button>
     <div class="content">
-      <iframe src="trigonometry/trig.pdf" width = "500" height="700"></iframe> <br> <br>
-    </div>
-
-    <!----------------------------------------------------------------->
-
-    <button type="button" class="collapsible">Collapsible</button>
-    <div class="content">
-      hello
+      <details>
+        <summary>Summary Note - Online</summary>
+        <p>
+          <iframe src="trigonometry/trig.pdf" width = "500" height="700"></iframe> <br> <br>
+        </p>
+      </details>
     </div>
 
     <!----------------------------------------------------------------->
