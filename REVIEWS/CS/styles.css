@@ -1,10 +1,10 @@
 
 body {
     font-family: system-ui;
-	background: linear-gradient(-45deg, #ffffff, #b6ebfe, #3305ff);
+	background: linear-gradient(-45deg, #ffffff, #f7b688, #8e75fd);
 	/*background-size: 1000%;*/
     background-size:10000%;
-	animation: gradient 30s ease infinite;
+	animation: gradient 25s ease infinite;
 	height: 100vh;
 	
 	padding-top: 50px;
