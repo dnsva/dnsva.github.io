@@ -100,10 +100,10 @@ summary{
 	color: rgb(255, 255, 255);*/
 }
 .content {
-padding: 30px;
-display: none;
-overflow: hidden;
-/*background-color: lavenderblush;*/
-background-color: #89d3fb;
-/*background-color: rgb(190, 190, 247);*/
+	padding: 30px;
+	display: none;
+	overflow: hidden;
+	/*background-color: lavenderblush;*/
+	background-color: #89d3fb;
+	/*background-color: rgb(190, 190, 247);*/
 }
