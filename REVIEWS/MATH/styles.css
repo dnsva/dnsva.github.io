@@ -91,12 +91,13 @@ summary{
 	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
 	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: rgb(48, 234, 255);
+	-webkit-text-stroke-color: rgb(60, 73, 78);
 	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/clouds.jpg);
 	background-size: auto;
 	background-attachment: unset;
 	background-position: 0%;
 	font-size: 80px;
+	letter-spacing: 0.07em;
 	animation: clouds-moving infinite 220s;
 	animation-fill-mode: forwards;
 	animation-play-state: running;
