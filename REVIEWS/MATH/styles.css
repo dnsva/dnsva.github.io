@@ -52,7 +52,7 @@ summary{
     font-size: 20px;
 }
 
-
+/*FOR COLLAPSIBLE*/
 .collapsible {
 
 	font-family: system-ui;
@@ -82,3 +82,40 @@ summary{
 	background-color: #89d3fb;
 }
 
+/*FOR TITLE*/
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
+.cloud-text {
+	font-family:'Courier New', Courier, monospace;
+	font-weight: 900;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgb(48, 234, 255);
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/clouds.jpg);
+	background-size: auto;
+	background-attachment: unset;
+	background-position: 0%;
+	font-size: 80px;
+	animation: clouds-moving infinite 220s;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	animation-timing-function: linear;
+	text-align: left;
+}
+@keyframes clouds-moving {
+	0% {
+		background-position: 0%;	
+	}
+	50% {
+		background-position: 100%;	
+	}
+	100% {
+		background-position: 0%;
+	}
+}
+.attribute {
+	position: relative;
+	font-size: 26px;
+	text-align: center;
+}
