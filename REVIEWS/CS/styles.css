@@ -1,11 +1,9 @@
 
 body {
     font-family: system-ui;
-	background: linear-gradient(-45deg, #ffffff, #f7b688, #8e75fd);
-	/*background-size: 1000%;*/
-    background-size:10000%;
-	animation: gradient 25s ease infinite;
-	height: 100vh;
+
+	background-image: linear-gradient(to right,#ebf7fb, #5163aa);
+
 	
 	padding-top: 50px;
     padding-bottom: 50px;
@@ -14,6 +12,9 @@ body {
 
 }
 
+p{
+	padding-left: 20px;
+}
 
 
 @keyframes gradient {
@@ -28,38 +29,89 @@ body {
 	}
 }
 
-/*background-image:linear-gradient(to bottom right, royalblue blue);*/
-summary {
-    font-size: 1.5em;
+summary{
+	font-family: system-ui;
+	font-weight: bold;
+    font-size: 20px;
 }
 
 /*FOR TABLE*/
-table, th, td {
-border: 1px solid rgb(45, 45, 45);
-border-collapse: collapse;
+table, th, td{
+	border: 1px solid rgb(45, 45, 45);
+	vertical-align: top;
+	border-collapse: collapse;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding: 20px;
 }
 
-/*FOR COLLAPSIBLE BUTTON*/
+/*FOR COLLAPSIBLE*/
 .collapsible {
-background-color: rgb(251, 251, 251);
-/*background-image: linear-gradient(to bottom right, white, black);*/
-color: rgb(0, 0, 0);
-cursor: pointer;
-padding: 18px;
-width: 100%;
-border: none;
-text-align: left;
-outline: none;
-font-size: 15px;
+
+	font-family: system-ui;
+    font-size: 20px;
+	
+	background-image: linear-gradient(to right, #cde6f8, #1D2B64);
+
+	margin-top: 5px;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: center;
+	outline: none;	 
+	
+	
 }
 .active, .collapsible:hover {
-background-color: rgb(0, 0, 0);
-color: rgb(255, 255, 255);
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 }
 .content {
-padding: 0 18px;
-display: none;
-overflow: hidden;
-/*background-color: lavenderblush;*/
-background-image: linear-gradient(to right, mediumslateblue, lavender);
+	padding: 30px;
+	display: none;
+	overflow: hidden;
+	background-color: #d4e7ed;
+}
+
+/*FOR TITLE*/
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
+.cloud-text {
+	font-family:'Courier New', Courier, monospace;
+	font-weight: 900;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgb(60, 73, 78);
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/clouds.jpg);
+	background-size: auto;
+	background-attachment: unset;
+	background-position: 0%;
+	font-size: 80px;
+	letter-spacing: 0.07em;
+	animation: clouds-moving infinite 220s;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	animation-timing-function: linear;
+	text-align: left;
+}
+@keyframes clouds-moving {
+	0% {
+		background-position: 0%;	
+	}
+	50% {
+		background-position: 100%;	
+	}
+	100% {
+		background-position: 0%;
+	}
+}
+.attribute {
+	position: relative;
+	font-size: 26px;
+	text-align: center;
 }
