@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Computer Science</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 80px; color:">Comsci 11 Summary</h1>
+    
+    <p style="text-align: right; font-family: 'Courier New', Courier, monospace; font-weight: bold; color:rgba(252, 253, 255, 0.911)">
+        Exam Date - June 2, 2023 <br>
+    </p>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 1 - NUMBER SYSTEMS</button>
+    <div class="content">
+        <!---------------------------------------------------------------------->
+        <h2>Binary</h2>
+        <p>
+            <ul>
+            <li><b>base 2</b> number system</li>
+            <li><b>0 - off/false, 1 - on/true</b></li>
+            <li>1 byte - <b>min = 0, max = 225</b></li><br>
+            <table>
+            <tr>
+                <td>2<sup>7</sup></td>
+                <td>2<sup>6</sup></td>
+                <td>2<sup>5</sup></td>
+                <td>2<sup>4</sup></td>
+                <td>2<sup>3</sup></td>
+                <td>2<sup>2</sup></td>
+                <td>2<sup>1</sup></td>
+                <td>2<sup>0</sup></td>
+            </tr>
+                <td>128</td>
+                <td>64</td>
+                <td>32</td>
+                <td>16</td>
+                <td>8</td>
+                <td>4</td>
+                <td>2</td>
+                <td>1</td>
+            </table><br>
+            </ul>
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>Decimal</h2>
+        <p>
+            <ul>
+                <li><b>base 10</b> number system - each digit is 0-9</li>
+            </ul>
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>Hexadecimal</h2>
+        <p>
+            <ul>
+                <li><b>base 16</b> number system</li>
+                <li>2 digits can represent values 0-255, it is the same as one byte of binary</li>
+                <li>6 digits - used for colors</li><br>
+          
+            <table>
+            <tr>
+                <th>Hex</th>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+            </tr>
+                <th>Binary</th>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </table> <br>
+
+            <table>
+            <tr>
+                <td>16<sup>3</sup></td>
+                <td>16<sup>2</sup></td>
+                <td>16<sup>1</sup></td>
+                <td>16<sup>0</sup></td>
+            </tr>
+                <td>4096</td>
+                <td>256</td>
+                <td>16</td>
+                <td>1</td>
+            </table><br>
+
+            </ul>
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>Converting</h2>
+        <p>
+            <table style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                
+                <tr style="border: none;">
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2); text-align: center;">
+                        <!Blank>
+                        ---
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Binary to Decimal</b><br>
+                        Add up all the values with 1s:<br>
+                        1001 1011 -> 1 + 2+ 8 + 16 + 128 = 155<sub>10</sub> <br>
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Binary to Hexadecimal</b><br>
+                        binary -> decimal -> hex<br>
+                        0110 0110 -> 2 + 4 + 32 + 64 = 102<sub>10</sub> = 66<sub>16</sub><br>
+                        TRICK: split in half<br>
+                        0001 0111 -> [0001 = (1)], [0111 = (7)] -> 17 <br>
+                        0011 1010 -> [0011 = (3)], [1010 = (10)] -> 3A <br>
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Binary to ASCII</b><br>
+                        binary -> decimal -> ASCII<br>
+                        0010 1001 -> 1 + 8 + 32 = 41 = ')' <br>
+                    </td>
+    
+                </tr>
+    
+                <tr>
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Decimal to Binary</b><br>
+                        Turn on all powers of 2 that are used<br>
+                        42 -> 0010 1010 <br>
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2); text-align: center;">
+                        <!Blank>
+                        ---
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Decimal to Hexademcimal</b><br>
+                        4097<sub>10</sub> -> 1001<sub>16</sub> <br>
+                        1111<sub>10</sub> -> 457<sub>16</sub> <br>
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Decimal to ASCII</b><br>
+                        Look in ASCII chart <br>
+                    </td>
+    
+                </tr>
+    
+                <tr>
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Hexadecimal to Binary</b><br>
+                        hex -> decimal -> binary<br>
+                        or just hex -> binary (cut in half)<br>
+                        23 -> [2 - 0010][3 - 0011] = 0010 0011<br>
+                        AB -> 10101011<br>
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Hexadecimal to Decimal</b><br>
+                        AA0 -> 256(10) + 16(10) + 16(0) = 2720<br>
+                        If two digits - split (trick)<br>
+                        FF -> [F = 1111][F = 1111] = 255 <br>
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2); text-align: center;">
+                        <!Blank>
+                        ---
+                    </td>
+    
+                    <td style="border: 2px solid rgba(0, 0, 0, 0.2);">
+                        <b>Hexadecimal to ASCII</b><br>
+                        hex -> dec -> ascii <br> 
+                    </td>
+    
+                </tr>
+    
+            </table>
+                
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>Adding Binary</h2>
+        <p>
+            <u>Rules</u> <br> 
+            0 + 1 = 1<br>
+            1 + 1 = 0, CARRY 1<br>
+            1 + 1 + 1 = 1, CARRY 1<br>
+            &nbsp;&nbsp;&nbsp;<sub>111</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub>111</sub><br>
+            &nbsp;&nbsp;&nbsp;1011 0111<br>
+            &nbsp;+0111 0011<br>
+            &nbsp;-----------<br>
+            1 0010 1010
+        </p>
+        <!---------------------------------------------------------------------->
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 2 - LOGIC</button>
+    <div class="content">
+        <!---------------------------------------------------------------------->
+        <h2>Truth Tables</h2>
+        <p>
+            # Cols = 1 for each var, 1 for each not var, 1 for each operation working inside out <br> 
+            # Rows = 2<sup>n</sup> rows where n = number of variables <br>
+
+            <p style="font-size: 8px;">
+                <b>EXAMPLE:</b><br>
+                ¬((A ∨ B) ∧ ¬C)
+                <table style="font-size: 8px;">
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>¬C</th>
+                        <th>A∨B</th>
+                        <th>(A∨B)∧¬C</th>
+                        <th>¬((A∨B)∧¬C)</th>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+                    </tr>
+                </table><br>
+            </p>
+           
+            <u><b>Tautology</b></u> - Always true: p ∨ ¬p <br>
+            <u><b>Contradition</b></u> - Always false: p ∧ ¬p
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>Types of Operators</h2>
+        <p> <mark>
+            Logical: and, or, not (∧, ∨, ¬,˜) (&&, ||, !) <br>
+            Arithmetic: +, -, *, /, %<br>
+            Assignment: = <br>
+            Relational: <, >, <=, >=, !=, ==<br>
+            Compound: +=, -=, /=, *=, %= <br>
+        </p></mark>
+        <!---------------------------------------------------------------------->
+        <h2>Translating</h2>
+        <p>
+            English sentences to logical operators to determine truth value.<br>
+            <u>Steps</u><br>
+            1) let statements<br>
+            2) determine propositions<br>
+            3) determine logical operators<br><br>
+            <u>Example:</u><br>
+            The cat is not brown or the truck flies.<br>
+            1) let p represent "the cat is brown"<br>
+            2) let q represent "the truck flies"<br>
+            ¬p ∨ q<br>
+            SINCE trucks can't fly, THEREFORE true when the cat is not brown
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>DeMorgan's Law</h2>
+        <p>
+            Distributes the "not"<br>
+            ¬(A∧B) = ¬A∨¬B <br>
+            ¬(A∨B) = ¬A∧¬B
+        </p>
+        <!---------------------------------------------------------------------->
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 3 - PSEUDO CODE/FLOW CHARTS</button>
+    <div class="content">
+       *** LOOK AT EXAMPLES FROM NOTES ***
+        <!---------------------------------------------------------------------->
+        <h2>Flow Charts</h2>
+        <p>
+            <img src="Images/flow charts.jpg" width = "500" height="480">
+            <br><br>
+        </p>
+        <!---------------------------------------------------------------------->
+        <h2>Pseudo Code</h2>
+        <p>
+            <img src="Images/pseudo code.jpg" width="480" height="500">
+            <br><br>
+        </p>
+        <!---------------------------------------------------------------------->
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 4 - HARDWARE</button>
+    <div class="content">
+
+
+        <h2>Computer Parts</h2>
+        <p>
+        
+        <b>Motherboard</b> - The main circuit board of a computer that connects all of the other components together (CPU, RAM, power supply, etc). It provides the electrical connections and allows communication between them.<br><br>
+        
+        <b>Storage Device (SSD, HDD)</b> - The part of a computer that allows data to be stored.<br>
+        <u>SSD</u> (solid-state drive) - faster, more expensive, lower capacity, more durable <br> 
+        <u>HDD</u> (hard disk drive) - slower, cheaper, higher capacity, stores data on spinning disks. <br>
+        <mark>powers of 2<br>
+            2TB - lots <br>
+            512GB/1TB - average <br> 
+            256GB - not that much 
+        </mark><br><br>
+
+        <b>CPU (processor)</b> (central processing unit) - Brain of the computer. Executes instructions, processes data, performs calculators. Usually 2-16 cores. Communicates with other components to complete certain tasks.<br>
+        <mark>Image procesing/photoshop/etc. - 24 cores (lots)<br>
+            Average - 12 cores <br>
+            Normal - 8 cores </mark>
+        <br><br>
+
+        <b>RAM</b> (random access memory) - Short term memory. Type of memory used for temporary storage that the CPU is actively using. RAM allows the CPU to access data quickly. The more RAM you have, the better your performance usually is.<br>
+        <mark>
+            32GB - lots <br>
+            16GB - average <br>
+            8GB - ok
+        </mark><br><br>
+
+        <b>Operating System (OS)</b> - Software that manages a computer's resources. Provides an interface for users to interact with. Allows applications to run. Windows, Linux, MacOS. <br><br>
+
+        <b>Display Device (Monitor)</b> - Output device that displays information processed by the computer. Shows visual output (text, images, videos, grpahics). Come in different sizes, resolutions, and types. <br><br>
+
+        <b>GPU (Graphics Card)</b> (graphics processing unit) - Performs complex calculations required for rendering graphics. Responsible for accelerating image and video processing. GPUs are used in applications such as gaming, video editing, and scientific research. <br><br>
+    
+        </p>
+
+        <h2>File Systems</h2>
+        <p>
+            Directory = folder, A directory in a directory = subdirectory <br>
+            -> tree structure / hierarchy is formed <br><br>
+            
+            <u>Copying:</u> CTRL+C or right click + "copy"<br>
+            <u>Pasting:</u> CTRL+V or right click + "paste"<br>
+            <u>Deleting:</u> click "DEL" on keyboard or right click + "delete" <br>
+            <u>Renaming:</u> click + "rename"<br>
+            <u>Moving:</u> drag <br>
+            <u>Copying:</u> CTRL key while dragging <br>
+        </p>
+
+        <h2>Vocabulary</h2>
+        <p>
+            <iframe src="hardware.pdf" width = "500" height="500"></iframe> <br> <br>
+        </p>
+
+        <h2>Input vs Output vs Storage vs Processing</h2>
+        <p>
+            <b>Input</b>: Keyboard, touch screen, pointing devices, mouse, touchpad/trackpad, joystick, game controllers, graphic controllers, graphics tablet, digital cameras, webcams, image scanners, fingerprint scanner, barcode reader, audio input devices, microphone, MIDI keyboard, etc. <br> <br>
+   
+
+            <b>Output</b>: Monitor, printer, haptic sensors (e.g., mobile device vibrations), sound cards, sepakers <br> <br> 
+
+            <b>Storage</b> - saves/stores info/instructions in memory : HDD, SSD, Optical Drives (CDs/BluRay/DVD), Flash storage devices (USB), Flobby disk drives, Network-attached storage devices (NAS), etc. <br> <br>
+
+            <b>Processing</b> - processes the data you input : CPU <br> <br>
+
+        </p>
+
+        <h2>Viruses</h2>
+        <p>
+            <b>A virus</b> is a piece of code that attaches intself to a file. The file is now said to be <u>infected</u>. In addition to the ability to attach to a file, the virus generally carries a <u>payload</u>, which is a small program that executes when the infected file is accessed.<br><br>
+
+            <b>The payload</b> can be harmless (e.g., a humorous message) or very malicious (e.g., erasing the entire hard drive) <br><br>
+
+            <b>Worms</b><br>
+            <ul>
+                <li>Similar to a virus but it is more aggressive about spreading</li>
+                <li>They use the fact that most computers are interconnected (networks, internet)</li>
+                <li>They search for connections between computers and try to put copies of themselves on vulnerable systems</li>
+            </ul><br>
+
+            <b>Trojan Horse</b><br>
+            <ul>
+                <li>A program that looks like something you would want</li>
+                <li>The goal is to TRICK you into downloading and running the program</li>
+                <li>As soon as the program executes, the payload is delivered. This will quite often be a virus or worm, and you just willingly installed it</li>
+            </ul><br>
+
+            <b>Spyware</b><br>
+            <ul>
+                <li>Range of behaviour for this type of software</li>
+                <li>It will track your browsing habits and send targeted advertisments when you go to certain websites</li>
+                <li>Most web browsing involves this to some extent in the form of <u>cookies</u> which are legitimate files stored while browsing</li>
+                <li>Some types of spyware will garther information to send back to the owner/creator</li>
+                <li>In addition to browsing, they might include software found on your computer, personal info, private & financial info</li>
+            </ul><br>
+
+            <b>Malware</b><br>
+            <ul>
+                <li><b>Everything above is collectively referred to as <u>malware</u> (<u>mal</u>icious soft<u>ware</u>)</b></li>
+            </ul><br>
+
+
+            <h2>Anti-Viruses</h2>
+            Tools to combat viruses, worms, trojan horses, etc. = anti-virus (software)<br><br>
+
+            <b>Anti-viruses</b> software runs on your computer at all times and actively scans files for virus signatures, and if a virus is detected, it is neutralized (cured) or quarantined (incurable) <br><br>
+            
+            HOWEVER, <br>
+            - performance problems can be caused from having a program run all the time <br>
+            - "false positives" can happen where anti-virus software will incorrectly identify a legitamate program as a virus <br> 
+            - a poor, old, out of date program might not recognize a new virus <br><br>
+
+            Spyware Cleaners - There are software products that will find and remove spyware already installed on a system. Similar to anti-virus. <br><br>
+
+            <b>A firewall</b> is a piece of software that acts as a barrier between a computer and the rest of the world. It can act as a filter that allows the authorized flow of data over specific channels (ports) on the computer system. They can prevent unauthorized software (e.g., worms, spyware) already on the computer from communicating with the outside world <br><br>
+
+        </p>
+
+        <h2>Examples - Viruses & Anti-Viruses</h2>
+        <p>
+            <b>ANTIVIRUS - KASPERSKY</b><br>
+            <ul>
+                <li>(1) Developed by Kaspersky Lab, a multinational cybersecurity and antivirus provider founded in 1997 and headquartered in Moscow, Russia</li>
+                <li>(2) The cost varies on the specific version. The price for a single device license of the anti-virus is $29.99 per year</li>
+                <li>(3) Advantages include:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Comprehensive protection against viruses, malware, spyware, ransomware, and other cyber threats<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. High detection rates <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Low false positives <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Easy-to-use interface<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. Low system impact
+                </li>
+                <li>(4) It is compatible with Windows, MacOS, and Android OS systems</li>
+            </ul>
+
+            <br>
+
+            <b>WANNACRY - VIRUS/WORM/RANSOMWARE</b><br>
+            <ul>
+                <li>(1) 2017 worm that started spreading through countless computers attacking large companies and organizations targetting outdated Windows systems</li>
+                <li>(2) It was able to infect 300,000 computers across the globe</li>
+                <li>(3) It was able to run on 27 different languages</li>
+                <li>(4) Spread throughout systems using: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. infected downloads <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. malware droppers <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. and fake emails
+                </li>
+                <li>(5) It encrypted data, taking the computer infected hostage, promisin to return inaccessible data only after a payment of bitcoin</li>
+                <li>(6) Caused 5 billion dollars worth of personal losses from individuals across the world</li>
+                <li>(7) Later, a 22 year old was able to find a killswitch for it through reverse engineering</li>
+            </ul>
+
+
+        </p>
+
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 5 - PROGRARMMING P1</button>
+    <div class="content">
+
+        <u>Output</u>
+        <ul>
+            <li><code>cout<<"1+2";</code> vs <code>cout<<1+2;</code></li><br>
+            <li><code>cin>></code> to read in</li><br>
+            <li><code>endl</code> vs <code>"\n"</code></li><br>
+            <li><u>Escape Sequences</u><br> 
+                <img src="Images/escape sequences.png" height="280" width="400"> <br><br>
+            </li>
+            <li>
+                <u>Comments</u> <br> 
+                Single line - // <br>
+                Multitline - /* */ <br><br>
+            </li>
+        </ul>
+
+        <u>Calculations</u>
+        <ul>
+            <li>Integer division: <code>1/2 = 0 and 1.0/2 = 0.5</code></li> <br>
+            <li>Remainder: <code>5%2 = 1</code></li> <br>
+            <li><u>Math Functions</u><br>
+                <code>#include < math.h > OR #include < cmath ></code><br>
+                <img src="Images/math functions.png" width="500" height="400"> <br>
+            </li> <br>
+            <li><u>Types of Variables</u> <br>
+                <b>char</b> - character <br> 
+                <b>int</b> - integer <br>
+                <b>double</b> - double floating point <br> 
+                <b>bool</b> - boolean <br> 
+                <b>void</b> - no value <br> <br>
+            </li>
+            <li><u>Constants</u><br>
+                Declared with <b>const</b> C++ keyword and usually named in caps: <br> 
+                <code>const double PI = 3.14;</code><br> <br>
+            </li>
+        </ul>
+
+        <u>Decisions & Loops</u>
+        <ul>
+            <li>Increment: <b>a++</b></li>
+            <li>Decrement: <b>a--</b></li> <br>
+
+            <li>If statements<br> <br>
+
+            <li>
+            <u>While Statement</u><br>
+            General format: <br> 
+            <pre><code>
+                while(condition){
+                    statement;
+                }
+            </code></pre><br>
+            </li>
+
+            <li>
+            <u>Do - While</u><br>
+            - The loop is always executed at least once <br> 
+            <pre><code>
+            do{
+                statements(s); //body of loop
+            }while(condititon); //test
+            </code></pre>
+            - The condition is tested after the loop is executed once <br> 
+            Example: <br> 
+            <code><pre>
+                counter = 0; 
+                do{
+                    total += counter;
+                    counter++;
+                }while (counter < 5);
+            </pre></code><br>
+            This will loop five times <br> <br>
+            </li>
+
+            <li>
+            <u>Do - While VS While </u><br>
+            Good: Using do while you do not need to ask before entering the loop since it will always enter once. <br> 
+            Bad: The condititon is checked at the end which can be bad if you do not want it to enter once. <br> 
+            </li>
+
+            <br>
+            <li>
+            <u>Switch Statement</u><br>
+            <code><pre>
+                switch(condition){
+                    case a:
+                    ....
+                    break;
+                    case b:
+                    ....
+                    //fall through
+                    default:
+                    ....
+                }
+            </pre></code>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 6 - PROGRAMMING P2</button>
+    <div class="content">
+
+        <ul>
+            <li>Random Numbers <br>
+                <code> <pre>
+                    #include < ctime >
+                    #include < cstdlib >
+                    srand(time(0));
+                    rand()%(m-n+1)+n; //from n to m       
+                </code> </pre>
+            </li> <br>
+
+           <li> For Loops <br>
+                (initialize) (test) (update) <br>
+                <code> <pre>
+                    for(int i = 0; i<10; i++){
+                        ...
+                    }
+                </code></pre>
+           </li> <br>
+
+           <li><u>Functions</u> <br>
+            1. Function declaration/Function declaration <br>
+            2. main(){ function call(parameters) } <br>
+            3. Function header(parameters){ function definition } <br>
+           </li> <br>
+        </ul>
+
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <button type="button" class="collapsible">UNIT 7 - PROGRAMMING P3</button>
+    <div class="content">
+
+        <u>Arrays</u>
+        <ul>
+            <li><code>type name[size];</code></li>
+            <li>positions start at 0 to n-1 if size in n</li>
+            <li>use a for loop to cin/cout<br>
+                <code> <pre>
+                    for(int i = 0; i < n; i++) {
+                        cin>>array[i];
+                    }
+                </code> </pre> <br>
+                *** No for loop needed for char array, do normally <br>
+            </li>
+            <li>char arrays have a NULL character (<code>\0</code>) at the end and need room</li>
+            <li>cin - does not get whitespace</li>
+            <li>gets(array name), getline(cin, name) gets whitespace</li>
+        </ul>
+
+        <br>
+
+        <u>Strings</u> <br>
+        <code>#include < cstring ></code> - c strings, character arrays <br>
+        <code>#include < string ></code> - normal strings <br> 
+
+        <table>
+            <tr>
+                <td>Strings</td>
+                <td>C Strings</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>
+        <pre>
+            - .at(pos)
+            - .clear()
+            - .length()
+            - .empty() 
+            - .substr(pos, count)
+            - .insert(pos, str)
+            - .insert(pos, n, char)
+            - .compare(str)
+            - .compare(pos, count, str)
+            - .find(str, pos)
+            - .find(cstr, pos, n)
+        </pre>
+                    </code>
+                </td>
+                <td>
+                    <code>
+        <pre>
+            - strlen(name)
+            - strcmp(str1, str2)
+            - strncmp(str1, str2, count)
+            - strcpy(dest, src)
+            - strncpy(dest, src, n)
+            - strcat(dest, src)
+            - strncat(dest, src, n)
+        </pre>
+                    </code>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+</body>
+
+<script src="script.js"></script> 

@@ -1,0 +1,126 @@
+
+body {
+    font-family: system-ui;
+
+	/*background-image: linear-gradient(to right, #bce0f0 0%, #bfe9ff  51%, #6ee7ff  100%);*/
+	background-image: linear-gradient(to right, #ff6f80 0%, #f79bc5  51%, #ffd5ec  100%);
+
+	
+	/*background: #ee9ca7;  /* fallback for old browsers */
+	/*background: linear-gradient(to right, #ffdde1, #ee9ca7); */
+
+
+	/*background: linear-gradient(-45deg, #185beb, #d190f2, #ff3091);*/
+	/*background-size: 1000%;*/
+
+	/*
+    background-size:10000%;
+	animation: gradient 30s ease infinite;
+	height: 100vh;*/
+	
+	padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*FOR TABLE*/
+table, th, td {
+	border: 1px solid rgb(45, 45, 45);
+	border-collapse: collapse;
+	text-align:start;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+summary{
+	font-family: system-ui;
+    font-size: 20px;
+}
+
+/*FOR COLLAPSIBLE*/
+.collapsible {
+
+	font-family: system-ui;
+    font-size: 20px;
+	color: white;
+	/*background-image: linear-gradient(to right, #6db3ec 0%, #bfe9ff 100%);*/
+	/*background-color: rgba(0,0,0, 1);*/
+	background-color: rgba(255, 255, 255, 0.3);
+	margin-top: 5px;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: center;
+	outline: none;
+
+	
+}
+.active, .collapsible:hover {
+	/*color: #fff;*/
+	font-weight: 900;
+	/*text-decoration: none;*/
+	/*box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);*/
+}
+.content {
+	padding: 30px;
+	display: none;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*FOR TITLE*/
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
+.cloud-text {
+	font-family:'Courier New', Courier, monospace;
+	font-weight: 900;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgb(60, 73, 78);
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/clouds.jpg);
+	background-size: auto;
+	background-attachment: unset;
+	background-position: 0%;
+	font-size: 80px;
+	letter-spacing: 0.07em;
+	animation: clouds-moving infinite 220s;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	animation-timing-function: linear;
+	text-align: left;
+}
+@keyframes clouds-moving {
+	0% {
+		background-position: 0%;	
+	}
+	50% {
+		background-position: 100%;	
+	}
+	100% {
+		background-position: 0%;
+	}
+}
+.attribute {
+	position: relative;
+	font-size: 26px;
+	text-align: center;
+}
+

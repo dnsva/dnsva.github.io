@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Computer Science</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 80px;">Comsci 11 Summary</h1>
+    
+    <p style="text-align: right; font-family: 'Courier New', Courier, monospace; font-weight: bold; color:rgba(3, 13, 95, 0.911)">
+        (Exam) <br>
+        Exam Date - ? <br>
+    </p>
+
+
+    <button type="button" class="collapsible">Introduction - Binary, Hexadecimal, Flow Charts, Pseudo Code, Logic</button>
+    <div class="content">
+
+        <p>
+            <b>Website: </b>
+            <a href="http://missmolinaro.pbworks.com/w/page/48288193/ICS3U%20Pre-Programming%20(SEPT-OCT)">Click Here</a>
+        </p>
+    
+        <!--------------------------------------------------------------->
+
+        <!NUMBER SYSTEMS>
+
+        <details>
+
+            <summary>Number Systems</summary>
+
+            <!--------------------------------------------------------------->
+
+            <p>
+                To identify which number system, we use a subscript:<br>
+                (Note: you don't need leading zeros in binary)<br>
+                110 0111<sub>2</sub>, 64<sub>10</sub>, A4<sub>16</sub><br>
+            </p>
+
+            <!--------------------------------------------------------------->
+
+            <h2>Binary</h2>
+            <p>
+                <ul>
+                <li>A system of numerical notation with <b>base 2</b>, in which each place of a number is expressed as a 0 or 1 and corresponds to a power of two. </li> 
+                <li>Computers "think" and communicate in binary</li>
+                <li><b>0 - off/false, 1 - on/true</b></li><br>
+                <table>
+                <tr>
+                    <td>2<sup>7</sup></td>
+                    <td>2<sup>6</sup></td>
+                    <td>2<sup>5</sup></td>
+                    <td>2<sup>4</sup></td>
+                    <td>2<sup>3</sup></td>
+                    <td>2<sup>2</sup></td>
+                    <td>2<sup>1</sup></td>
+                    <td>2<sup>0</sup></td>
+                </tr>
+                    <td>128</td>
+                    <td>64</td>
+                    <td>32</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                </table><br>
+                <table>
+                <tr>
+                    <th>Bit:</th>
+                    <th>Byte:</th>
+                </tr>
+                    <td>
+                        - a single binary digit (0 or 1)<br><br><br><br>
+                    </td>
+                    <td>
+                        - 8 bits<br>
+                        - can be used to represent a letter/symbol<br>
+                        - 256 diff combos<br>
+                        - largest possible val: 255, smallest: 0
+                    </td>
+                </table>
+                </ul>
+            </p>
+
+            <!--------------------------------------------------------------->
+        
+            <h2>Decimal</h2>
+            <p>
+                <ul>
+                    <li><b>base 10</b> number system where each digit can be 0-9</li>
+                </ul>
+            </p>
+        
+            <!--------------------------------------------------------------->
+        
+            <h2>Hexadecimal</h2>
+            <p>
+                <ul>
+                    <li>Number system with <b>base 16</b></li>
+                    <li>2 digits can represent values 0-255, it is the same as one byte of binary</li>
+                    <li>6 digits - often used for colors</li><br>
+                </ul>
+            
+                <table>
+                <tr>
+                    <th>Hex</th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                </tr>
+                    <th>Binary</th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                </table> <br>
+                <table>
+                <tr>
+                    <td>16<sup>3</sup></td>
+                    <td>16<sup>2</sup></td>
+                    <td>16<sup>1</sup></td>
+                    <td>16<sup>0</sup></td>
+                </tr>
+                    <td>4096</td>
+                    <td>256</td>
+                    <td>16</td>
+                    <td>1</td>
+                </table><br>
+            </p>
+        
+        </details>
+
+        <!--------------------------------------------------------------->
+
+        <!CONVERTING>
+
+        <details>
+
+            <summary>Converting</summary>
+
+            <p>
+                <table style="border: none;">
+
+                    <tr style="border: none;">
+        
+                        <td style="border: none; text-align: center;">
+                            <!Blank>
+                            ---
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Binary to Decimal</b><br>
+                            Add up all the values with 1s:<br>
+                            1001 1011 -> 1 + 2+ 8 + 16 + 128 = 155<sub>10</sub> <br>
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Binary to Hexadecimal</b><br>
+                            binary -> decimal -> hex<br>
+                            0110 0110 -> 2 + 4 + 32 + 64 = 102<sub>10</sub> = 66<sub>16</sub><br>
+                            TRICK: split in half<br>
+                            0001 0111 -> [0001 = (1)], [0111 = (7)] -> 17 <br>
+                            0011 1010 -> [0011 = (3)], [1010 = (10)] -> 3A <br>
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Binary to ASCII</b><br>
+                            binary -> decimal -> ASCII<br>
+                            0010 1001 -> 1 + 8 + 32 = 41 = ')' <br>
+                        </td>
+        
+                    </tr>
+        
+                    <tr>
+                        <td style="border: none;">
+                            <b>Decimal to Binary</b><br>
+                            Turn on all powers of 2 that are used<br>
+                            42 -> 0010 1010 <br>
+                        </td>
+        
+                        <td style="border: none; text-align: center;">
+                            <!Blank>
+                            ---
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Decimal to Hexademcimal</b><br>
+                            4097<sub>10</sub> -> 1001<sub>16</sub> <br>
+                            1111<sub>10</sub> -> 457<sub>16</sub> <br>
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Decimal to ASCII</b><br>
+                            Look in ASCII chart <br>
+                        </td>
+        
+                    </tr>
+        
+                    <tr>
+                        <td style="border: none;">
+                            <b>Hexadecimal to Binary</b><br>
+                            hex -> decimal -> binary<br>
+                            or just hex -> binary (cut in half)<br>
+                            23 -> [2 - 0010][3 - 0011] = 0010 0011<br>
+                            AB -> 10101011<br>
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Hexadecimal to Decimal</b><br>
+                            AA0 -> 256(10) + 16(10) + 16(0) = 2720<br>
+                            If two digits - split (trick)<br>
+                            FF -> [F = 1111][F = 1111] = 255 <br>
+                        </td>
+        
+                        <td style="border: none; text-align: center;">
+                            <!Blank>
+                            ---
+                        </td>
+        
+                        <td style="border: none;">
+                            <b>Hexadecimal to ASCII</b><br>
+                            hex -> dec -> ascii <br> 
+                        </td>
+        
+                    </tr>
+        
+        
+                </table>
+                    
+            </p>
+    
+        </details>
+
+        <!--------------------------------------------------------------->
+    
+        <!ADDING BINARY>
+
+        <details>
+
+            <summary>Adding Binary</summary>
+        
+            <p>
+                <u>Rules</u> <br> 
+                0 + 1 = 1<br>
+                1 + 1 = 0, CARRY 1<br>
+                1 + 1 + 1 = 1, CARRY 1<br>
+                &nbsp;&nbsp;&nbsp;<sub>111</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub>111</sub><br>
+                &nbsp;&nbsp;&nbsp;1011 0111<br>
+                &nbsp;+0111 0011<br>
+                &nbsp;-----------<br>
+                1 0010 1010
+            </p>
+
+        </details>
+    
+        <!--------------------------------------------------------------->
+
+        <!TRUTH TABLES>
+
+        <details>
+            
+            <summary>Truth Tables - Logic</summary>
+
+            <p>
+                3 logical connectives:<br>
+                AND = <mark>∧</mark> = &&<br>
+                OR = <mark>∨</mark> = || <br>
+                NOT = <mark>¬,˜</mark> = ! <br><br>
+        
+                <b># of COLS in a truth table:</b><br>
+                <ul>
+                    <li>1 for each variable</li>
+                    <li>1 fir single not variables</li>
+                    <li>1 for each operation working inside out </li>
+                </ul>
+                
+                <b># of ROWS in a truth table:</b><br>
+                <ul>
+                    <li>2<sup>n</sup> rows</li>
+                    <li>n = number of variables</li>
+                </ul>
+        
+                <b>EXAMPLE:</b><br>
+                ¬((A ∨ B) ∧ ¬C)<br>
+                <table>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>¬C</th>
+                        <th>A∨B</th>
+                        <th>(A∨B)∧¬C</th>
+                        <th>¬((A∨B)∧¬C)</th>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+                    </tr>
+                </table><br>
+        
+                <u><b>Tautology</b></u> - proposition that is always true so p ∨ ¬p <br>
+                <u><b>Contradition</b></u> - proposition that is always false so p ∧ ¬p
+            </p>
+
+        </details>
+    
+        <!--------------------------------------------------------------->
+
+        <!ENGLISH TO PROPOSITIONAL LOGIC>
+
+        <details>
+
+            <summary>English to Propositional Logic</summary>
+        
+            <p>
+                English sentences can be converted to logical operators to determine truth value.<br>
+                <u>Steps</u><br>
+                1) let statements<br>
+                2) determine propositions<br>
+                3) determine logical operators<br><br>
+                <u>Example:</u><br>
+                The cat is not brown or the truck flies.<br>
+                1) let p represent "the cat is brown"<br>
+                2) let q represent "the truck flies"<br>
+                ¬p ∨ q<br>
+                SINCE trucks can't fly, THEREFORE true when the cat is not brown
+            </p>
+        
+        </details>
+    
+        <!--------------------------------------------------------------->
+
+        <!TYPES OF OPERATORS>
+
+        <details>
+
+            <summary>Types of Operators</summary>
+            
+            <p> <mark>
+                Logical: and, or, not<br>
+                Arithmetic: +, -, *, /, %<br>
+                Assignment: = <br>
+                Relational: <, >, <=, >=, !=, ==<br>
+            </p></mark>
+
+        </details>
+    
+        <!--------------------------------------------------------------->
+    
+        <!LOGICAL PROPERTIES>
+
+        <details>
+            <summary>Logical Properties</summary>
+
+            <p>
+                <img src="Images/logical_properties.png" alt="Logical Properties" width="240.5" height="305">
+        
+                <br>
+                <h3>How to do a proof:</h3>
+                1) Split into LS and RS <br>
+                2) Goals: Work on one (or both) sides until they are equal. Start with the more complex side. <br>
+                3) Make a conclusion (since & therefore) <br>
+            </p>
+
+        </details>
+
+        <!--------------------------------------------------------------->
+    
+        <!WRITTEN SUMMARY> 
+
+        <details>
+            <summary>Written Summary</summary>
+            <p>
+                <iframe src="Images/written review.pdf" width = "500" height="500"></iframe> <br> <br>
+            </p>
+        </details>
+
+        <!--------------------------------------------------------------->
+    
+        <!FLOW CHARTS AND PSEUDO CODE> 
+        <details>
+            <summary>Flow Charts and Pseudo Code</summary>
+            <p>
+                <img src="Images/flow charts.jpg" width = "500" height="480">
+                <br><br>
+            
+                <img src="Images/pseudo code.jpg" width="480" height="500">
+                <br><br>
+            </p>
+        </details>
+
+        <!--------------------------------------------------------------->
+
+        <br>
+
+    </div>
+
+
+    <button type="button" class="collapsible">Unit 1 - Intro to Programming</button>
+    <div class="content">
+
+        <p>
+            <b>Website: </b>
+            <a href="http://missmolinaro.pbworks.com/w/page/66477920/ICS3U%20-%20Programming%20Unit%201">Click Here</a>
+        </p>
+        
+        <!--------------------------------------------------------------->
+        
+        <h2>Ch 1 - Intro</h2>
+        <p>
+            Programmer -> Compiler -> Machine language <br> 
+            <u>First we wrote in: </u><br>
+            1 - Machine language - binary <br> 
+            2 - Then assembly and other low level <br> 
+            3 - Then high level langs like C, Pascal, Java, Go, ... <br><br>
+            
+            <u>Steps:</u><br>
+            1) Think <br>
+            2) Organize your thoughts <br> 
+            3) Write them down (pseudo code) <br>
+            4) Translate into C++ <br> 
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>Ch 2 - Basics</h2>
+        <p>
+            <b>Hello World:</b><br>
+            <code><pre>
+            #include <iostream> //header
+            int main(){
+                std::cout<<"Hello World\n";
+                return 0;
+            } 
+            </pre></code>
+            <b>Syntax errors</b> - when you spell things incorrectly <br> 
+            <b>Logical errors</b> - compilers can't help you, the order of commadns are incorrect or the program does not do as required <br> 
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>Ch 3 - Style</h2>
+        <p>
+            <u>Comments</u> <br> 
+            Single line - // <br>
+            Multitline - /* */ <br><br>
+
+            <u>Header comment format</u> <br> 
+            <code>
+            name: <br>
+            date: <br>
+            title: <br> 
+            description: <br><br>
+            </code>
+
+            Make your program as clear and as simple as possible <br><br>
+
+            <u>Escape Sequences</u><br> 
+            <img src="Images/escape sequences.png" height="400" width="600"> <br><br>
+
+            output - cout <br> 
+            input - cin <br> 
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>Ch 4 - Basic Expressions & Declarations & Structure & Math Functions</h2>
+        <p>
+            <u>Basic Program Structure</u><br>
+            1) Heading Comments <br>
+            2) Data Declarations <br> 
+            3) Executable Statements <br><br>
+
+            * Multiply <br> 
+            / Divide <br>
+            + Add <br> 
+            - Subtract <br>
+            % Modulus <br> <br> 
+
+            *Note - integer division cuts off decimal places <br><br> 
+
+            <code>type name;</code><br><br>
+
+            <u>Types of Variables</u> <br>
+            <b>char</b> - character <br> 
+            <b>wchar_t</b> - wide character <br> 
+            <b>int</b> - integer <br> 
+            <b>float</b> - floating point <br>
+            <b>double</b> - double floating point <br> 
+            <b>bool</b> - boolean <br> 
+            <b>void</b> - no value <br> <br>
+
+            By convention, variable names are lowercase. <br><br>
+
+            <u>BAD:</u><br>
+            <b>3rd_entry</b> - Begins with a number <br>
+            <b>all$done</b> - Contains a "$" <br> 
+            <b>the end</b> - Contains a space <br> 
+            <b>int</b> - Reserved word <br> <br> 
+
+            <u>Constants</u><br>
+            Declared with <b>const</b> C++ keyword and usually named in caps: <br> 
+            const double PI = 3.14; <br> <br>
+            
+            DECLARE VARIABLES AT THE TOP OF PROGRAM <br>
+            Declare first: <br> 
+            <code>int answer;</code><br>
+            Assign: <br> 
+            <code>answer = (1+2)*4;</code><br><br>
+            
+            <u>General Structure</u><br>
+            1) Declare variables <br> 
+            2) Initialize variables <br> 
+            3) Do calculations <br> 
+            4) Output answers <br> 
+
+            <h4>Math Functions</h4>
+            <code>#include < math.h > OR #include < cmath ></code><br>
+            <img src="Images/math functions.png" width="500" height="400"> <br>
+            
+        </p>
+
+    </div>
+
+
+    <button type="button" class="collapsible">Unit 2 - Input, Decisions and Loops</button>
+    <div class="content">
+
+        <p>
+            <b>Website: </b>
+            <a href="http://missmolinaro.pbworks.com/w/page/66477928/ICS3U%20-%20Programming%20Unit%202">Click Here</a>
+        </p>
+        
+        <!--------------------------------------------------------------->
+
+        <h2>Ch 5 - Reading Data</h2>
+        <p>
+            <code>std::cout</code> (<<), reading data - <code>std::cin</code> (>>) <br>
+            - Cin skips whitespaces <br><br>
+
+            <code>int alpha = 10.5</code> will actually store 10 <br> 
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>Ch 6 - Decision Statements</h2>
+        <p>
+            Decision and control statements allow us to change the flow of a program. <br><br> 
+
+            <u>Relational Operators</u> <br>
+            <= - Less than or equal to <br> 
+            < - Less than <br>
+            > - Greater than <br> 
+            >= - Greater than or equal to <br> 
+            == - Equal <br> 
+            != - Not equal <br> <br>
+            
+            <u>Increment & Decrement Shortcut</u><br>
+            ++a or a++, --a or a-- <br> <br>
+            
+            <u>Compound Operators</u><br>
+            Combines the = operator with another arithmetic operator <br>
+            a += 5.67 is equivalemnt to a = a + 5.67 <br> 
+            -=, *=, /=, %= <br><br>
+
+            <u>Logical Operators</u><br>
+            Logical or - || - (expr1) || (expr2)<br> 
+            Logical and - && - (expr1) && (expr2) <br>
+            Logical not - ! - !(expr)<br> <br>
+
+            <u>If statement</u><br>
+            <pre><code>
+            if(condition){
+                statement;
+            }else if (another condition){
+                statement;
+            }else{
+                statement;
+            }
+            </code></pre><br>
+
+            Nested if statements are if statements inside of if statements <br> <br>
+
+            <u>Control Statements</u><br>
+            <u>While Statement</u><br>
+            General format: <br> 
+            <pre><code>
+                while(condition){
+                    statement;
+                }
+            </code></pre><br>
+
+            While loops as error checks - continue to loop while they enter a wrong value <br> <br>
+
+            Break statement <br> 
+            - Will cause the program to exit the intermost loop <br> 
+            <pre><code>
+                if(item == 0){
+                    break;
+                }
+            </code></pre><br>
+
+            <u>Do - While</u><br>
+            - The loop is always executed at least once <br> 
+            <pre><code>
+            do{
+                statements(s); //body of loop
+            }while(condititon); //test
+            </code></pre>
+            - The condition is tested after the loop is executed once <br> 
+            Example: <br> 
+            <code><pre>
+                counter = 0; 
+                do{
+                    total += counter;
+                    counter++;
+                }while (counter < 5);
+            </pre></code><br>
+
+            This will loop five times <br> <br>
+
+            <u>Do - While VS While </u><br>
+            Good: Using do while you do not tneed tot ask before entering tthe loop since it will always enter once. <br> 
+            Bad: The condittiton is checked at the end which can be bad if you do not want it to enter once. <br> 
+            
+        </p>
+
+    </div>
+
+    <button type="button" class="collapsible">Unit 3 - Random For Methods</button>
+    <div class="content">
+        
+        <!--------------------------------------------------------------->
+
+        <h2>01 - Random Numbers</h2>
+        <p>
+
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>02 - For Loops</h2>
+        <p>
+            
+            <pre><code>
+                code goes here
+            </code></pre><br>
+            
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>03 - Functions</h2>
+        <p>
+            
+            <pre><code>
+                code goes here
+            </code></pre><br>
+            
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>08 - Nested For Loops</h2>
+        <p>
+            
+            <pre><code>
+                code goes here
+            </code></pre><br>
+            
+        </p>
+
+        <!--------------------------------------------------------------->
+
+        <h2>07 - Switch</h2>
+        <p>
+            
+            <pre><code>
+                code goes here
+            </code></pre><br>
+            
+        </p>
+
+        <!--------------------------------------------------------------->
+
+    </div>
+
+    <button type="button" class="collapsible">Arrays</button>
+    <div class="content">
+
+        <!--------------------------------------------------------------->
+
+        <h2>1 - Arrays</h2>
+        Arrays are used to store a collection of related values<br>
+        <code>data type arrayname[n];</code> <br>
+        - n represents the maximum number of values/elements - size declarator <br>
+        For example, an int array <code>int width[1000]</code> has 100 elements but the last element is accessed with <code>width[999]</code>. <br><br>
+        <u>Inputting Elements of an Array</u> <br>
+        Array elements may be inputted one at a time: <br> 
+        <pre><code>
+            score[0] = 78;
+            score[5] = 80;
+            score[99] = 99999;
+        </code></pre>
+        Or with a loop: <br>
+        <pre><code>
+            for(int j = 0; j < n; j++){
+                cout<<"Please enter the score: ";
+                cin>>score[j];
+            }
+        </code></pre><br>
+
+        Array elements can be initialized at the time of declaration: <br>
+        <code>double temps[4] = {1.4, 3.1, 53, 64.02};</code> <br>
+        If declaring at initialization, the size declarator may be omitted so, <br>
+        <code>double temps[] = {1.4, ...};</code> <br><br>
+
+        Outputting - <code>cout&lt&ltarr[index];</code>, not <code>cout&lt&ltscore</code> <br>
+
+        You can also pre- or post-incremenent/decrement: <code>temp[6]++</code> <br>
+
+        <h2>3 - String and Char Arrays</h2>
+
+        <b>Char Arrays</b> - C String, length of word + 1 for null character \0 <br>
+        - <code>#include &ltstring.h&lt</code> or <code>#include &ltcstring&lt</code> <br>
+        - Declare and initialize: <code>char name[] = "Tom"; </code><br>
+        - Declare then initialize - does not work unless individual: <code>char name[4]; name = "Tom"; - WRONG</code> , <code>char name [4]; name[0] = 'T' .... name[3] = '\0'; - WORKS</code><br>
+        - ***You must consider the null character when using character arrays '\0'; <br>
+        - Operators : <code>strcat(first string, second string)</code> - puts second string on the end of first, <code>strlen(arrayname)</code> - length, <code>stringname[i]</code> - access individual positions <br> 
+        - Reading in : <code>cin&gt&gtarrayname</code> - does not get whitespace, does not work on it, <code>gets(arrayname);</code> - getst whitespace <br> <br>
+
+        <b>String Variable</b> - String Object <br>
+        - <code>#include &ltstring&gt </code><br>
+        - <code>string name; name = "Tom";</code> <br>
+        - Operators : <code>+</code> - concatenate, <code>stringname.length()</code> - length, <code>stringname.at(position)</code> - individual letters at positions <br>
+        - Reading in : <code>cin&gt&gtstringname</code> - does not get whitespace, <code>getline(cin, stringname)</code> - gets whitespace <br> <br>
+
+        Wide strings (<code>wstring</code>) contain wide characters: <br> <br>
+
+        <u>Gets and Getline Fails: </u> <br>
+        Sometimes when you are using gets or getline it will get the "enter key" from the last cin entry. To fix this glitch, we can use the command <code>cin.ignore();</code> - place it direcly above your gets or getline command and it will receive the enter key and your program will go on like normal <br> 
+
+
+
+
+        <h2>4 - String and Char Array Functions</h2>
+
+        <h2>C String Functions (character arrays) string.h or cstring</h2>
+        <p>
+            <table>
+                <!-------------------->
+                <tr>
+                    <td>
+                        Name
+                    </td>
+
+                    <td>
+                        Example
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strcpy(x); <br><br>
+                        char* strcpy( char* dest, const char* src );
+                    </td>
+                    <td>
+                        Example:
+                        <pre><code>
+                        #include <stdio.h>
+                        #include <string.h>
+                        
+                        int main ()
+                        {
+                            char str1[]="Sample string";
+                            char str2[40];
+                            char str3[40];
+                            strcpy (str2,str1);
+                            strcpy (str3,"copy successful");
+                            printf ("str1: %s\nstr2: %s\nstr3: %s\n",str1,str2,str3);
+                            return 0;
+                        }
+                        </code></pre>
+                        Output:
+                        <pre><code>
+                        str1: Sample string
+                        str2: Sample string
+                        str3: copy successful
+                        </code></pre>
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strncpy(x);<br><br>
+                        char *strncpy( char *dest, const char *src, std::size_t count );
+                    </td>
+                    <td>
+                        Example:
+                        <pre><code>
+                        #include <stdio.h>
+                        #include <string.h>
+                        
+                        int main ()
+                        {
+                            char str1[]= "To be or not to be";
+                            char str2[40];
+                            char str3[40];
+                        
+                            /* copy to sized buffer (overflow safe): */
+                            strncpy ( str2, str1, sizeof(str2) );
+                        
+                            /* partial copy (only 5 chars): */
+                            strncpy ( str3, str2, 5 );
+                            str3[5] = '\0';   /* null character manually added */
+                        
+                            puts (str1);
+                            puts (str2);
+                            puts (str3);
+                        
+                            return 0;
+                        }
+                        </code></pre>
+                        Output:
+                        <code><pre>
+                        To be or not to be
+                        To be or not to be
+                        To be 
+                        </pre></code>
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strcat(x); <br><br>
+                        char *strcat( char *dest, const char *src );
+                    </td>
+                    <td>
+                        Example 1:
+                        <pre><code>
+                        #include <cstring>
+                        #include <cstdio>
+                            
+                        int main() 
+                        {
+                            char str[50] = "Hello ";
+                            char str2[50] = "World!";
+                            std::strcat(str, str2);
+                            std::strcat(str, " Goodbye World!");
+                            std::puts(str);
+                        }
+                        </code></pre>
+                        Output 1:
+                        <code><pre>
+                        Hello World! Goodbye World!
+                        </pre></code>
+                        <br>
+                        Example 2:
+                        <pre><code>
+                        #include <stdio.h>
+                        #include <string.h>
+                        
+                        int main ()
+                        {
+                            char str[80];
+                            strcpy (str,"these ");
+                            strcat (str,"strings ");
+                            strcat (str,"are ");
+                            strcat (str,"concatenated.");
+                            puts (str);
+                            return 0;
+                        }
+                        </code></pre>
+                        Output 2:
+                        <code><pre>
+                        these strings are concatenated. 
+                        </pre></code>
+
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strncat(x);<br><br>
+                        char *strncat( char *dest, const char *src, std::size_t count );
+                    </td>
+                    <td>
+                        Example 1:
+                        <pre><code>
+                        #include <cstring>
+                        #include <cstdio>
+                            
+                        int main() 
+                        {
+                            char str[50] = "Hello ";
+                            char str2[50] = "World!";
+                            std::strcat(str, str2);
+                            std::strncat(str, " Goodbye World!", 3);
+                            std::puts(str);
+                        }
+                        </code></pre>
+                        Output 1:
+                        <code><pre>
+                        Hello World! Go
+                        </pre></code>
+                        <br>
+
+                        Example 2:
+                        <pre><code>
+                        #include <stdio.h>
+                        #include <string.h>
+
+                        int main ()
+                        {
+                        char str1[20];
+                        char str2[20];
+                        strcpy (str1,"To be ");
+                        strcpy (str2,"or not to be");
+                        strncat (str1, str2, 6);
+                        puts (str1);
+                        return 0;
+                        }
+                        </code></pre>
+                        Output 2:
+                        <code><pre>
+                        To be or not
+                        </pre></code>
+
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strlen(x); <br> <br>
+                        std::size_t strlen( const char* str )
+                    </td>
+                    <td>
+                        Example:
+                        <pre><code>
+                        #include <cstring>
+                        #include <iostream>
+                            
+                        int main()
+                        {
+                            const char str[] = "How many characters does this string contain?";
+                            
+                            std::cout << "without null character: " << std::strlen(str) << '\n'
+                                        << "with null character: " << sizeof str << '\n';
+                        }
+                        </code></pre>
+                        Output:
+                        <pre><code>
+                        without null character: 45
+                        with null character: 46
+                        </code></pre>
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strcmp(x); <br><br>
+                        int strcmp( const char *lhs, const char *rhs )
+                    </td>
+                    <td>
+                        Example:
+                        <pre><code>
+                        #include <stdio.h>
+                        #include <string.h>
+
+                        int main (){
+                        char key[] = "apple";
+                        char buffer[80];
+                        do {
+                            printf ("Guess my favorite fruit? ");
+                            fflush (stdout);
+                            scanf ("%79s",buffer);
+                        } while (strcmp (key,buffer) != 0);
+                        puts ("Correct answer!");
+                        return 0;
+                        }
+                        </code></pre>
+                        Output:
+                        <code><pre>
+                        Guess my favourite fruit? orange
+                        Guess my favourite fruit? apple
+                        Correct answer!
+                        </pre></code>
+                    </td>
+                </tr>
+                <!-------------------->
+                <tr>
+                    <td>
+                        strncmp(x); <br><br>
+                        int strncmp( const char *lhs, const char *rhs, size_t count )
+                        
+                    </td>
+                    <td>
+                        count - max number of characters to compare <br> 
+                        Example:
+                        <pre><code>
+                        #include <stdio.h>
+                        #include <string.h>
+                        
+                        int main (){
+                            char str[][5] = { "R2D2" , "C3PO" , "R2A6" };
+                            int n;
+                            puts ("Looking for R2 astromech droids...");
+                            for (n=0 ; n<3 ; n++)
+                            if (strncmp (str[n],"R2xx",2) == 0)
+                            {
+                                printf ("found %s\n",str[n]);
+                            }
+                            return 0;
+                        }
+                        </code></pre>
+                        Output:
+                        <pre><code>
+                        Looking for R2 astromech droids...
+                        found R2D2
+                        found R2A6
+                        </code></pre>
+                    </td>
+                </tr>
+                <!-------------------->
+            </table>
+            
+        </p>
+
+        <h2>String Functions - #include &ltstring&gt </h2>
+
+        string x = "whatever"; <br>
+        string y = "whatever2"; <br>
+        <ul>
+            <li><code>x.size()</code> & <code>x.length()</code> - Returnrs the number of characters in the string</li>
+
+            <li><code>x.clear()</code> - clears the contents</li>
+
+            <li><code>x.insert(size_t pos, const string& str)</code> & <code>x.insert(size_t pos, size_t n, char c);</code> - Inserts additional characters into the string right before the character indicated by pos. First function inserts a copy of str, second function inserts n consecutive copies of character c. </li>
+
+            <li><code>x.compare(const string& str); ::: x.compare(y);</code> & <code>x.compare(size_t pos, size_t len, const string& str);</code> - Compares the value of the string to a sequence of characters. str - Another string, pos - Position of the first character in the compared string, len - Length of compared string</li>
+
+            <li><code>x.substring(pos, len); </code> - Returns a newly constructed string object. pos - Position of the first character to be copied as a substring, len - Number of characters to include in the substring. </li>
+
+            <li><code>find(const string& str, size_t pos); </code> & <code>find(const char* c, size_t pos);</code> - Searches the string for the first occurrence of the sequence specified by its arguments. str - Another strirng, pos - Position of the first character in the string to be considered in the search, c - individual character to be searched for. Return value is the position of the first character of the first match, if none end the function returns -1</li>
+        </ul>
+
+        <!--------------------------------------------------------------->
+                
+
+    </div>
+
+</body>
+
+<script src="script.js"></script> 
