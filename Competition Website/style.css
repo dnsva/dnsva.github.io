@@ -139,10 +139,10 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding-top: var(--dl-space-space-twounits);
+  padding-top: 8px;
   border-color: rgba(255, 255, 255, 0.2);
   flex-direction: row;
-  padding-bottom: var(--dl-space-space-twounits);
+  padding-bottom: 8px;
   justify-content: space-between;
   border-bottom-width: 1px;
 }
@@ -175,8 +175,8 @@
 }
 @media(max-width: 479px) {
   .accordion {
-    padding-top: var(--dl-space-space-oneandhalfunits);
-    padding-bottom: var(--dl-space-space-oneandhalfunits);
+    padding-top: var(--dl-space-space-halfunit);
+    padding-bottom: var(--dl-space-space-halfunit);
   }
 }
 
