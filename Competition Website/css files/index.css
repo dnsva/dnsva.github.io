@@ -1174,7 +1174,7 @@ hr {
   overflow: visible;
   margin: 2rem 0;
 }
-hr:before {
+hr:before { /* https://codepen.io/rebelchris/pen/rNzbbeg */
   animation: move 10s infinite linear;
   position: absolute;
   top: -14px;
@@ -1188,7 +1188,7 @@ hr:before {
   content: ' ';
   height: 24px;
 }
-hr:after {
+hr:after { /* https://codepen.io/rebelchris/pen/rNzbbeg */
     animation: move 10s 1s infinite linear;
   position: absolute;
   top: -14px;
