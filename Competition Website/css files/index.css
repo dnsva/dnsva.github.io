@@ -74,7 +74,8 @@
   object-fit: cover;
 }
 .home-view {
-  background-color: #77f2ff;
+  background-color: #FC6DAB;
+  
 }
 .home-burger-menu {
   display: none;
@@ -218,7 +219,7 @@
   flex-direction: row;
 }
 .home-view1 {
-  background-color: #77f2ff;
+  background-color: #FC6DAB;
 }
 .home-description {
   gap: 120px;
@@ -370,7 +371,7 @@
   padding-right: var(--dl-space-space-fiveunits);
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fourunits);
-  background-color: #00ff3c;
+  background-color: #7692FF;
 }
 .home-main1 {
   gap: var(--dl-space-space-threeunits);
@@ -433,7 +434,7 @@
   padding-right: var(--dl-space-space-fiveunits);
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fourunits);
-  background-color: #ff31ed;
+  background-color: #ABD2FA;
 }
 .home-row1 {
   gap: var(--dl-space-space-fourunits);
@@ -1165,7 +1166,7 @@
 html {
   background: #000;
 }
-hr {
+.pacman {
   border: 0;
   width: 100%;
   height: 0;
@@ -1174,7 +1175,7 @@ hr {
   overflow: visible;
   margin: 2rem 0;
 }
-hr:before { /* https://codepen.io/rebelchris/pen/rNzbbeg */
+.pacman:before { /* https://codepen.io/rebelchris/pen/rNzbbeg */
   animation: move 10s infinite linear;
   position: absolute;
   top: -14px;
@@ -1188,7 +1189,7 @@ hr:before { /* https://codepen.io/rebelchris/pen/rNzbbeg */
   content: ' ';
   height: 24px;
 }
-hr:after { /* https://codepen.io/rebelchris/pen/rNzbbeg */
+.pacman:after { /* https://codepen.io/rebelchris/pen/rNzbbeg */
     animation: move 10s 1s infinite linear;
   position: absolute;
   top: -14px;
@@ -1206,5 +1207,35 @@ hr:after { /* https://codepen.io/rebelchris/pen/rNzbbeg */
 @keyframes move {
   0% {
     background-position: 0 0;
+  }
+}
+
+
+
+
+
+hr {
+  border: 0;
+  width: 35%;
+  height: 0;
+  border-top: 0.3rem solid #ABD2FA;
+  position: relative;
+  overflow: visible;
+  margin: 2rem 0;
+  animation: colorChange 5s infinite; /* Apply the animation */
+}
+
+@keyframes colorChange {
+  0% {
+    border-color: #1B2CC1;
+  }
+  22% {
+    border-color: #1B2CC1;
+  }
+  81% {
+    border-color: #7692FF;
+  }
+  100% {
+    border-color: #1B2CC1;
   }
 }

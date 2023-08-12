@@ -15,8 +15,8 @@ body {
 
 ul {
 	list-style-position: inside;
-	width: 600px;
-	max-width: 100%;
+	width: 100%;
+	max-width: 600px;
 	background: white;
 	box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.15);
 	padding: 0;
@@ -26,6 +26,7 @@ ul {
 
 li {
 	padding: 0 0 0 1rem;
+    padding-right: 1rem;
 }
 
 li:not(:last-child) {

@@ -59,11 +59,11 @@ body {
 @keyframes deconstructed1 {
   0% {
     transform: translateX(100%);
-    color: #00ff3c;
+    color: #1B2CC1; 
   }
   26% {
     transform: translateX(0%);
-    color: #00ff3c;
+    color: #1B2CC1;
     
   }
   83% {
@@ -71,18 +71,18 @@ body {
   }
   100% {
     transform: translateX(-120%);
-    color: #ff31ed;
+    color: #7692FF;
   }
 }
 
 @keyframes deconstructed2 {
   0% {
     transform: translateX(100%);
-    color: #00ff3c;
+    color: #1B2CC1;
   }
   24% {
     transform: translateX(0.5%);
-    color: #00ff3c;
+    color: #1B2CC1;
   }
   82% {
     transform: translateX(-0.2%);
@@ -90,18 +90,18 @@ body {
   100% {
     transform: translateX(-125%);
     
-    color: #ff31ed;
+    color: #7692FF;
   }
 }
 
 @keyframes deconstructed3 {
   0% {
     transform: translateX(100%);
-    color: #00ff3c;
+    color: #1B2CC1;
   }
   22% {
     transform: translateX(0%);
-    color: #00ff3c;
+    color: #1B2CC1;
   }
   81% {
     transform: translateX(0%);
@@ -109,18 +109,18 @@ body {
   100% {
     transform: translateX(-130%);
     
-    color: #ff31ed;
+    color: #7692FF;
   }
 }
 
 @keyframes deconstructed4 {
   0% {
     transform: translateX(100%);
-    color: #00ff3c;
+    color: #1B2CC1;
   }
   20% {
     transform: translateX(0%);
-    color: #00ff3c;
+    color: #1B2CC1;
   }
   80% {
     transform: translateX(0%);
@@ -128,7 +128,7 @@ body {
   100% {
     transform: translateX(-135%);
     
-    color: #ff31ed;
+    color: #7692FF;
   }
 }
 
