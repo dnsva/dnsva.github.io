@@ -1,0 +1,139 @@
+/*FOR GRADIENTS*/
+#grad1 {
+height: 200px;
+background-color: red; /* For browsers that do not support gradients */
+background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+	background: ;
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+	height: 100vh;
+}
+
+
+body {
+  text-align: center;
+  margin: 1em;
+  font: 1.4em "Press start 2P";
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  padding: 0.4em 1.3em;
+}
+
+hr {
+  height: 10px;
+  visibility: hidden;
+}
+
+.lvl1 {
+  box-shadow:
+    4px 0 orange,
+    -4px 0 orange,
+    0 -4px orange,
+    0 4px orange,
+    6px 0 0 2px orange,
+    -6px 0 0 2px orange,
+    0 -6px 0 2px orange,
+    0 6px 0 2px orange,
+    20px 0 black;
+  margin: 24px auto;
+}
+
+.lvl2 {
+  box-shadow:
+    4px 0 white,
+    -4px 0 white,
+    0 -4px white,
+    0 4px white,
+    8px 0 blue,
+    -8px 0 blue,
+    0 -8px blue,
+    0 8px blue,
+    0 0 0 4px blue;
+  margin: 8px auto;
+}
+
+.lvl3 {
+  box-shadow:
+    3px 0 white,
+    -3px 0 white,
+    0 -3px white,
+    0 3px white,
+    6px 0 white,
+    -6px 0 white,
+    0 -6px white,
+    0 6px white,
+    0 0 0 3px white,
+    9px 0 red,
+    -9px 0 red,
+    0 9px red,
+    0 -9px red,
+    0 -3px 0 3px red,
+    0 3px 0 3px red,
+    3px 0 0 3px red,
+    -3px 0 0 3px red,
+    27px 0 white;
+  margin: 12px auto;
+}
+
+.lvl4 {
+  box-shadow:
+    5px 0 white,
+    -5px 0 white,
+    0 -5px white,
+    0 5px white,
+    10px 0 white,
+    -10px 0 white,
+    0 -10px white,
+    0 10px white,
+    0 0 0 5px white,
+    15px 0 white,
+    -15px 0 white,
+    0 15px white,
+    0 -15px white,
+    0 -5px 0 5px white,
+    0 5px 0 5px white,
+    5px 0 0 5px white,
+    -5px 0 0 5px white,
+    20px 0 green,
+    -20px 0 green,
+    0 -20px green,
+    0 20px green,
+    10px 0 0 10px green,
+    -10px 0 0 10px green,
+    0 10px 0 10px green,
+    0 -10px 0 10px green,
+    0 0 0 10px green;
+  margin: 20px auto;
+}
+
+.other {
+  box-shadow:
+    6px 0 black,
+    -6px 0 black,
+    0 -6px black,
+    0 6px black,
+    12px 0 black,
+    -12px 0 black,
+    0 -12px black,
+    0 12px black,
+    15px 0 white,
+    -15px 0 white,
+    0 15px white,
+    0 -15px white,
+    0 -6px 0 6px white,
+    0 6px 0 6px white;
+  margin: 24px auto;
+}
