@@ -59,10 +59,10 @@ hr {
 
 .lvl2 {
   box-shadow:
-    2px 0 white,
-    -2px 0 white,
-    0 -2px white,
-    0 2px white,
+    2px 0 rgb(209, 234, 255),
+    -2px 0 rgb(209, 234, 255),
+    0 -2px rgb(209, 234, 255),
+    0 2px rgb(209, 234, 255),
 
     8px 0 blue,
     -8px 0 blue,
@@ -76,10 +76,10 @@ hr {
 .lvl2newcolor{
 
   box-shadow:
-    2px 0 white,
-    -2px 0 white,
-    0 -2px white,
-    0 2px white,
+    2px 0 rgb(255, 220, 220),
+    -2px 0 rgb(255, 220, 220),
+    0 -2px rgb(255, 220, 220),
+    0 2px rgb(255, 220, 220),
 
     8px 0 rgb(255, 8, 0),
     -8px 0 rgb(255, 8, 0),
