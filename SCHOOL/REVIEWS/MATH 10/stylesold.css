@@ -2,8 +2,7 @@
 body {
     font-family: system-ui;
 
-	/*background-image: linear-gradient(to right, #bce0f0 0%, #bfe9ff  51%, #6ee7ff  100%);*/
-	background-image: linear-gradient(to right, #a9f9ff 0%, #46b8ff  51%, #a9f9ff  100%);
+	background-image: linear-gradient(to right, #bce0f0 0%, #bfe9ff  51%, #6ee7ff  100%);
 
 	
 	/*background: #ee9ca7;  /* fallback for old browsers */
@@ -53,18 +52,13 @@ summary{
     font-size: 20px;
 }
 
-
 /*FOR COLLAPSIBLE*/
 .collapsible {
 
-	
-	font-family:'Courier New', Courier, monospace;
-	font-weight: 900;
+	font-family: system-ui;
     font-size: 20px;
-	color: rgb(0, 0, 0);
-	/*background-image: linear-gradient(to right, #6db3ec 0%, #bfe9ff 100%);*/
-	/*background-color: rgba(0,0,0, 1);*/
-	background-color: rgba(255, 255, 255, 0.3);
+	
+	background-image: linear-gradient(to right, #6db3ec 0%, #bfe9ff 100%);
 	margin-top: 5px;
 	cursor: pointer;
 	padding: 18px;
@@ -76,17 +70,15 @@ summary{
 	
 }
 .active, .collapsible:hover {
-	/*color: #fff;*/
-	color:darkblue;
-	font-weight: 900;
-	/*text-decoration: none;*/
-	/*box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);*/
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 }
 .content {
 	padding: 30px;
 	display: none;
 	overflow: hidden;
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: #89d3fb;
 }
 
 /*FOR TITLE*/
