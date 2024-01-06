@@ -371,7 +371,7 @@
   padding-right: var(--dl-space-space-fiveunits);
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fourunits);
-  background-color: #7692FF;
+  background-color: #ABD2FA;
 }
 .home-main1 {
   gap: var(--dl-space-space-threeunits);
@@ -434,7 +434,7 @@
   padding-right: var(--dl-space-space-fiveunits);
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fourunits);
-  background-color: #ABD2FA;
+  background-color: #7692FF;
 }
 .home-row1 {
   gap: var(--dl-space-space-fourunits);
