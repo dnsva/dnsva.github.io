@@ -1,11 +1,10 @@
 //Cut in Line
+//Vectors solution (would be the same for arraylists)
 
 #include <iostream>
 #include <vector>
 
 using namespace std;
-
-//solution with vectors (would be the same for arraylists)
 
 int main(){
 

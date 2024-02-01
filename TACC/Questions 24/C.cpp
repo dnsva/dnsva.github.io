@@ -1,4 +1,4 @@
-//C
+//Sibice
 
 #include <iostream>
 #include <math.h>

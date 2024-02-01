@@ -1,9 +1,10 @@
+//Cut in Line
+//Arrays solution
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
-
-//solution arrays
 
 int main(){
 
@@ -11,7 +12,7 @@ int main(){
     cin>>n;
 
     string line[n+1000]; //this is the largest amount of memory possibly needed
-    int number_of_people_in_line = n; //add when there is an cut, sub when a leave
+    int number_of_people_in_line = n; //add when there is a cut, sub when a leave
 
     /* Get the current line input: */
     for(int i = 0; i < n; ++i){
