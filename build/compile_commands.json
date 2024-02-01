@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/anna/Documents/main/Website/dnsva.github.io/build",
+  "command": "/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/A.dir/A.cpp.o -c \"/Users/anna/Documents/main/Website/dnsva.github.io/TACC/Questions 24/A.cpp\"",
+  "file": "/Users/anna/Documents/main/Website/dnsva.github.io/TACC/Questions 24/A.cpp"
+}
+]

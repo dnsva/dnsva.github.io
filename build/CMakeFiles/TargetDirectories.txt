@@ -1,0 +1,3 @@
+/Users/anna/Documents/main/Website/dnsva.github.io/build/CMakeFiles/A.dir
+/Users/anna/Documents/main/Website/dnsva.github.io/build/CMakeFiles/edit_cache.dir
+/Users/anna/Documents/main/Website/dnsva.github.io/build/CMakeFiles/rebuild_cache.dir
