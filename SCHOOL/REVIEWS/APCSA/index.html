@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>APCSA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 style="font-size: xx-large;">APCSA STUDY GUIDE</h1>
+
+    <table>
+        <tr>
+            <td style="vertical-align: top;">
+                <p>Java Quick Reference: <a href="quick reference.png">here</a></a> </p>
+
+                <h1>Ch 1 - Intro Java Language Features</h1>
+                <p>
+                    Textbook: <a href="Ch 1 Textbook.pdf">click</a> <br><br>
+                    <b>Notes:</b> <br>
+                    PDF: <a href="Ch 1 Notes.pdf">click</a> <br>
+                
+                </p>
+
+                <h1>Ch 2 - Classes and Objects</h1>
+                <p>
+                    Textbook: <a href="Ch 2 Textbook.pdf">click</a> <br><br>
+                    <b>Notes:</b> <br>
+                    PDF (Not Mine): <a href="Objects and Classes Notes Other.pdf">click</a> <br>
+                    PDF (Mine): <a href="Objects and Classes Notes.pdf">click</a> <br>
+                </p>
+
+                <h1>Ch 3 - Inheritance and Polymorphism</h1>
+                <p>
+                    Textbook: <a href="Ch 3 Textbook.pdf">click</a> <br> <br>
+                    <b>Notes:</b> <br>
+                    PDF: <a href="Ch 3 Notes.pdf">click</a> <br>
+                </p>
+
+                <h1>Ch 4 - Some Standard Classes</h1>
+                <p>
+                    Textbook: <a href="Ch 4 Textbook.pdf">click</a> <br><br>
+                    <b>Notes:</b> <br>
+                    PDF (String Methods): <a href="String Methods.pdf">click</a> <br>
+                </p>
+
+                <h1>Ch 5 - Program Design and Analysis</h1>
+                <p>
+                    Textbook: <a href="Ch 5 Textbook.pdf">click</a>
+                </p>
+            </td>
+            <td style="vertical-align: top;">
+                <br>
+                <h1>Ch 6 - Arrays and Array Lists</h1>
+                <p>
+                    Textbook: <a href="Ch 6 Textbook.pdf">click</a> <br> <br>
+                    <b>Notes:</b> <br>
+                    <code>
+                        //Syntax: <br>
+                        boolean[] hi = new boolean[SIZE]; //1D array <br>
+                        boolean[][] hi = new boolean[ROWS SIZE][COLS SIZE]; //2D array <br>
+                        //You can initialize normally or use a loop: <br>
+                        int[][] table = new int[3][6]; <br>
+                        for(int row = 0; row < table.length; row++) {  <br>
+                            &nbsp;&nbsp;for(int col = 0; col < table[row].length; col++) {  <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;table[row][col] = SOME VALUE; <br>
+                            &nbsp;&nbsp;} <br>
+                        } <br> 
+                    </code>
+                    PDF: <a href="Ch 6 Notes.pdf">click</a> <br>
+                </p>
+
+                <h1>Ch 7 - Recursion</h1>
+                <p>
+                    Textbook: <a href="Ch 7 Textbook.pdf">click</a> <br><br>
+                    <b>Notes:</b> <br>
+                    PDF: <a href="Recursion Notes.pdf">click</a> <br>
+                </p>
+
+                <h1>Ch 8 - Sorting and Searching</h1>
+                <p>
+                    Textbook: <a href="Ch 8 Textbook.pdf">click</a> <br><br>
+
+                    <b>Notes:</b> <br>
+                    Bubble Sort: <br>
+                    <code>
+                    public static void bubbleSort (int[] list){ <br>
+                        &nbsp;&nbsp;boolean sorted = false; <br>
+                        &nbsp;&nbsp;for (int top = list.length - 1; top > 0; top--){ <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;sorted = true; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < top; i++){ <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (list[i] > list[i+1]){ <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sorted = false; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int  temp = list[i]; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list[i] = list[i+1]; <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list[i+1] = temp; <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;} <br>
+                    } <br>
+                    </code>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    
+
+</body>
+</html> 

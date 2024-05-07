@@ -1,0 +1,20 @@
+body {
+    margin: 50px;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: large;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+table td {
+    width: 1%;
+    white-space: nowrap;
+}
