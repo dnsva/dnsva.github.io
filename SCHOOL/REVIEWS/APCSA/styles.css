@@ -3,18 +3,44 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 50px;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(70, 88, 222);
+}
+
+
 h1 {
     color: #333;
     font-family: 'Arial', sans-serif;
     font-size: large;
 }
 
+div {
+    background-color: white;
+    padding: 20px;
+    border-style: solid;
+}
 table{
+    margin: 50px;
     width: 100%;
-    table-layout: fixed;
+   /* table-layout: fixed; */
 }
 
 table td {
-    width: 1%;
-    white-space: nowrap;
+    
+   /* width: 1%; */
+   /* white-space: nowrap; */
 }
