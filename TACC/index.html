@@ -1,494 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>test</title>
+    <meta property="og:title" content="test" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
 
-<!-------------------------------------------->
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
 
-<head>
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background-color: var(--dl-color-theme-neutral-light);
 
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
 
-  <title>TACC</title>
-
-  <meta property="og:title" content="TBPC" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-  <meta property="twitter:card" content="summary_large_image" />
-
-  <style data-tag="reset-style-sheet">
-    html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-  </style>
-
-  <style data-tag="default-style-sheet">
-    html {
-      font-family: Inter;
-      font-size: 16px;
-    }
-    body {
-      font-weight: 400;
-      font-style:normal;
-      text-decoration: none;
-      text-transform: none;
-      letter-spacing: normal;
-      line-height: 1.15;
-      color: var(--dl-color-gray-black);
-      background-color: var(--dl-color-gray-white);
-
-    }
-  </style>
-  
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-    data-tag="font"
-  />
-
-  
-  <link rel="stylesheet" href="css files/index.css"/>
-  <link rel="stylesheet" href="css files/style.css"/>
-  <link rel="stylesheet" href="css files/title.css"/>
-
-</head>
-
-<!-------------------------------------------->
-
-<body>
-
-  <!-------------------------------------------->
-
-  <div>
-
-    <script
-      type="text/javascript"
-      src="custom scripts/lib.umd.js"
-    ></script>
-    
-    <!-------------------------------------------->
-
-    <div class="home-container">
-
-      <!-------------------------------------------->
-
-      <header data-thq="thq-navbar" class="home-navbar">
-
-        <!-------------------------------------------->
-
-        <span class="home-logo" style="color: white;">TACC</span>
-
-        <!-------------------------------------------->
-
-        <div data-thq="thq-navbar-nav" data-role="Nav" class="home-desktop-menu"> </div>
-
-        <!-------------------------------------------->
-
-        <div data-thq="thq-navbar-btn-group" class="home-btn-group">
-
-          <div class="home-socials"> </div>
-          
-          <a href="sign-up.html">
-            <button class="home-view button">Sign Up</button>
-          </a>
-
-        </div>
-
-        <!-------------------------------------------->
-
-        <div data-thq="thq-burger-menu" class="home-burger-menu">
-
-          <a href="sign-up.html">
-            <button class="home-view button">Sign Up</button>
-          </a>
-        
-        </div>
-
-        <!-------------------------------------------->
-        
-      </header>
-
-      <!-------------------------------------------->
-
-      <section class="home-hero">
-
-        <!-------------------------------------------->
-
-        <div class="home-heading">
-
-          <div class="deconstructed">
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTACC&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTACC&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTACC&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTACC&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTACC&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-          </div>
-
-   
-          <p style="color: rgb(255, 255, 255);
-          font-size: 30px;
-          max-width: 800px;
-          text-align: center;
-          line-height: 36px;
-          "><b>The Academy Coding Competition</b></p>
-
-          <!--p class="home-caption"><b>The Best Programming Competition</b></p -->
-
-          <hr />
-
-
-          <span style="font-size: 22px; text-align: center; max-width:50ch; color:white" class="home-text05">
-          
-
-              <b style="
-              ">
-              ASCIS has its SECOND in-house programming competition coming up on Febuary 1st! Compete in teams of 2 to show off your coding skills. It costs $0.<br><br>
+      <div class="home-container">
+        <header class="navbar1-container44">
+          <header data-thq="thq-navbar" class="navbar1-navbar-interactive">
+            <p>TACC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             
-            It will be held in Room #215 from periods 1-3. To enter, you should have some knowledge of any high-level coding language and it is recommended that you have taken Comsci 11. <br> <br>
+            <!--<img 
+              alt="Website Logo"
+              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
+              class="navbar1-image13"
+            /> -->
 
-            Keep scrolling to learn more. 
-            </b>
-          </span>
+            <div data-thq="thq-navbar-nav" class="navbar1-desktop-menu">
+              <nav class="navbar1-links3">
+                <a href="#Features23">
+                  <fragment><span>Home</span></fragment>
+                </a>
+                <a href="#Steps2">
+                  <fragment><span>Steps</span></fragment>
+                </a>
+                <a href="#Features22" target="_blank" rel="noreferrer noopener">
+                  <fragment><span>About</span></fragment>
+                </a>
+                <a href="#Gallery11" target="_blank" rel="noreferrer noopener">
+                  <fragment><span>Gallery</span></fragment>
+                </a>
+                <a href="#Footer3" target="_blank" rel="noreferrer noopener">
+                  <fragment><span>Contact</span></fragment>
+                </a>
+              </nav>
+              <div class="navbar1-buttons2">
+                <button
+                  class="navbar1-action13 thq-button-animated thq-button-filled"
+                >
+                  <span class="thq-body-small">
+                    <fragment><span>Sign Up</span></fragment>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div data-thq="thq-burger-menu" class="navbar1-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar1-icon20">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </div>
+            <div data-thq="thq-mobile-menu" class="navbar1-mobile-menu">
+              <div class="navbar1-nav">
+                <div class="navbar1-top">
+                  <img
+                    alt="Website Logo"
+                    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
+                    class="navbar1-logo1"
+                  />
+                  <div data-thq="thq-close-menu" class="navbar1-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar1-icon22">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <nav class="navbar1-links4">
+                  <a href="#Features23">
+                    <fragment>
+                      <span class="home-text thq-link thq-body-small">
+                        Home
+                      </span>
+                    </fragment>
+                  </a>
+                  <a href="#Steps2">
+                    <fragment>
+                      <span class="home-text01 thq-link thq-body-small">
+                        Steps
+                      </span>
+                    </fragment>
+                  </a>
+                  <a href="#Features22">
+                    <fragment>
+                      <span class="home-text02 thq-link thq-body-small">
+                        About
+                      </span>
+                    </fragment>
+                  </a>
+                  <a href="#Gallery11">
+                    <fragment>
+                      <span class="home-text03 thq-link thq-body-small">
+                        Gallery
+                      </span>
+                    </fragment>
+                  </a>
+                  <a href="#Footer3">
+                    <fragment>
+                      <span class="home-text04 thq-link thq-body-small">
+                        Contact
+                      </span>
+                    </fragment>
+                  </a>
+                </nav>
+                <div class="navbar1-buttons3">
+                  <button class="thq-button-filled">
+                    <span>
+                      <fragment>
+                        <span class="home-text05">Sign Up</span>
+                      </fragment>
+                    </span>
+                  </button>
+                  <button class="thq-button-outline">
+                    <span>
+                      <fragment>
+                        <span class="home-text06">Log In</span>
+                      </fragment>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="navbar1-icon-group">
+                <svg
+                  viewBox="0 0 950.8571428571428 1024"
+                  class="thq-icon-x-small"
+                >
+                  <path
+                    d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 877.7142857142857 1024"
+                  class="thq-icon-x-small"
+                >
+                  <path
+                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                  ></path></svg
+                ><svg
+                  viewBox="0 0 602.2582857142856 1024"
+                  class="thq-icon-x-small"
+                >
+                  <path
+                    d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </header>
+        </header>
+        <div id="Features23" class="features23-layout3492 thq-section-padding">
+          <div class="features23-max-width09 thq-section-max-width">
+            <div class="features23-container48">
+              <h2>
+                <p style="text-align: center;">TACC</p>
+                <p style="text-align: center;">The Academy Programming Competition</p>
+              </h2>
+              <span>
+                <fragment>
+                  <span class="home-text08 thq-body-small">
+                    ASCIS has its THIRD programming competition coming up!
+                    Compete in teams of 2 to show off your coding skills for a price of $0.
+                    To enter, you should have some knowledge of any high-level coding language
+                    and it is recommended that you have taken Comsci 11.
+                    Here is some key information.
+                  </span>
+                </fragment>
+              </span>
+              
+              <div class="thq-grid-3">
+                <div class="features23-container50 thq-card">
+                  <span>
+                    <fragment>
+                      <span class="home-text16 thq-body-small">
+                        <b>Date:</b> February 1, 2025
+                      </span>
+                    </fragment>
+                  </span>
+                </div>
+                <div class="features23-container51 thq-card">
+                  <span>
+                    <fragment>
+                      <span class="home-text17 thq-body-small">
+                        <b>Location:</b> fill in later
+                      </span>
+                    </fragment>
+                  </span>
+                </div>
+                <div class="features23-container52 thq-card">
+                  <span>
+                    <fragment>
+                      <span class="home-text18 thq-body-small">
+                        <b>Room:</b> #215
+                      </span>
+                    </fragment>
+                  </span>
+                </div>
+                <div class="features23-container53 thq-card">
+                  <span>
+                    <fragment>
+                      <span class="home-text19 thq-body-small">
+                        <b>Be there at:</b> TBD
+                      </span>
+                    </fragment>
+                  </span>
+                </div>
+                <div class="features23-container54 thq-card">
+                  <span>
+                    <fragment>
+                      <span class="home-text20 thq-body-small">
+                        <b>Questions: </b> 5
+                      </span>
+                    </fragment>
+                  </span>
+                </div>
+                <div class="features23-container55 thq-card">
+                  <span>
+                    <fragment>
+                      <span class="home-text21 thq-body-small">
+                        <b>Length: </b> 2 hours
+                      </span>
+                    </fragment>
+                  </span>
+                </div>
+              </div>
 
-          <hr />
 
-
-
-          <span style="font-size: 15px; color: white;" class="home-text05">
-            Organised by Anna Denisova and Mrs. Morin
-          </span>
-
-          <hr />
-
-           <span style="font-size: 15px; color: white;" class="home-text05">
-
-            <center>  
-              A special thanks to our sponsors.<br><br>
-            </center>
-           
-
-            <img style="display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;" src="centerline.png"> 
-            <br>
-            <img style="display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;" src="windsor.png"> 
-
-          </span>
-
+              <button class="thq-button-filled features23-button">
+                <span>
+                  <fragment>
+                    <span class="home-text07 thq-body-small">SIGN UP</span>
+                  </fragment>
+                </span>
+              </button>
+            </div>
+            
+          </div>
         </div>
-
-        <!-------------------------------------------->
-
-        <div class="home-buttons">
-          <a href="sign-up.html">
-            <button class="home-view button">Sign Up</button>
-          </a>
-        </div>
-
-        <!-------------------------------------------->
-
-
-
-      </section>
-
-      <!-------------------------------------------->
-
-      <div class="pacman"></div>
-      <!-------------------------------------------->
-
-      <section class="home-cards">
-        
-        <!-------------------------------------------->
-
-        <div class="home-row">
-
-          <!-------------------------------------------->
-
-          <div class="home-card">
-            <div class="home-main">
-              <div class="home-content1">
-                <h2 class="home-header01">Prizes & Distinction</h2>
-                <p class="home-description02">
-                  <p class="home-description02">For participation...</p>  
-                  <ul class="home-description02" style="padding-left: 25px;">
-                    <li>Laptop stickers</li>
-                    <li>Merch from our sponsor(s)</li>
-                    <li>Activity points</li>
-                  </ul>  
-                  <p class="home-description02">Additionally for the top three teams...</p>
-                  <ul class="home-description02" style="padding-left: 25px;">
-                    <li>Trophies</li>
-                    <li>Insane bragging rights</li>
-                    <li>Certificates - These will be announced during our award night and graduations</li>
-                  </ul> 
-                </p>
+        <div class="logos7-container56 thq-section-padding">
+          <div class="logos7-max-width10 thq-section-max-width">
+            <div class="logos7-container57">
+              <h2>
+                <p style="text-align: center;">SPONSORS</p>
+              </h2>
+            </div>
+            <div class="logos7-container58">
+              <div class="logos7-container59">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo1 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container60">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo2 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container61">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo3 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container62">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo4 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container63">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo5 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container64">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo6 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container65">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo7 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container66">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo8 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container67">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo9 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container68">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo10 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="logos7-container69">
+                <img
+                  alt="Logo"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/3c22ad70-97c1-42ae-9e5e-7f9cfdb33faa?org_if_sml=1&amp;force_format=original"
+                  class="logos7-logo11 thq-img-ratio-16-9"
+                />
               </div>
             </div>
           </div>
-
-          <!-------------------------------------------->
-
-          <div class="home-card1">
-            <div class="home-main1">
-              <div class="home-content2">
-                <h2 class="home-header02">
-                  Experience
+        </div>
+        <h1>Steps</h1>
+        <div id="Steps2" class="steps2-container36 thq-section-padding">
+          <div class="steps2-max-width6 thq-section-max-width">
+            <div class="steps2-container37">
+              <div class="steps2-container38 thq-card">
+                <h2>
+                  <fragment>
+                    <span class="home-text24 thq-heading-2">
+                      Create an Account
+                    </span>
+                  </fragment>
                 </h2>
-                <p class="home-description03">
-                  Experience working in a TEAM. You don't know how to overcome a problem? Well, theres a person right next to you to help! <br> <br> 
+                <span>
+                  <fragment>
+                    <span class="home-text28 thq-body-small">
+                      Create an account on <a href="https://open.kattis.com/register"><u>Kattis (click me)</u></a>!
+                    </span>
+                  </fragment>
+                </span>
+                <label class="steps2-text115 thq-heading-3">01</label>
+              </div>
+              <div class="steps2-container39 thq-card">
+                <h2>
+                  <fragment>
+                    <span class="home-text25 thq-heading-2">
+                      Google Forms Sign Up
+                    </span>
+                  </fragment>
+                </h2>
+                <span>
+                  <fragment>
+                    <span class="home-text29 thq-body-small">
+                      Sign up on <a href = "https://add later"><u>google forms</u></a> and fill out your information. 
+                    </span>
+                  </fragment>
+                </span>
+                <label class="steps2-text118 thq-heading-3">02</label>
+              </div>
+              <div class="steps2-container40 thq-card">
+                <h2>
+                  <fragment>
+                    <span class="home-text26 thq-heading-2">Practice Submitting</span>
+                  </fragment>
+                </h2>
+                <span>
+                  <fragment>
+                    <span class="home-text30 thq-body-small">
+                      Checkout these <a href="add pdf later"><u>instructions</u></a> to practice submitting your code to Kattis.
+                    </span>
+                  </fragment>
+                </span>
+                <label class="steps2-text121 thq-heading-3">03</label>
+              </div>
+              <div class="steps2-container41 thq-card">
+                <h2>
+                  <fragment>
+                    <span class="home-text27 thq-heading-2">Write the Contest</span>
+                  </fragment>
+                </h2>
+                <span>
+                  <fragment>
+                    <span class="home-text31 thq-body-small">
+                      Read the <a href="add pdf later"><u>rules</u></a> and compete on February 1st. Bring some scrap paper and pens, your laptop, and a charger!
+                    </span>
+                  </fragment>
+                </span>
+                <label class="steps2-text124 thq-heading-3">04</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="Features22" class="features22-layout3491 thq-section-padding">
+          <div class="features22-max-width7 thq-section-max-width">
+            <div class="features22-container42">
+              <h2>
+                <fragment>
+                  <span class="home-text33 thq-heading-2">About</span>
+                </fragment>
+              </h2>
+            </div>
+            <div class="features22-container43 thq-grid-auto-300">
+              <div class="features22-card08 thq-card thq-flex-column">
+                <h2>
+                  <fragment>
+                    <span class="home-text34 thq-heading-2">
+                      Prizes & Distinction
+                    </span>
+                  </fragment>
+                </h2>
+                <span>
+                  <fragment>
+                    <span class="home-text42 thq-body-small">
+                      <p style="text-align:left"> 
+                        <b>For participation...</b> <br><br>
+                        <ul style="padding-left: 25px; text-align:left">
+                          <li>Laptop stickers</li>
+                          <li>Merch from our sponsor(s)</li>
+                          <li>Activity points</li>
+                        </ul>  <br>
+                        <p style="text-align: left;"> <b>For the top 3 teams...</b></p> <br>
+                        <ul style="padding-left: 25px; text-align:left">
+                          <li>Trophies</li>
+                          <li>Insane bragging rights</li>
+                          <li>Certificates - These will be announced during our award night and graduations</li>
+                        </ul>
+                      </p>
+                    </span>
+                  </fragment>
+                </span>
+              </div>
+              <div class="features22-card09 thq-card thq-flex-column">
+                <h2>
+                  <fragment>
+                    <span class="home-text35 thq-heading-2">
+                      Experience
+                    </span>
+                  </fragment>
+                </h2>
+                <span>
+                  <fragment>
+                    <span class="home-text43 thq-body-small" style="text-align:left">
+                      Experience working in a TEAM. You don't know how to overcome a problem? Well, theres a person right next to you to help! <br> <br> 
                   Even if you're just a beginner or an experienced pro coder, programming contests help to increase your problem solving skills for your future! Coding interviews ask the type of questions provided in these contests during interviews. <br><br>
                   Also, attending contests is a chance to add something to your resume and university/college applications. <br>
-                </p>
+                    </span>
+                  </fragment>
+                </span>
               </div>
             </div>
           </div>
-
-          <!-------------------------------------------->
-
         </div>
-
-
-        <!-------------------------------------------->
-
-      </section>
-
-      <!-------------------------------------------->
-
-      <section class="home-description">
-
-        <!-------------------------------------------->
-
-       <div class="pacman"></div>
-
-        <!-------------------------------------------->
-
-        <div class="home-container3">
-          <div class="home-description01">
-
-            <!-------------------------------------------->
-
-            <div class="home-content">
-              <p class="home-paragraph">
-                In order to write the contest you need a KATTIS account.
-              </p>
+        <div id="Gallery11" class="gallery11-gallery32 thq-section-padding">
+          <div class="gallery11-max-width11 thq-section-max-width">
+            <div class="gallery11-section-title2">
+              <h2>
+                <fragment>
+                  <span class="home-text51 thq-heading-2">Gallery</span>
+                </fragment>
+              </h2>
+              <span>
+                <fragment>
+                  <span class="home-text50 thq-body-large">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </span>
+                </fragment>
+              </span>
             </div>
-
-            <!-------------------------------------------->
-
-            <div class="home-links">
-              <a
-                href="https://open.kattis.com/register"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="button-link button"
-              >
-                <span>Register/Open Kattis</span>
+            <div class="gallery11-content3">
+              <div class="gallery11-container70">
                 <img
-                  alt="image"
-                  src="public/Icons/arrow.svg"
-                  class="home-arrow"
+                  alt="Image 1"
+                  src="https://images.unsplash.com/photo-1625062084544-a0f93d639b93?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMTkxNzUzN3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3"
                 />
-              </a>
-            </div>
-
-            <!-------------------------------------------->
-
-          </div>
-        </div>
-
-        <!-------------------------------------------->
-
-        <div class="home-container3">
-          <div class="home-description01">
-
-            <!-------------------------------------------->
-
-            <div class="home-content">
-              <p class="home-paragraph">
-                And, make sure to read our rules.
-              </p>
-            </div>
-
-            <!-------------------------------------------->
-
-            <div class="home-links">
-              <a href="rules.html" class="button-link button">
-                <span>See Rules</span>
+              </div>
+              <div class="gallery11-container71">
                 <img
-                  alt="image"
-                  src="public/Icons/arrow.svg"
-                  class="home-arrow"
+                  alt="Image 2"
+                  src="https://images.unsplash.com/photo-1595264963293-a868bb792563?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMTkxNzUzN3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3"
                 />
-              </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-------------------------------------------->
-
-        <div class="home-container3">
-          <div class="home-description01">
-
-            <!-------------------------------------------->
-
-            <div class="home-content">
-              <p class="home-paragraph">
-                GALLERY - 2023
-              </p>
+        <div id="" class="gallery11-gallery32 thq-section-padding">
+          <div class="gallery11-max-width11 thq-section-max-width">
+            <div class="gallery11-section-title2">
+              <h2>
+                <fragment>
+                  <span class="home-text53 thq-heading-2">Gallery</span>
+                </fragment>
+              </h2>
+              <span>
+                <fragment>
+                  <span class="home-text52 thq-body-large">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </span>
+                </fragment>
+              </span>
             </div>
-
-            <!-------------------------------------------->
-            
-            <img style="gap: var(--dl-space-space-twounits); 
-                        width: 100%;
-                        display: flex;
-                        align-items: flex-start
-                        padding-top: 12px;
-                        padding-left: var(--dl-space-space-fourunits);
-                        padding-right: var(--dl-space-space-fiveunits);
-                        flex-direction: column;
-                        padding-bottom: 12px;"
-                  src="photos-2023/winners.jpg">
-
-            <img style="gap: var(--dl-space-space-twounits); 
-                        width: 100%;
-                        display: flex;
-                        align-items: flex-start
-                        padding-top: 12px;
-                        padding-left: var(--dl-space-space-fourunits);
-                        padding-right: var(--dl-space-space-fiveunits);
-                        flex-direction: column;
-                        padding-bottom: 12px"
-                  src="photos-2023/contest.jpg">
-
-            <div class="home-content">
-              <p class="home-paragraph">
-                GALLERY - 2024
-              </p>
+            <div class="gallery11-content3">
+              <div class="gallery11-container70">
+                <img
+                  alt="Image 1"
+                  src="https://images.unsplash.com/photo-1625062084544-a0f93d639b93?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMTkxNzUzN3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3"
+                />
+              </div>
+              <div class="gallery11-container71">
+                <img
+                  alt="Image 2"
+                  src="https://images.unsplash.com/photo-1595264963293-a868bb792563?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMTkxNzUzN3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3"
+                />
+              </div>
             </div>
-
-            <!-------------------------------------------->
-            
-            <img style="gap: var(--dl-space-space-twounits); 
-                        width: 100%;
-                        display: flex;
-                        align-items: flex-start
-                        padding-top: 12px;
-                        padding-left: var(--dl-space-space-fourunits);
-                        padding-right: var(--dl-space-space-fiveunits);
-                        flex-direction: column;
-                        padding-bottom: 12px;"
-                  src="photos-2024/winners.jpg">
-
-            <img style="gap: var(--dl-space-space-twounits); 
-                        width: 100%;
-                        display: flex;
-                        align-items: flex-start
-                        padding-top: 12px;
-                        padding-left: var(--dl-space-space-fourunits);
-                        padding-right: var(--dl-space-space-fiveunits);
-                        flex-direction: column;
-                        padding-bottom: 12px"
-                  src="photos-2024/room.jpeg">
-
           </div>
         </div>
-
-        <!-------------------------------------------->
-
-      </section>
-
-      <!-------------------------------------------->
-
-      <h3 class="home-heading2"><br><br>Questions?</h3>
-      <div class="home-items">
-        <p style="color: white; text-align: center;" ><br><b>Contact me - Anna Denisova</b><br><br>email - <i>2018a_denisova@stececile.ca</i></p>
+        <footer id="Footer3" class="footer3-footer4 thq-section-padding">
+          <div class="footer3-max-width12 thq-section-max-width"></div>
+            <p>Organized by me. Contact at sldkfjskldfj@gmail.com</p>
+            <div class="thq-divider-horizontal"></div>
+              
+          </div>
+        </footer>
       </div>
-      
-      <!-------------------------------------------->
-
-      <footer class="home-footer">
-        <span class="home-copyright">
-          <!--© 2023. All Rights Reserved.-->
-        </span>
-      </footer>
-
-      <!-------------------------------------------->
-
-      <div>
-        <dangerous-html
-          html="<script>
-          /*
-          Accordion - Code Embed
-          */
-          const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
-          const accordionContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
-          const accordionIconsClosed = document.querySelectorAll('[data-role='accordion-icon-closed']'); // All accordion closed icons
-          const accordionIconsOpen = document.querySelectorAll('[data-role='accordion-icon-open']'); // All accordion open icons
-
-          accordionContents.forEach((accordionContent) => {
-              accordionContent.style.display = 'none'; //Hides all accordion contents
-          });
-
-          accordionIconsClosed.forEach((icon) => {
-            icon.style.display = 'flex'
-          })
-
-          accordionIconsOpen.forEach((icon) => {
-            icon.style.display = 'none'
-          })
-
-          accordionContainers.forEach((accordionContainer, index) => {
-              accordionContainer.addEventListener('click', () => {
-                  if (accordionContents[index].style.display === 'flex') {
-                      // If the accordion is already open, close it
-                      accordionContents[index].style.display = 'none';
-                      accordionIconsClosed[index].style.display = 'flex';
-                      accordionIconsOpen[index].style.display = 'none'
-                  } else {
-                      // If the accordion is closed, open it
-                      accordionContents.forEach((accordionContent) => {
-                          accordionContent.style.display = 'none'; //Hides all accordion contents
-                      });
-
-                      accordionIconsClosed.forEach((accordionIcon) => {
-                          accordionIcon.style.display = 'flex'; // Resets all icon transforms to 0deg (default)
-                      });
-
-                      accordionIconsOpen.forEach((accordionIcon) => {
-                        accordionIcon.style.display = 'none';
-                      })
-                      
-                      accordionContents[index].style.display = 'flex'; // Shows accordion content
-                      accordionIconsClosed[index].style.display = 'none'; // Rotates accordion icon 180deg
-                      accordionIconsOpen[index].style.display = 'flex';
-                  }
-              });
-          });
-          </script>
-          "
-        ></dangerous-html>
-      </div>
-
-      <!-------------------------------------------->
-
     </div>
-
-    <!-------------------------------------------->
-
-  </div>
-
-  <!-------------------------------------------->
-
-  <script
-    data-section-id="navbar"
-    src="custom scripts/script.js"
-  ></script>
-
-  <!-------------------------------------------->
-
-</body>
-
-<!-------------------------------------------->
-
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
 </html>
