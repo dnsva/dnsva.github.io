@@ -756,6 +756,7 @@
 }
 .steps2-container38 {
   top: 10%;
+  width: 900px;
   position: sticky;
   transform: rotate(-2deg);
   margin-bottom: var(--dl-space-space-twounits);
@@ -889,6 +890,7 @@
 .features22-card08 {
   color: #FFFFFF;
   height: auto;
+  height: 460px;
   display: flex;
   align-self: flex-start;
   align-items: center;
@@ -904,6 +906,7 @@
 .features22-card09 {
   color: #FFFFFF;
   height: auto;
+  height: 460px;
   display: flex;
   align-self: flex-start;
   align-items: center;
