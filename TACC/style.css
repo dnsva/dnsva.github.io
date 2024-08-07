@@ -7,8 +7,8 @@
   --dl-space-space-unit: 16px;
   --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
-  --dl-color-theme-accent1: #1b2066;
-  --dl-color-theme-accent2: #12134e;
+  --dl-color-theme-accent1: #2176FF;
+  --dl-color-theme-accent2: #33A1FD;
   --dl-radius-radius-round: 50%;
   --dl-color-theme-primary1: #5dc1df;
   --dl-color-theme-primary2: #EAFFFD;
@@ -99,20 +99,20 @@
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
   white-space: nowrap;
-  border-color: var(--dl-color-theme-primary1);
+  border-color: #00e491;
   border-width: 1px;
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: var(--dl-radius-radius-buttonradius);
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
-  background-color: var(--dl-color-theme-primary1);
+  background-color: #00e491;
 }
 .thq-button-filled:hover {
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
-  border-color: var(--dl-color-theme-primary2);
-  background-color: var(--dl-color-theme-primary2);
+  border-color: #0FFF95;
+  background-color: #0FFF95;
 }
 .thq-button-outline {
   gap: var(--dl-space-space-halfunit);
@@ -134,10 +134,16 @@
   justify-content: center;
 }
 .thq-button-outline:hover {
+  
+  border-color: #0FFF95;
+  background-color: #0FFF95;
+  fill: #0FFF95;
+  color: #0FFF95;
+  /*
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
   border-color: var(--dl-color-theme-primary2);
-  background-color: var(--dl-color-theme-primary2);
+  background-color: var(--dl-color-theme-primary2);*/
 }
 .thq-button-flat {
   gap: var(--dl-space-space-halfunit);
@@ -158,38 +164,41 @@
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
 }
+/*
 .thq-button-flat:hover {
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
-  border-color: var(--dl-color-theme-primary2);
-  background-color: var(--dl-color-theme-primary2);
-}
+  fill: #0FFF95;
+  color: #0FFF95;
+  border-color: #0FFF95;
+  background-color: #0FFF95;
+}*/
 .thq-heading-1 {
   font-size: 48px;
-  font-family: STIX Two Text;
+  /*font-family: STIX Two Text;*/
   font-weight: 700;
   line-height: 1.5;
 }
 .thq-heading-2 {
   font-size: 35px;
-  font-family: STIX Two Text;
+  /*font-family: STIX Two Text;*/
   font-weight: 600;
   line-height: 1.5;
 }
 .thq-heading-3 {
   font-size: 26px;
-  font-family: STIX Two Text;
+  /*font-family: STIX Two Text;*/
   font-weight: 600;
   line-height: 1.5;
 }
 .thq-body-large {
   font-size: 18px;
-  font-family: Noto Sans;
+  /*font-family: Noto Sans;*/
   line-height: 1.5;
 }
 .thq-body-small {
   font-size: 16px;
-  font-family: Noto Sans;
+  /*font-family: Noto Sans;*/
   line-height: 1.5;
 }
 .thq-team-image-round {
@@ -472,7 +481,7 @@
 }
 .Content {
   font-size: 16px;
-  font-family: Inter;
+  /*font-family: Inter;*/
   font-weight: 400;
   line-height: 1.15;
   text-transform: none;
