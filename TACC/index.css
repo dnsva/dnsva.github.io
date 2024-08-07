@@ -385,7 +385,7 @@
     gap: var(--dl-space-space-oneandhalfunits);
   }
   .features23-button {
-    width: 100%;
+    width: 80vw;
   }
 }
 
@@ -756,7 +756,8 @@
 }
 .steps2-container38 {
   top: 10%;
-  width: 900px;
+  width: 80vw;
+
   position: sticky;
   transform: rotate(-2deg);
   margin-bottom: var(--dl-space-space-twounits);

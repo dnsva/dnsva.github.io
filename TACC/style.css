@@ -551,7 +551,7 @@
   .thq-grid-3 {
     grid-gap: var(--dl-space-space-unit);
     align-items: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: 80vw;
   }
   .thq-grid-4 {
     grid-gap: var(--dl-space-space-unit);
