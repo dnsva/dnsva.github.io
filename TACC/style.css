@@ -7,10 +7,8 @@
   --dl-space-space-unit: 16px;
   --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
-  --dl-color-theme-accent1: #2176FF;
-  --dl-color-theme-accent2: #33A1FD;
   --dl-radius-radius-round: 50%;
-  --dl-color-theme-primary1: #5dc1df;
+ /* --dl-color-theme-primary1: #5dc1df; */
   --dl-color-theme-primary2: #EAFFFD;
   --dl-space-space-halfunit: 8px;
   --dl-space-space-sixunits: 96px;
@@ -85,9 +83,10 @@
   border-radius: var(--dl-radius-radius-inputradius);
   background-color: var(--dl-color-theme-neutral-light);
 }
+/*
 .thq-input:focus {
   outline: 1px solid var(--dl-color-theme-primary1);
-}
+}*/
 .thq-button-filled {
   gap: var(--dl-space-space-halfunit);
   fill: var(--dl-color-theme-secondary1);
@@ -114,6 +113,7 @@
   border-color: #0FFF95;
   background-color: #0FFF95;
 }
+/*
 .thq-button-outline {
   gap: var(--dl-space-space-halfunit);
   fill: var(--dl-color-theme-primary1);
@@ -132,7 +132,7 @@
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
-}
+}*/
 .thq-button-outline:hover {
   
   border-color: #0FFF95;
@@ -145,6 +145,7 @@
   border-color: var(--dl-color-theme-primary2);
   background-color: var(--dl-color-theme-primary2);*/
 }
+/*
 .thq-button-flat {
   gap: var(--dl-space-space-halfunit);
   fill: var(--dl-color-theme-primary1);
@@ -163,7 +164,7 @@
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
-}
+}*/
 /*
 .thq-button-flat:hover {
   fill: var(--dl-color-theme-secondary1);
@@ -346,7 +347,7 @@
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  background: linear-gradient(to right, var(--dl-color-theme-primary1) 50%, var(--dl-color-theme-neutral-dark) 50%);
+  background: linear-gradient(to right, #00e491 50%, var(--dl-color-theme-neutral-dark) 50%);
   transition: background-position 300ms ease;
   font-weight: 600;
   background-clip: text;
@@ -428,12 +429,12 @@
   height: 100%;
   transition: transform 0.3s;
   border-radius: var(--dl-radius-radius-cardradius);
-  background-color: var(--dl-color-theme-accent1);
+  background-color: #2176FF;
 }
 .thq-animated-card-bg-2 {
   transition: transform 0.3s;
   border-radius: var(--dl-radius-radius-cardradius);
-  background-color: var(--dl-color-theme-accent2);
+  background-color: #33A1FD;
 }
 .thq-button-animated {
   outline: none;
