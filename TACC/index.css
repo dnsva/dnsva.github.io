@@ -1083,3 +1083,12 @@
   display: inline-block;
   text-align: center;
 }
+
+/* Step titles */
+.thq-heading-2.home-text24,
+.thq-heading-2.home-text25,
+.thq-heading-2.home-text26,
+.thq-heading-2.home-text27 {
+    font-size: clamp(20px, 3vw, 30px); /* Will scale between 16px and 24px based on viewport width */
+    word-wrap: break-word;
+}
