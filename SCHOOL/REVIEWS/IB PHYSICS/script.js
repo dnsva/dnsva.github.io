@@ -61,6 +61,25 @@ async function loadContent(subunit) {
         const response = await fetch(`content/${fileName}.html`);
         if (response.ok) {
             contentDiv.innerHTML = await response.text();
+            
+            // Initialize tooltips after content is loaded
+            document.querySelectorAll('.vocabulary').forEach(element => {
+                const definition = element.getAttribute('data-definition');
+                if (definition) {
+                    createTooltip(element, definition);
+                }
+            });
+
+            // Render LaTeX
+            renderMathInElement(contentDiv, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
         } else {
             contentDiv.innerHTML = `
                 <h1>${subunit}</h1>
@@ -189,3 +208,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function createTooltip(element, definition) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = definition;
+    document.body.appendChild(tooltip);
+
+    function updatePosition() {
+        const rect = element.getBoundingClientRect();
+        const tooltipHeight = tooltip.offsetHeight;
+        const spaceAbove = rect.top;
+        const spaceBelow = window.innerHeight - rect.bottom;
+        
+        // Position above or below based on available space
+        if (spaceAbove > tooltipHeight + 20 || spaceAbove > spaceBelow) {
+            tooltip.style.bottom = `${window.innerHeight - rect.top + 8}px`;
+            tooltip.classList.add('top');
+            tooltip.classList.remove('bottom');
+        } else {
+            tooltip.style.top = `${rect.bottom + 8}px`;
+            tooltip.classList.add('bottom');
+            tooltip.classList.remove('top');
+        }
+
+        // Center horizontally
+        const left = rect.left + (rect.width - tooltip.offsetWidth) / 2;
+        const rightOverflow = left + tooltip.offsetWidth - window.innerWidth;
+        
+        if (rightOverflow > 0) {
+            tooltip.style.left = `${left - rightOverflow - 10}px`;
+        } else if (left < 10) {
+            tooltip.style.left = '10px';
+        } else {
+            tooltip.style.left = `${left}px`;
+        }
+    }
+
+    element.addEventListener('mouseenter', () => {
+        tooltip.classList.add('active');
+        updatePosition();
+    });
+
+    element.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('active');
+    });
+
+    // Update position on scroll and resize
+    window.addEventListener('scroll', () => {
+        if (tooltip.classList.contains('active')) {
+            updatePosition();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (tooltip.classList.contains('active')) {
+            updatePosition();
+        }
+    });
+}
