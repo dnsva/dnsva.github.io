@@ -213,35 +213,38 @@ function createTooltip(element, definition) {
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
     tooltip.textContent = definition;
-    document.body.appendChild(tooltip);
+    element.appendChild(tooltip);
 
     function updatePosition() {
-        const rect = element.getBoundingClientRect();
-        const tooltipHeight = tooltip.offsetHeight;
-        const spaceAbove = rect.top;
-        const spaceBelow = window.innerHeight - rect.bottom;
+        // Get element dimensions
+        const elementRect = element.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
         
-        // Position above or below based on available space
-        if (spaceAbove > tooltipHeight + 20 || spaceAbove > spaceBelow) {
-            tooltip.style.bottom = `${window.innerHeight - rect.top + 8}px`;
-            tooltip.classList.add('top');
-            tooltip.classList.remove('bottom');
-        } else {
-            tooltip.style.top = `${rect.bottom + 8}px`;
-            tooltip.classList.add('bottom');
-            tooltip.classList.remove('top');
-        }
+        // Reset any existing positioning
+        tooltip.style.top = '';
+        tooltip.style.bottom = '';
+        tooltip.style.left = '';
+        tooltip.style.right = '';
+        
+        // Always position above
+        tooltip.style.bottom = '100%';
+        tooltip.style.marginBottom = '8px';
+        tooltip.classList.add('top');
+        tooltip.classList.remove('bottom');
 
         // Center horizontally
-        const left = rect.left + (rect.width - tooltip.offsetWidth) / 2;
-        const rightOverflow = left + tooltip.offsetWidth - window.innerWidth;
-        
-        if (rightOverflow > 0) {
-            tooltip.style.left = `${left - rightOverflow - 10}px`;
-        } else if (left < 10) {
-            tooltip.style.left = '10px';
-        } else {
-            tooltip.style.left = `${left}px`;
+        const tooltipWidth = tooltipRect.width;
+        const elementWidth = elementRect.width;
+        tooltip.style.left = `${(elementWidth - tooltipWidth) / 2}px`;
+
+        // Prevent tooltip from going off-screen
+        const tooltipLeft = tooltipRect.left;
+        const tooltipRight = tooltipLeft + tooltipWidth;
+
+        if (tooltipLeft < 0) {
+            tooltip.style.left = `-${elementRect.left}px`;
+        } else if (tooltipRight > window.innerWidth) {
+            tooltip.style.left = `${window.innerWidth - tooltipRight - elementRect.left}px`;
         }
     }
 
@@ -254,16 +257,14 @@ function createTooltip(element, definition) {
         tooltip.classList.remove('active');
     });
 
-    // Update position on scroll and resize
-    window.addEventListener('scroll', () => {
+    // Update position only when tooltip is active
+    const updateIfActive = () => {
         if (tooltip.classList.contains('active')) {
-            updatePosition();
+            requestAnimationFrame(updatePosition);
         }
-    });
+    };
 
-    window.addEventListener('resize', () => {
-        if (tooltip.classList.contains('active')) {
-            updatePosition();
-        }
-    });
+    // Use passive event listeners to improve performance
+    window.addEventListener('scroll', updateIfActive, { passive: true });
+    window.addEventListener('resize', updateIfActive, { passive: true });
 }

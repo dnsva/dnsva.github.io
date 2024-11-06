@@ -383,6 +383,7 @@ main.expanded {
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s;
     border: 1px solid var(--accent);
+    pointer-events: none;
 }
 
 .tooltip.active {
@@ -454,4 +455,9 @@ main.expanded {
 
 .example-box strong {
     color: var(--highlight);
+}
+
+.vocabulary {
+    position: relative;
+    display: inline-block;
 }
