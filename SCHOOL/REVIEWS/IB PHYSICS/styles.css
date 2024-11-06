@@ -412,3 +412,46 @@ main.expanded {
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* Add this after your .formula styles */
+.example {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: rgba(224, 175, 104, 0.1); /* Using --highlight with opacity */
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    border-left: 3px solid var(--highlight);
+}
+
+.example p {
+    margin-bottom: 0.4rem;
+}
+
+/* Mobile adjustments for examples */
+@media (max-width: 768px) {
+    .example {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+.example-box {
+    background-color: #2d2a20 !important;  /* Force the background color */
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    border-left: 3px solid var(--highlight);
+}
+
+.example-box p {
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.example-box strong {
+    color: var(--highlight);
+}
