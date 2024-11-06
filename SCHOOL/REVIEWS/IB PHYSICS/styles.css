@@ -22,7 +22,7 @@ body {
     color: var(--text-primary);
     display: flex;
     min-height: 100vh;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .sidebar {
@@ -102,31 +102,25 @@ h3 {
     color: var(--text-secondary);
 }
 
-p {
+p, li, ul {
+    font-size: 13px;
     line-height: 1.4;
     margin-bottom: 0.6rem;
-    font-size: 13px;
 }
 
 .formula {
-    font-family: 'JetBrains Mono', monospace;
-    background-color: var(--bg-secondary);
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
+    font-size: 13px;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
 }
 
 .formula p {
-    margin-bottom: 0.5rem;
-}
-
-.formula p:last-child {
-    margin-bottom: 0;
+    font-size: 13px;
+    margin-bottom: 0.4rem;
 }
 
 .vocabulary {
+    font-size: 13px;
     color: var(--highlight);
     cursor: help;
     border-bottom: 1px dashed var(--highlight);
@@ -379,7 +373,7 @@ main.expanded {
     color: var(--text-primary);
     padding: 0.5rem 0.6rem;
     border-radius: 4px;
-    font-size: 0.7rem;
+    font-size: 13px;
     line-height: 1.2;
     width: max-content;
     max-width: 250px;
