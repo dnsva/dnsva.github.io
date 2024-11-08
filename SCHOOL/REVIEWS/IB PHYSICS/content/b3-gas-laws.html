@@ -81,28 +81,28 @@
 
 <h2>Gas Laws</h2>
 <h3>Boyle's Law</h3>
-<p>At constant temperature (<span class="vocabulary" data-definition="A process where temperature remains constant">isothermal</span> process):</p>
+<p>The pressure P of a fixed quantity of gas (that is, a constant number of molecules) is inversely proportional to its volume V when the temperature does not change.</p>
 <div class="formula">
-    $$P_1V_1 = P_2V_2$$
-    $$PV = \text{constant}$$
-    <p>Pressure and volume are inversely proportional</p>
+    <p>The law can be written algebraically in two ways:</p>
+    <p>$$P \propto \frac{1}{V} \text{ or } PV = \text{constant} \text{ (}\text{when temperature is constant)}$$</p>
 </div>
 
 <h3>Charles's Law</h3>
-<p>At constant pressure (<span class="vocabulary" data-definition="A process where pressure remains constant">isobaric</span> process):</p>
+<p>At constant pressure:</p>
 <div class="formula">
-    $$\frac{V_1}{T_1} = \frac{V_2}{T_2}$$
+    $$V \propto T$$
     $$\frac{V}{T} = \text{constant}$$
     <p>Volume is directly proportional to absolute temperature</p>
 </div>
 
+
 <h3>Gay-Lussac's Law</h3>
-<p>At constant volume (<span class="vocabulary" data-definition="A process where volume remains constant">isochoric</span> process):</p>
+<p>The pressure of a fixed quantity of gas at a constant volume is directly proportional to the absolute temperature</p>
 <div class="formula">
-    $$\frac{P_1}{T_1} = \frac{P_2}{T_2}$$
-    $$\frac{P}{T} = \text{constant}$$
-    <p>Pressure is directly proportional to absolute temperature</p>
+    $$P \propto T$$
+    $$\frac{P}{T} = \text{constant (at constant volume)}$$
 </div>
+
 
 <h3>Avogadro's Law</h3>
 <p>
@@ -129,19 +129,41 @@
     <p>$R$ = gas constant (8.31 J mol⁻¹ K⁻¹)</p>
     <p>$T$ = temperature (K)</p>
 </div>
+<h3>Physical Interpretation of R</h3>
+<p>The gas constant R can be interpreted as a type of specific heat capacity per mole, similar to how specific heat capacity c represents energy per unit mass per kelvin:</p>
+
+<div class="formula">
+    <p>Units of R: J mol⁻¹ K⁻¹</p>
+    <p>Units of c: J kg⁻¹ K⁻¹</p>
+</div>
+
+<p>This interpretation helps explain why PV = nRT represents energy:</p>
+<div class="formula">
+    <p>PV has units of energy (Pa × m³ = N/m² × m³ = N·m = J)</p>
+    <p>nRT also has units of energy (mol × J/mol·K × K = J)</p>
+</div>
+
 
 <h4>Alternative Form</h4>
 <p>
-    The ideal gas law can be rewritten in terms of number of molecules $N$ using the <span class="vocabulary" data-definition="Constant relating energy at molecular level, equal to R/Nₐ">Boltzmann constant</span> $k_B$:
+    Since one mole contains $N_A$ molecules (Avogadro's number), we can rewrite the ideal gas law in terms of the total number of molecules $N$ by defining the <span class="vocabulary" data-definition="Constant relating energy at molecular level, equal to R/Nₐ">Boltzmann constant</span> $k_B = \frac{R}{N_A}$:
 </p>
 
-//break here 
-
 <div class="formula">
+    $$\frac{PV}{NT} = k_B$$
     $$PV = Nk_BT$$
     <p>Where:</p>
-    <p>$N$ = number of molecules</p>
-    <p>$k_B = \frac{R}{N_A} = 1.38 \times 10^{-23}$ J/K</p>
+    <p>$N$ = total number of molecules</p>
+    <p>$k_B = \frac{R}{N_A} = \frac{8.31}{6.02 \times 10^{23}} = 1.38 \times 10^{-23}$ J/K</p>
+</div>
+
+<h3>Formula Summary</h3>
+<div class="formula">
+    <p>Key equations from above:</p>
+    $$P = \frac{F}{A}$$
+    $$n = \frac{N}{N_A}$$
+    <p style="color: var(--highlight);">$$\frac{PV}{T} = \text{constant}$$</p>
+    <p style="color: var(--highlight);">$$PV = nRT = Nk_BT$$</p>
 </div>
 
 
