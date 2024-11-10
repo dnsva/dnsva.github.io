@@ -202,35 +202,47 @@
 <p>
     When analyzing the motion of gas particles in the kinetic model, we consider that each particle moves with a velocity $v$ which can be resolved into three perpendicular components $v_x$, $v_y$, and $v_z$.
 </p>
+<div class="formula">
+    <p><strong>Force on Container Walls:</strong></p>
+    $$F_x = \frac{mv_x^2}{L}$$
+    <p>Where:</p>
+    <p>$F_x$ = force exerted by particle on right/left wall</p>
+    <p>$m$ = mass of one particle</p>
+    <p>$L$ = length of container</p>
+    <p>$v_x$ = velocity component in x direction</p>
 
-Fx = mvx^2/L
-Fx - the particle exerts a force of mvx^2/L on the right/left hand wall.
-m - mass of 1 particle
-L - length of box
-vx - velocity component in x direction
-Average Fx = Nm/L v^2x - <- with - being a line above v^2x
-N - number of particles
-v2x with a line above it - mean of square velocities 
+    <p>Average force:</p>
+    $$\overline{F_x} = \frac{Nm}{L}\overline{v_x^2}$$
+    <p>Where:</p>
+    <p>$N$ = number of particles</p>
+    <p>$\overline{v_x^2}$ = mean of square velocities</p>
 
-Mean square speed of molecules: 
-with lines above everything:
-v^2 = v^2x + v^2y + v^2z
+    <p><strong>Mean Square Speed of Molecules:</strong></p>
+    $$\overline{v^2} = \overline{v_x^2} + \overline{v_y^2} + \overline{v_z^2}$$
 
-Total Force F on the wall 
-F = 1/3 Nm / L * v^2
-Since when N is very large the gas will look the same in whatever diretion we observe it so v^2x = v^2y = v^2z <- (all these with lines above) and so v^2 = 3v^2x or v^2x = 1/3 v^2
+    <p><strong>Total Force on Wall:</strong></p>
+    $$F = \frac{1}{3}\frac{Nm}{L}\overline{v^2}$$
 
-Pressure on the wall
-P = Force acting on the wall / Area of the wall
-A = L^2
-P = 1/3 Nm/L * 1/L^2 * v^2 (with line above v^2)
-P = 1/3 Nm/V * v^2 (where V is volume of the box)
+    <p>For large $N$, the gas particles move with equal probability in all directions, meaning:</p>
+    $$\overline{v_x^2} = \overline{v_y^2} = \overline{v_z^2}$$
+    $$\therefore \overline{v^2} = 3\overline{v_x^2} \text{ or } \overline{v_x^2} = \frac{1}{3}\overline{v^2}$$
 
-The equation is also written as P = 1/3 (Nm/V) * v^2 (withOUT line above v^2)
-- v is the square root of the average (mean) translational speed^2 of a gas particle
-- sqrt (v^2 (with line above v^2)) is usually called rms value (root mean square)
+    <p><strong>Pressure on Wall:</strong></p>
+    $$P = \frac{\text{Force}}{\text{Area}} = \frac{F}{A}$$
+    $$A = L^2$$
+    $$P = \frac{1}{3}\frac{Nm}{L} \cdot \frac{1}{L^2}\overline{v^2}$$
+    $$P = \frac{1}{3}\frac{Nm}{V}\overline{v^2}$$
 
-Also,
-N * m is the number of molecules * mass of 1 molecule
-So, the total mass.
-V is volume of the box and if density (rho) = mass/volume then P = 1/3 rho * v^2 where rho is the denisty of gas (kg/m^3, Nm/V)
+    <p>Where $V$ is the volume of the container.</p>
+
+    <p>This equation can also be written as:</p>
+    $$P = \frac{1}{3}\frac{Nm}{V}v^2$$
+    
+    <p>Where $v$ is the root mean square (rms) speed:</p>
+    $$v = \sqrt{\overline{v^2}}$$
+
+    <p><strong>Relation to Density:</strong></p>
+    <p>Since $Nm$ is the total mass and density $\rho = \frac{\text{mass}}{\text{volume}}$, we can write:</p>
+    $$P = \frac{1}{3}\rho v^2$$
+    <p>Where $\rho$ is the density of gas (kg/m³)</p>
+</div>
