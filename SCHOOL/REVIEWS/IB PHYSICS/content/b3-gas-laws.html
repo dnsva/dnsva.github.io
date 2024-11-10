@@ -166,40 +166,71 @@
     <p style="color: var(--highlight);">$$PV = nRT = Nk_BT$$</p>
 </div>
 
+<h2>Kinetic Model of an Ideal Gas</h2>
+<p>
+    The gas laws discussed above were developed through 150 years of <span class="vocabulary" data-definition="Based on observation and experiment rather than theory">empirical</span> experimentation. However, we can also develop a <span class="vocabulary" data-definition="A simplified representation of a physical system used to explain and predict behavior">theoretical model</span> based on mechanical principles to describe ideal gas behavior and compare how these approaches complement each other.
+</p>
 
-<h2>Kinetic Theory</h2>
-<p>The <span class="vocabulary" data-definition="Theory relating macroscopic properties of gases to the motion of their particles">kinetic theory</span> 
-relates pressure to particle motion:</p>
+<p>
+    The ideal gas model we develop is known as the <span class="vocabulary" data-definition="A theoretical model describing gas behavior based on molecular motion">kinetic model of an ideal gas</span> and it is based on a set of assumptions:
+</p>
+
 <div class="formula">
-    $$P = \frac{1}{3}\rho\overline{v^2}$$
-    <p>Where:</p>
-    <p>$\rho$ = density of gas</p>
-    <p>$\overline{v^2}$ = mean square speed of particles</p>
+    <p><strong>Key Assumptions of the Kinetic Theory:</strong></p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">1</span>. The gas is made up of tiny particles (molecules or atoms) that are all identical and have the same mass.
+    </p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">2</span>. These particles are in constant random motion.
+    </p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">3</span>. The total volume of the particles is negligible compared with the total volume of the gas. (This is the same as saying that the average distance between particles is much greater than their average size.)
+    </p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">4</span>. The particles collide <span class="vocabulary" data-definition="Collisions where kinetic energy is conserved">elastically</span> with each other and with the walls of their container.
+    </p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">5</span>. Intermolecular forces between the particles and the walls can be ignored except during collisions. (This means that the energy in the gas can be considered as entirely kinetic with no potential-energy contribution.)
+    </p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">6</span>. Collisions happen very quickly - the time for a collision between particles, and the time for a collision between a particle and the wall are negligible compared with the time between collisions.
+    </p>
+    <p style="margin-left: 20px;">
+        <span style="color: var(--highlight)">7</span>. External forces (such as gravity) are ignored.
+    </p>
 </div>
+<p>
+    When analyzing the motion of gas particles in the kinetic model, we consider that each particle moves with a velocity $v$ which can be resolved into three perpendicular components $v_x$, $v_y$, and $v_z$.
+</p>
 
-<h2>Root Mean Square Speed</h2>
-<div class="formula">
-    $$v_{rms} = \sqrt{\frac{3RT}{M}} = \sqrt{\frac{3kT}{m}}$$
-    <p>Where:</p>
-    <p>$v_{rms}$ = root mean square speed (m/s)</p>
-    <p>$M$ = molar mass (kg/mol)</p>
-    <p>$m$ = mass of one molecule (kg)</p>
-    <p>$k$ = Boltzmann constant ($1.38 × 10^{-23}$ J/K)</p>
-</div>
+Fx = mvx^2/L
+Fx - the particle exerts a force of mvx^2/L on the right/left hand wall.
+m - mass of 1 particle
+L - length of box
+vx - velocity component in x direction
+Average Fx = Nm/L v^2x - <- with - being a line above v^2x
+N - number of particles
+v2x with a line above it - mean of square velocities 
 
-<h2>Worked Examples</h2>
-<h3>Example 1: Ideal Gas Law</h3>
-<div class="formula">
-    <p>A gas occupies 2.0 L at 1.5 atm and 300 K. What volume will it occupy at 3.0 atm and 400 K?</p>
-    <p>Solution:</p>
-    <p>Using $\frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2}$:</p>
-    $$V_2 = \frac{P_1V_1T_2}{P_2T_1} = \frac{(1.5)(2.0)(400)}{(3.0)(300)} = 1.33\text{ L}$$
-</div>
+Mean square speed of molecules: 
+with lines above everything:
+v^2 = v^2x + v^2y + v^2z
 
-<h3>Example 2: RMS Speed</h3>
-<div class="formula">
-    <p>Calculate the RMS speed of oxygen molecules (M = 32 g/mol) at 27°C.</p>
-    <p>Solution:</p>
-    <p>First convert temperature to Kelvin: 27°C + 273 = 300 K</p>
-</div>
+Total Force F on the wall 
+F = 1/3 Nm / L * v^2
+Since when N is very large the gas will look the same in whatever diretion we observe it so v^2x = v^2y = v^2z <- (all these with lines above) and so v^2 = 3v^2x or v^2x = 1/3 v^2
 
+Pressure on the wall
+P = Force acting on the wall / Area of the wall
+A = L^2
+P = 1/3 Nm/L * 1/L^2 * v^2 (with line above v^2)
+P = 1/3 Nm/V * v^2 (where V is volume of the box)
+
+The equation is also written as P = 1/3 (Nm/V) * v^2 (withOUT line above v^2)
+- v is the square root of the average (mean) translational speed^2 of a gas particle
+- sqrt (v^2 (with line above v^2)) is usually called rms value (root mean square)
+
+Also,
+N * m is the number of molecules * mass of 1 molecule
+So, the total mass.
+V is volume of the box and if density (rho) = mass/volume then P = 1/3 rho * v^2 where rho is the denisty of gas (kg/m^3, Nm/V)

@@ -112,7 +112,11 @@ function createSidebar() {
             const subunitButton = document.createElement('button');
             subunitButton.className = 'unit-button subunit';
             subunitButton.textContent = subunit;
-            subunitButton.addEventListener('click', () => loadContent(subunit));
+            subunitButton.addEventListener('click', () => {
+                // Update URL hash and load content
+                window.location.hash = encodeURIComponent(subunit);
+                loadContent(subunit);
+            });
             unitDiv.appendChild(subunitButton);
         });
         
@@ -128,7 +132,15 @@ function loadDefaultContent() {
 
 document.addEventListener('DOMContentLoaded', () => {
     createSidebar();
-    loadDefaultContent();
+    
+    // Check for hash on page load
+    if (window.location.hash) {
+        const section = decodeURIComponent(window.location.hash.slice(1));
+        loadContent(section);
+    } else {
+        // Load default content if no hash
+        loadDefaultContent();
+    }
 
     // Sidebar resize functionality
     const sidebar = document.querySelector('.sidebar');
