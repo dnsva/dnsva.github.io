@@ -246,3 +246,118 @@
     $$P = \frac{1}{3}\rho v^2$$
     <p>Where $\rho$ is the density of gas (kg/m³)</p>
 </div>
+
+<div class="note-box">
+    <p>
+        A <span class="vocabulary" data-definition="A gas whose atoms consist of single atoms (like helium, neon, or argon) rather than molecules">monatomic gas</span> is the simplest type of gas, where each particle is a single atom (like helium, neon, or argon). The kinetic theory equations we've derived are most directly applicable to monatomic gases, as they have only translational kinetic energy.
+    </p>
+</div>
+
+<h3>Example Problems</h3>
+
+<div class="example-box">
+    <h4>Question 11: Volume Analysis</h4>
+    <p>The kinetic model assumes that the total volume of gas particles is much smaller than the volume of the box.</p>
+    
+    <p><strong>a) Estimate the volume of the room.</strong></p>
+    <div class="solution">
+        <p>Given dimensions: $4.5\text{ m} \times 3\text{ m} \times 3\text{ m}$</p>
+        $$V = l \times w \times h = 4.5 \times 3 \times 3 = 40\text{ m}^3$$
+    </div>
+
+    <p><strong>b) Estimate the number of gas molecules in the room.</strong></p>
+    <div class="solution">
+        <p>Number of molecules ≈ $10^{27}$ (at room temperature and pressure)</p>
+        <p>This can be calculated using the ideal gas law $PV = Nk_BT$:</p>
+        <p>At room temperature (293 K) and pressure (101 kPa):</p>
+        $$N = \frac{PV}{k_BT} = \frac{101000 \times 40}{1.38 \times 10^{-23} \times 293} \approx 10^{27}\text{ molecules}$$
+    </div>
+
+    <p><strong>c) The diameter of a nitrogen molecule is about $3 \times 10^{-10}\text{ m}$. Estimate the total volume of the gas molecules in the room.</strong></p>
+    <div class="solution">
+        <p>Volume of one molecule: $V = \frac{4}{3}\pi r^3$</p>
+        <p>This formula gives the volume of a sphere, which we use to approximate the shape of a gas molecule.</p>
+        <p>$r = 1.5 \times 10^{-10}\text{ m}$ (half the diameter)</p>
+        <p>For one molecule: $V = \frac{4}{3}\pi(1.5 \times 10^{-10})^3 = 1.4 \times 10^{-29}\text{ m}^3$</p>
+        <p>Total volume = $1.4 \times 10^{-29} \times 10^{27} = 0.14\text{ m}^3$</p>
+        <p>This is much smaller than the room volume ($40\text{ m}^3$), confirming our assumption.</p>
+    </div>
+</div>
+
+<h3>Interpreting Temperature</h3>
+
+<p>
+    The empirical ideal gas equation can be linked to this theoretical kinetic model.
+</p>
+
+<div class="formula">
+    <p>The expression for the pressure in a gas:</p>
+    $$P = \frac{1}{3} \frac{Nm}{V} \bar{v}^2$$
+    
+    <p>can be rewritten as:</p>
+    $$PV = \frac{Nm}{3} \bar{v}^2$$
+</div>
+
+<p>
+    This leads to a new equation that uses elements of both the empirical and theoretical equations:
+</p>
+
+<div class="formula">
+    $$PV = \frac{Nm}{3} \bar{v}^2 = Nk_BT$$
+</div>
+
+<p>
+    A further rearrangement of $\frac{Nm}{3} \bar{v}^2 = Nk_BT$ and the introduction of a numerical factor $\frac{3}{2}$ gives:
+</p>
+
+<div class="formula">
+    $$\frac{3}{2} \times \frac{Nm}{3} \bar{v}^2 = N \times \frac{1}{2}m\bar{v}^2 = \frac{3}{2}Nk_BT$$
+    
+    <p>Therefore:</p>
+    $$N \times \frac{1}{2}m\bar{v}^2 = \frac{3}{2}Nk_BT$$
+    
+    <p>and:</p>
+    $$\frac{1}{2}m\bar{v}^2 = \frac{3}{2}k_BT$$
+</div>
+
+<p>
+    This equation has a very specific physical meaning. The left-hand side of the equation is $\frac{1}{2} \times \text{mass} \times \text{speed}^2$ and is therefore the translational kinetic energy of the "average" gas molecule in the box. The right-hand side of the equation is $1.5 \times \text{Boltzmann constant} \times \text{absolute temperature}$.
+</p>
+
+<div class="note-box">
+    <p>This is an important result. The kinetic theory links the macroscopic quantity <em>temperature</em> to the microscopic quantity <em>kinetic energy of the "average" molecule</em>.</p>
+</div>
+
+<p>
+    Remember that an ideal gas has no long-range intermolecular forces and therefore no potential energy contribution to the total energy. The total energy of the gas relies solely on the kinetic energy. Given that there are $N$ molecules in the gas, then:
+</p>
+
+<div class="formula">
+    <div class="important-equation">
+        $$\text{total internal energy of an ideal gas} = \frac{3}{2}Nk_BT$$
+    </div>
+</div>
+
+<p>
+    This is an important step in thinking about the properties of an ideal gas. Its total internal energy is directly proportional to the Kelvin temperature. The units of $k_B$ ($\text{J K}^{-1}$, as we saw earlier) reflect this and will help you to remember the importance of this relationship.
+</p>
+
+<h2>Ideal and Real Gases</h2>
+
+<p>
+    An ideal gas is a theoretical concept that perfectly follows all the gas laws we've discussed. However, real gases deviate from ideal behavior to varying degrees.
+</p>
+
+<div class="note-box">
+    <p>
+        The best approximations to ideal gas behaviour occur when a gas is at a high temperature and low pressure.
+    </p>
+</div>
+
+<p>
+    This is because:
+</p>
+<ul>
+    <li>High temperature means particles have more kinetic energy, making intermolecular forces less significant</li>
+    <li>Low pressure means particles are further apart, reducing intermolecular interactions</li>
+</ul>
