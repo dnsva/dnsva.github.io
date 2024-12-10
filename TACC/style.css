@@ -98,20 +98,20 @@
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
   white-space: nowrap;
-  border-color: #e4a300;
+  border-color: #FA8072;
   border-width: 1px;
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: var(--dl-radius-radius-buttonradius);
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
-  background-color: #e4a300; 
+  background-color: #FA8072; 
 }
 .thq-button-filled:hover {
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
-  border-color: #0FFF95;
-  background-color: #0FFF95;
+  border-color: #E9967A;
+  background-color: #E9967A; 
 }
 /*
 .thq-button-outline {
@@ -135,10 +135,10 @@
 }*/
 .thq-button-outline:hover {
   
-  border-color: #0FFF95;
-  background-color: #0FFF95;
-  fill: #0FFF95;
-  color: #0FFF95;
+  border-color: #E9967A;
+  background-color: #E9967A;
+  fill: #E9967A;
+  color: #E9967A;
   /*
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
