@@ -98,14 +98,14 @@
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
   white-space: nowrap;
-  border-color: #00e491;
+  border-color: #e4a300;
   border-width: 1px;
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: var(--dl-radius-radius-buttonradius);
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
-  background-color: #00e491;
+  background-color: #e4a300; 
 }
 .thq-button-filled:hover {
   fill: var(--dl-color-theme-secondary2);
