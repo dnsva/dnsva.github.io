@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark background for a museum feel */
+    color: #e0e0e0; /* Light text for readability */
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Center align text */
+}
+
+header {
+    background-color: #333; /* Darker brown color */
+    color: #ffcc00; /* Gold color for header text */
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    animation: fadeIn 1s; /* Fade-in effect */
+}
+
+main {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Space between sections */
+    margin: 20px 0;
+}
+
+.box {
+    background-color: #444; /* Dark gray background for boxes */
+    border: 2px solid #ffcc00; /* Gold border for boxes */
+    border-radius: 10px;
+    padding: 40px; /* Increased padding for larger boxes */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+    animation: fadeIn 1s; /* Fade-in effect for boxes */
+}
+
+.box:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Glowing effect on hover */
+}
+
+h2 {
+    color: #ffcc00; /* Gold color for section titles */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Text shadow effect */
+}
+
+button {
+    background-color: #ffcc00; /* Gold color for buttons */
+    color: #1a1a1a; /* Dark text for buttons */
+    border: none;
+    padding: 15px 30px;
+    margin-top: 20px; /* Space above button */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+button:hover {
+    background-color: #e0e0e0; /* Light gray on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333; /* Dark background for footer */
+    color: #ccc; /* Light gray for footer text */
+    text-align: center; /* Center align footer text */
+}
+
+.footer-content {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the content */
+}
+
+.social-links {
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: #ffcc00; /* Gold color for links */
+    margin: 0 10px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.social-links a:hover {
+    color: #e0e0e0; /* Light gray on hover */
+}
+
+/* Special Effects */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ffcc00; }
+    50% { text-shadow: 0 0 20px #ffcc00; }
+    100% { text-shadow: 0 0 5px #ffcc00; }
+}
+
+h1 {
+    animation: glow 3s infinite alternate; /* Slower glowing effect for header */
+}
