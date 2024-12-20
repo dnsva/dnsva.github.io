@@ -68,24 +68,32 @@ footer {
     text-align: center; /* Center align footer text */
 }
 
-.footer-content {
-    max-width: 800px; /* Limit width for better readability */
-    margin: 0 auto; /* Center the content */
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr; /* Stack boxes in a single column */
+    }
 
-.social-links {
-    margin: 10px 0;
-}
+    header {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
 
-.social-links a {
-    color: #ffcc00; /* Gold color for links */
-    margin: 0 10px;
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Transition for hover effect */
-}
+    h1 {
+        font-size: 24px; /* Adjust font size for header */
+    }
 
-.social-links a:hover {
-    color: #e0e0e0; /* Light gray on hover */
+    h2 {
+        font-size: 20px; /* Adjust font size for section titles */
+    }
+
+    button {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust button font size */
+    }
+
+    footer {
+        padding: 15px; /* Adjust footer padding */
+    }
 }
 
 /* Special Effects */
