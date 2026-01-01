@@ -163,7 +163,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 .features23-container51 { /* used */
   flex: 1;
@@ -176,7 +176,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 .features23-container52 { /* used */
   flex: 1;
@@ -189,7 +189,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 .features23-container53 { /* used */
   flex: 1;
@@ -202,7 +202,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 .features23-container54 { /* used */
   flex: 1;
@@ -215,7 +215,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 .features23-container55 { /* used */
   flex: 1;
@@ -228,7 +228,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 @media(max-width: 991px) {
   .features23-max-width09 {
@@ -636,7 +636,7 @@
   position: sticky;
   transform: rotate(-2deg);
   margin-bottom: var(--dl-space-space-twounits);
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 .steps2-container39 { /* used */
   top: 10%;
@@ -644,20 +644,20 @@
   transform: rotate(2deg);
   margin-bottom: var(--dl-space-space-twounits);
   justify-content: center;
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 .steps2-container40 { /* used */
   top: 10%;
   position: sticky;
   transform: rotate(-2deg);
   margin-bottom: var(--dl-space-space-twounits);
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 .steps2-container41 { /* used */
   top: 10%;
   position: sticky;
   transform: rotate(2deg);
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 
 .steps2-max-width6 { /* used */
@@ -756,11 +756,11 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 
 .features22-card08{ /* used */
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 
 .features22-card08,

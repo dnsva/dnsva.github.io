@@ -98,20 +98,20 @@
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
   white-space: nowrap;
-  border-color: #FA8072;
+  border-color: #A855F7;
   border-width: 1px;
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: var(--dl-radius-radius-buttonradius);
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-halfunit);
   justify-content: center;
-  background-color: #FA8072; 
+  background-color: #A855F7; 
 }
 .thq-button-filled:hover {
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
-  border-color: #E9967A;
-  background-color: #E9967A; 
+  border-color: #C084FC;
+  background-color: #C084FC; 
 }
 /*
 .thq-button-outline {
@@ -135,10 +135,10 @@
 }*/
 .thq-button-outline:hover {
   
-  border-color: #E9967A;
-  background-color: #E9967A;
-  fill: #E9967A;
-  color: #E9967A;
+  border-color: #C084FC;
+  background-color: #C084FC;
+  fill: #C084FC;
+  color: #C084FC;
   /*
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
@@ -347,7 +347,7 @@
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  background: linear-gradient(to right, #00e491 50%, var(--dl-color-theme-neutral-dark) 50%);
+  background: linear-gradient(to right, #A78BFA 50%, var(--dl-color-theme-neutral-dark) 50%);
   transition: background-position 300ms ease;
   font-weight: 600;
   background-clip: text;
@@ -429,12 +429,12 @@
   height: 100%;
   transition: transform 0.3s;
   border-radius: var(--dl-radius-radius-cardradius);
-  background-color: #2176FF;
+  background-color: #6B46C1;
 }
 .thq-animated-card-bg-2 {
   transition: transform 0.3s;
   border-radius: var(--dl-radius-radius-cardradius);
-  background-color: #33A1FD;
+  background-color: #8B5CF6;
 }
 .thq-button-animated {
   outline: none;
