@@ -4,7 +4,7 @@ Personal website for Anna ([@dnsva](https://github.com/dnsva)), hosted via GitHu
 
 ## About
 
-A minimal personal site built with HTML, CSS, and JavaScript. Includes a fun easter egg — try refreshing the page!
+My personal website built with HTML, CSS, and JavaScript.
 
 ## Structure
 
@@ -15,7 +15,7 @@ dnsva.github.io/
 ├── script.js        # JavaScript (easter egg + interactivity)
 ├── styles.css       # Styling
 ├── Pictures/        # Image assets
-├── SCHOOL/          # School-related content
+├── SCHOOL/          # HIGH SCHOOL School-related content
 ├── TACC/            # TACC-related content
 └── build/           # Build output
 ```
@@ -47,7 +47,7 @@ The site is automatically deployed via [GitHub Pages](https://pages.github.com/)
 
 ## Author
 
-**Anna** — incoming Computer Engineering student at the University of Waterloo (Fall 2026).
+**Anna** - incoming Computer Engineering student at the University of Waterloo (Fall 2026).
 
 - GitHub: [@dnsva](https://github.com/dnsva)
 - LinkedIn: [anna-d-65401b319](https://www.linkedin.com/in/anna-d-65401b319/)
