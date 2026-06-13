@@ -17,6 +17,7 @@ dnsva.github.io/
 ├── Pictures/        # Image assets
 ├── SCHOOL/          # HIGH SCHOOL School-related content
 ├── TACC/            # TACC-related content
+├── UNIVERSITY/      # WATERLOO School-related content
 └── build/           # Build output
 ```
 <!-- STRUCTURE:END -->
