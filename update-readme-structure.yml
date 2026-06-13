@@ -1,0 +1,98 @@
+name: Update README structure
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Regenerate structure and update README
+        run: |
+          python3 << 'PYEOF'
+          import os, re
+
+          IGNORE = {'.git', '.github', '.DS_Store', 'node_modules'}
+          ANNOTATIONS = {
+              'index.html':  '# Main page',
+              'script.js':   '# JavaScript (easter egg + interactivity)',
+              'styles.css':  '# Styling',
+          }
+
+          def collect(root):
+              entries = []
+              for name in sorted(os.listdir(root)):
+                  if name in IGNORE:
+                      continue
+                  full = os.path.join(root, name)
+                  rel  = os.path.relpath(full, '.')
+                  entries.append((rel, os.path.isdir(full)))
+                  if os.path.isdir(full):
+                      entries.extend(collect(full))
+              return entries
+
+          def render_tree(entries):
+              # Build a nested dict
+              tree = {}
+              for path, is_dir in entries:
+                  parts = path.split(os.sep)
+                  node = tree
+                  for p in parts:
+                      node = node.setdefault(p, {})
+
+              lines = ['dnsva.github.io/']
+
+              def walk(subtree, prefix=''):
+                  items = sorted(subtree.items())
+                  for i, (name, children) in enumerate(items):
+                      is_last = i == len(items) - 1
+                      connector = '└── ' if is_last else '├── '
+                      suffix    = '/' if children else ''
+                      note      = ('  ' + ANNOTATIONS[name]) if name in ANNOTATIONS else ''
+                      lines.append(f'{prefix}{connector}{name}{suffix}{note}')
+                      if children:
+                          extension = '    ' if is_last else '│   '
+                          walk(children, prefix + extension)
+
+              walk(tree)
+              return '\n'.join(lines)
+
+          entries = collect('.')
+          tree_str = render_tree(entries)
+          block = f'<!-- STRUCTURE:START -->\n```\n{tree_str}\n```\n<!-- STRUCTURE:END -->'
+
+          readme = open('README.md').read()
+          updated = re.sub(
+              r'<!-- STRUCTURE:START -->.*?<!-- STRUCTURE:END -->',
+              block,
+              readme,
+              flags=re.DOTALL
+          )
+
+          if updated == readme:
+              print('Structure unchanged — nothing to commit.')
+          else:
+              open('README.md', 'w').write(updated)
+              print('README.md structure updated.')
+          PYEOF
+
+      - name: Commit updated README
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || (
+            git add README.md
+            git commit -m "docs: auto-update README structure [skip ci]"
+            git push
+          )
