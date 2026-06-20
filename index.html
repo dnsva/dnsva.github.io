@@ -1,29 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>WEBSITE </title>
-    
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>anna.os</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { text-decoration: none; color: inherit; }
+@keyframes blink { 0%,49%{opacity:1;} 50%,100%{opacity:0;} }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+/* ── Themes ── */
+:root {
+  --bg:    #96bdc6;
+  --dot:   rgba(47,58,56,0.14);
+  --win:   #ffffff;
+  --ink:   #2f3a38;
+  --sub:   #5e6b66;
+  --line:  #3a4744;
+  --field: #f0eae3;
+}
+[data-theme="dark"] {
+  --bg:    #20282a;
+  --dot:   rgba(150,189,198,0.10);
+  --win:   #2a3133;
+  --ink:   #e7eeec;
+  --sub:   #9fb0ac;
+  --line:  #3c4648;
+  --field: #232b2d;
+}
 
+/* ── Root canvas ── */
+#root {
+  min-height: 100vh;
+  padding: 12px 18px 56px;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.6px);
+  background-size: 7px 7px;
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+  transition: background-color .25s, color .25s;
+  overflow-x: hidden;
+}
+
+/* ── Layout helpers ── */
+.c   { max-width: 1080px; margin-left: auto; margin-right: auto; }
+.sec { max-width: 1080px; margin: 34px auto 0; scroll-margin-top: 54px; }
+
+/* ── Menu bar ── */
+.menubar {
+  position: sticky;
+  top: 8px;
+  z-index: 60;
+}
+.menubar-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 30px;
+  padding: 0 12px;
+}
+.menubar-nav { display: flex; gap: 20px; align-items: center; }
+.menubar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+
+/* ── Hero ── */
+.hero {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.hero-terminal { flex: 1 1 440px; min-width: 0; }
+.hero-icons    { flex: 0 0 auto; width: 300px; max-width: 100%; }
+.icon-grid     { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px 4px; }
+.icon-item     { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+/* ── About row ── */
+.about-row {
+  display: flex;
+  gap: 22px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  scroll-margin-top: 54px;
+}
+.about-window { flex: 1 1 540px; min-width: 0; }
+.about-inner  { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; padding: 22px; }
+.sysinfo-box  { flex: 1 1 240px; min-width: 220px; display: flex; flex-direction: column; }
+
+/* ── Projects ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 14px;
+}
+.project-card { display: flex; gap: 12px; }
+
+/* ── Courses ── */
+.courses-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+
+/* ── Photos ── */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 14px;
+}
+
+/* ── Now + Contact row ── */
+.bottom-row {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  margin: 34px auto 0;
+}
+.bottom-col { flex: 1 1 320px; scroll-margin-top: 54px; }
+
+/* ── Blog entries ── */
+.blog-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 18px;
+}
+.blog-date  { flex: none; width: 74px; }
+.blog-title { flex: 1; }
+.blog-read  { white-space: nowrap; }
+
+/* ── Titlebar helper ── */
+.win-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+}
+.win-title-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+/* ── Taskbar ── */
+.taskbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 7px 12px;
+}
+
+/* ═══════════════════════════════════════════
+   TABLET  768px
+═══════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .courses-grid { grid-template-columns: repeat(3,1fr); }
+  .photos-grid  { grid-template-columns: repeat(3,1fr); }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE  < 640px
+═══════════════════════════════════════════ */
+@media (max-width: 639px) {
+  #root { padding: 8px 10px 40px; }
+
+  /* menu: hide nav labels, keep logo + controls */
+  .menubar-nav { display: none; }
+  .menubar-inner { gap: 10px; }
+
+  /* hero: stack */
+  .hero { flex-direction: column; gap: 14px; }
+  .hero-terminal { flex: none; width: 100%; }
+  .hero-icons    { width: 100%; }
+
+  /* about: stack */
+  .about-row    { flex-direction: column; margin-top: 20px; }
+  .about-window { flex: none; width: 100%; }
+  .sysinfo-box  { flex: none; width: 100%; min-width: 0; }
+
+  /* remove tilts that cause overflow on small screens */
+  .tilt-neg { transform: none !important; }
+  .tilt-pos { transform: none !important; }
+
+  /* projects: single column */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* courses: 2 columns */
+  .courses-grid { grid-template-columns: repeat(2,1fr); }
+
+  /* photos: 2 columns */
+  .photos-grid { grid-template-columns: repeat(2,1fr); }
+
+  /* blog: stack date above title */
+  .blog-entry   { flex-wrap: wrap; gap: 4px 14px; }
+  .blog-date    { width: auto; }
+  .blog-read    { margin-left: auto; }
+
+  /* bottom row: stack */
+  .bottom-row { flex-direction: column; }
+  .bottom-col { flex: none; width: 100%; }
+}
+
+/* ═══════════════════════════════════════════
+   ULTRAWIDE  > 1440px
+═══════════════════════════════════════════ */
+@media (min-width: 1440px) {
+  .c, .sec, .bottom-row { max-width: 1280px; }
+  .menubar .c { max-width: 1280px; }
+  .photos-grid { grid-template-columns: repeat(4,1fr); }
+}
+@media (min-width: 1920px) {
+  .c, .sec, .bottom-row { max-width: 1600px; }
+  .menubar .c { max-width: 1600px; }
+}
+</style>
 </head>
+<body>
+<div id="root">
 
-<body style="text-align: center;">
+  <!-- ===================== MENU BAR ===================== -->
+  <div class="menubar c">
+    <div class="menubar-inner" style="background:var(--win);border:2px solid var(--line);border-radius:7px;box-shadow:3px 3px 0 rgba(0,0,0,.16);font-family:'Space Mono',monospace;font-size:12.5px;color:var(--ink);">
+      <span style="font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:.5px;">anna.os</span>
+      <span class="menubar-nav">
+        <span style="opacity:.85;">File</span>
+        <span style="opacity:.85;">Edit</span>
+        <span style="opacity:.85;">View</span>
+        <span style="opacity:.85;">Special</span>
+      </span>
+      <span class="menubar-right">
+        <button id="theme-btn" onclick="toggleTheme()" style="display:flex;align-items:center;gap:6px;border:2px solid var(--line);border-radius:7px;background:var(--field);padding:2px 10px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);cursor:pointer;box-shadow:1px 1px 0 rgba(0,0,0,.15);">&#9728; Light</button>
+        <span id="clock" style="opacity:.85;">12:00 AM</span>
+      </span>
+    </div>
+  </div>
 
-    <h1 style="font-family: 'Press Start 2P', cursive;">MY WEBSITE</h1>
+  <!-- ===================== HERO ===================== -->
+  <div id="top" class="hero c">
 
-    <h2>
-        <a href="https://github.com/dnsva/">GITHUB</a> <br>
-    </h2>
+    <!-- terminal window -->
+    <div class="hero-terminal" style="border:2px solid var(--line);background:#232c30;box-shadow:5px 5px 0 rgba(0,0,0,.22);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#6f837a 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid #161d20;background:#d6dede;display:inline-block;"></span>
+        <span class="win-title-label" style="background:#232c30;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:#eef3f3;">terminal &#8212; login</span>
+      </div>
+      <div style="padding:18px 18px 20px;font-family:'Space Mono',monospace;font-size:13px;line-height:1.9;color:#d6dede;">
+        <div style="color:#8d9c98;">Last login: Fri Jun 20 13:37 on console</div>
+        <div><span style="color:#c0936f;">anna@waterloo</span>:<span style="color:#6f837a;">~</span>$ whoami</div>
+        <div style="color:#eef3f3;">Anna &#8212; incoming Computer Engineering</div>
+        <div style="color:#eef3f3;">University of Waterloo &middot; Fall 2026</div>
+        <div style="margin-top:6px;"><span style="color:#c0936f;">anna@waterloo</span>:<span style="color:#6f837a;">~</span>$ cat intro.txt</div>
+        <div style="color:#e9d6ec;">builder &middot; community organizer &middot; always learning</div>
+        <div style="margin-top:6px;"><span style="color:#c0936f;">anna@waterloo</span>:<span style="color:#6f837a;">~</span>$ open ~/desktop <span style="display:inline-block;width:8px;height:15px;background:#6f837a;vertical-align:-2px;animation:blink 1s step-end infinite;"></span></div>
+      </div>
+    </div>
 
-    <h4>Something cool might happen if you refresh the page right now...</h4>
-    <img id="image" width="300" height="300"/>
+    <!-- desktop icons -->
+    <div class="hero-icons">
+      <div style="font-family:'Silkscreen',monospace;font-size:11px;color:var(--sub);margin:2px 0 12px 4px;letter-spacing:.5px;">DOUBLE-CLICK TO OPEN</div>
+      <div class="icon-grid">
+        <a href="#about" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#5c95a1;font-size:20px;">&#9786;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">about</span></a>
+        <a href="#projects" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#6f837a;font-size:20px;">&#8997;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">projects</span></a>
+        <a href="#uni" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#c0936f;font-size:20px;">&#9636;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">uni</span></a>
+        <a href="#blog" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#9a7fa6;font-size:20px;">&#9998;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">blog</span></a>
+        <a href="#photos" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#5c95a1;font-size:20px;">&#9651;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">photos</span></a>
+        <a href="#now" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#6f837a;font-size:20px;">&#9652;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">now</span></a>
+        <a href="#contact" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#c0936f;font-size:20px;">&#9652;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">resume</span></a>
+        <a href="#contact" class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#9a7fa6;font-size:20px;">&#9993;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--ink);">contact</span></a>
+      </div>
+      <!-- trash row -->
+      <div class="icon-grid" style="margin-top:16px;">
+        <div class="icon-item"><span style="width:46px;height:42px;border:2px solid var(--line);border-radius:7px;background:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:18px;">&#9618;</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">trash</span></div>
+      </div>
+    </div>
+  </div>
 
+  <!-- ===================== ABOUT ===================== -->
+  <div id="about" class="about-row c">
 
+    <!-- About window -->
+    <div class="about-window tilt-neg" style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);transform:rotate(-.3deg);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#5c95a1 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+        <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">About This Anna</span>
+        <span style="margin-left:auto;width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;"></span>
+      </div>
+      <div class="about-inner">
+        <div style="flex:0 0 auto;width:120px;height:120px;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 9px,var(--win) 9px 18px);display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);box-shadow:3px 3px 0 rgba(0,0,0,.14);">your<br>photo</div>
+        <div style="flex:1;min-width:200px;">
+          <div style="font-family:'Silkscreen',monospace;font-size:24px;line-height:1.1;color:var(--ink);">ANNA</div>
+          <div style="font-family:'Space Mono',monospace;font-size:12px;color:#5c95a1;margin:4px 0 14px;">@dnsva &middot; Computer Engineering &middot; UWaterloo '26</div>
+          <ul style="margin:0;padding-left:18px;font-family:'Work Sans',sans-serif;font-size:14.5px;line-height:1.7;color:var(--ink);">
+            <li>Motivated, results-oriented student passionate about learning &amp; helping others.</li>
+            <li>Active in community outreach &#8212; organizing &amp; promoting events.</li>
+            <li>Always up for a challenge, and for meeting new people. Ask me anything.</li>
+          </ul>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:16px;">
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">C++</span>
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">Python</span>
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">Java</span>
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">Go</span>
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">JavaScript</span>
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">C</span>
+            <span style="border:2px solid var(--line);border-radius:6px;padding:2px 9px;font-family:'Space Mono',monospace;font-size:11px;background:var(--field);color:var(--ink);">CMake &middot; Git &middot; VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sysinfo widget -->
+    <div class="sysinfo-box tilt-pos" style="border:2px solid var(--line);background:#232c30;box-shadow:5px 5px 0 rgba(0,0,0,.22);transform:rotate(.4deg);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#6f837a 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid #161d20;background:#d6dede;display:inline-block;"></span>
+        <span class="win-title-label" style="background:#232c30;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:#eef3f3;">sysinfo</span>
+      </div>
+      <div style="flex:1;padding:16px 16px 18px;font-family:'Space Mono',monospace;font-size:12px;line-height:1.85;color:#d6dede;">
+        <div style="color:#c0936f;">anna@waterloo</div>
+        <div style="color:#8d9c98;margin-bottom:8px;">&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</div>
+        <div><span style="color:#6f837a;">os</span>      anna.os 1.0</div>
+        <div><span style="color:#6f837a;">host</span>    CompEng &middot; UW</div>
+        <div><span style="color:#6f837a;">kernel</span>  1A &middot; Fall 2026</div>
+        <div><span style="color:#6f837a;">shell</span>   zsh + vim</div>
+        <div><span style="color:#6f837a;">locale</span>  Waterloo, ON</div>
+        <div style="margin-top:10px;color:#e9d6ec;">&#9658; open to internships</div>
+        <div style="display:flex;gap:5px;margin-top:6px;">
+          <span style="width:11px;height:11px;background:#9a7fa6;display:inline-block;border:1px solid #161d20;"></span>
+          <span style="width:11px;height:11px;background:#c0936f;display:inline-block;border:1px solid #161d20;"></span>
+          <span style="width:11px;height:11px;background:#6f837a;display:inline-block;border:1px solid #161d20;"></span>
+          <span style="width:11px;height:11px;background:#5c95a1;display:inline-block;border:1px solid #161d20;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <div id="projects" class="sec">
+    <div style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#6f837a 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+        <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">Projects &#8212; 6 items</span>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;justify-content:space-between;padding:7px 12px;border-bottom:2px solid var(--line);background:var(--field);font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);">
+        <span style="flex:1;">Name</span><span style="flex:1;text-align:center;">Kind</span><span style="flex:1;text-align:right;">Lang</span>
+      </div>
+      <div class="projects-grid">
+        <a href="https://github.com/dnsva/sfml-projects" class="project-card" style="border:2px solid var(--line);background:var(--win);padding:11px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+          <div style="width:58px;height:50px;flex:none;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 7px,var(--win) 7px 14px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;color:var(--sub);">.app</div>
+          <div style="flex:1;min-width:0;"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--ink);">sfml-projects</div><div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:var(--sub);line-height:1.4;margin-top:2px;">2D games &amp; graphics built with SFML.</div><span style="display:inline-block;margin-top:6px;font-family:'Space Mono',monospace;font-size:10px;color:#6f837a;border:1.5px solid #6f837a;border-radius:5px;padding:0 6px;">C++</span></div>
+        </a>
+        <a href="https://github.com/dnsva/ostep-book" class="project-card" style="border:2px solid var(--line);background:var(--win);padding:11px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+          <div style="width:58px;height:50px;flex:none;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 7px,var(--win) 7px 14px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;color:var(--sub);">.c</div>
+          <div style="flex:1;min-width:0;"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--ink);">ostep-book</div><div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:var(--sub);line-height:1.4;margin-top:2px;">Working through OS: Three Easy Pieces.</div><span style="display:inline-block;margin-top:6px;font-family:'Space Mono',monospace;font-size:10px;color:#5c95a1;border:1.5px solid #5c95a1;border-radius:5px;padding:0 6px;">C</span></div>
+        </a>
+        <a href="https://github.com/dnsva/assembly" class="project-card" style="border:2px solid var(--line);background:var(--win);padding:11px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+          <div style="width:58px;height:50px;flex:none;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 7px,var(--win) 7px 14px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;color:var(--sub);">.asm</div>
+          <div style="flex:1;min-width:0;"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--ink);">assembly</div><div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:var(--sub);line-height:1.4;margin-top:2px;">Low-level experiments, close to the metal.</div><span style="display:inline-block;margin-top:6px;font-family:'Space Mono',monospace;font-size:10px;color:#c0936f;border:1.5px solid #c0936f;border-radius:5px;padding:0 6px;">Assembly</span></div>
+        </a>
+        <a href="https://github.com/dnsva/tetris" class="project-card" style="border:2px solid var(--line);background:var(--win);padding:11px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+          <div style="width:58px;height:50px;flex:none;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 7px,var(--win) 7px 14px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;color:var(--sub);">.mk</div>
+          <div style="flex:1;min-width:0;"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--ink);">tetris</div><div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:var(--sub);line-height:1.4;margin-top:2px;">A Tetris clone &#8212; falling blocks, line clears.</div><span style="display:inline-block;margin-top:6px;font-family:'Space Mono',monospace;font-size:10px;color:#9a7fa6;border:1.5px solid #9a7fa6;border-radius:5px;padding:0 6px;">C / Make</span></div>
+        </a>
+        <a href="https://github.com/dnsva/go-projects" class="project-card" style="border:2px solid var(--line);background:var(--win);padding:11px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+          <div style="width:58px;height:50px;flex:none;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 7px,var(--win) 7px 14px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;color:var(--sub);">.go</div>
+          <div style="flex:1;min-width:0;"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--ink);">go-projects</div><div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:var(--sub);line-height:1.4;margin-top:2px;">Tools &amp; experiments while learning Go.</div><span style="display:inline-block;margin-top:6px;font-family:'Space Mono',monospace;font-size:10px;color:#6f837a;border:1.5px solid #6f837a;border-radius:5px;padding:0 6px;">Go</span></div>
+        </a>
+        <a href="https://github.com/dnsva/dnsva.github.io" class="project-card" style="border:2px solid var(--line);background:var(--win);padding:11px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+          <div style="width:58px;height:50px;flex:none;border:1.5px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 7px,var(--win) 7px 14px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:8px;color:var(--sub);">.html</div>
+          <div style="flex:1;min-width:0;"><div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;color:var(--ink);">dnsva.github.io</div><div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:var(--sub);line-height:1.4;margin-top:2px;">This very site &#8212; built from scratch.</div><span style="display:inline-block;margin-top:6px;font-family:'Space Mono',monospace;font-size:10px;color:#5c95a1;border:1.5px solid #5c95a1;border-radius:5px;padding:0 6px;">HTML</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== UNIVERSITY ===================== -->
+  <div id="uni" class="sec">
+    <div class="tilt-pos" style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);transform:rotate(.25deg);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#c0936f 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+        <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">University of Waterloo &#8212; Computer Engineering</span>
+      </div>
+      <div style="padding:20px;">
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+          <span style="font-family:'Silkscreen',monospace;font-size:15px;color:#c0936f;">TERM 1A</span>
+          <span style="font-family:'Work Sans',sans-serif;font-size:13.5px;color:var(--sub);">Fall 2026 &middot; first semester &middot; click a course to open its notes</span>
+        </div>
+        <div style="border:2px solid var(--line);background:var(--field);padding:7px 12px;font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);display:flex;align-items:center;gap:8px;margin:10px 0;">&#9636; ~/university/1A/course-notes/</div>
+        <div class="courses-grid">
+          <a href="#note-ece105" style="display:flex;flex-direction:column;gap:9px;border:2px solid var(--line);background:var(--win);padding:12px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+            <span style="width:34px;height:42px;border:1.5px solid var(--line);background:repeating-linear-gradient(to bottom,var(--field) 0 4px,var(--win) 4px 8px);"></span>
+            <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:11px;color:var(--ink);">ECE 105</span>
+            <span style="font-family:'Work Sans',sans-serif;font-size:11px;color:var(--sub);line-height:1.3;">Classical Mechanics</span>
+          </a>
+          <a href="#note-ece150" style="display:flex;flex-direction:column;gap:9px;border:2px solid var(--line);background:var(--win);padding:12px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+            <span style="width:34px;height:42px;border:1.5px solid var(--line);background:repeating-linear-gradient(to bottom,var(--field) 0 4px,var(--win) 4px 8px);"></span>
+            <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:11px;color:var(--ink);">ECE 150</span>
+            <span style="font-family:'Work Sans',sans-serif;font-size:11px;color:var(--sub);line-height:1.3;">Fundamentals of Programming</span>
+          </a>
+          <a href="#note-ece190" style="display:flex;flex-direction:column;gap:9px;border:2px solid var(--line);background:var(--win);padding:12px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+            <span style="width:34px;height:42px;border:1.5px solid var(--line);background:repeating-linear-gradient(to bottom,var(--field) 0 4px,var(--win) 4px 8px);"></span>
+            <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:11px;color:var(--ink);">ECE 190</span>
+            <span style="font-family:'Work Sans',sans-serif;font-size:11px;color:var(--sub);line-height:1.3;">Engineering Profession &amp; Practice</span>
+          </a>
+          <a href="#note-math115" style="display:flex;flex-direction:column;gap:9px;border:2px solid var(--line);background:var(--win);padding:12px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+            <span style="width:34px;height:42px;border:1.5px solid var(--line);background:repeating-linear-gradient(to bottom,var(--field) 0 4px,var(--win) 4px 8px);"></span>
+            <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:11px;color:var(--ink);">MATH 115</span>
+            <span style="font-family:'Work Sans',sans-serif;font-size:11px;color:var(--sub);line-height:1.3;">Linear Algebra for Engineering</span>
+          </a>
+          <a href="#note-math117" style="display:flex;flex-direction:column;gap:9px;border:2px solid var(--line);background:var(--win);padding:12px;box-shadow:2px 2px 0 rgba(0,0,0,.13);">
+            <span style="width:34px;height:42px;border:1.5px solid var(--line);background:repeating-linear-gradient(to bottom,var(--field) 0 4px,var(--win) 4px 8px);"></span>
+            <span style="font-family:'Space Mono',monospace;font-weight:700;font-size:11px;color:var(--ink);">MATH 117</span>
+            <span style="font-family:'Work Sans',sans-serif;font-size:11px;color:var(--sub);line-height:1.3;">Calculus 1 for Engineering</span>
+          </a>
+        </div>
+        <div id="note-ece150" style="margin-top:18px;border:2px solid var(--line);background:var(--field);scroll-margin-top:54px;">
+          <div style="display:flex;align-items:center;gap:8px;padding:7px 12px;border-bottom:2px solid var(--line);font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);">&#128196; ECE150_notes.md <span style="margin-left:auto;color:var(--sub);">preview</span></div>
+          <div style="padding:14px 16px;font-family:'Work Sans',sans-serif;font-size:13.5px;line-height:1.7;color:var(--ink);">
+            <div style="font-family:'Space Mono',monospace;font-weight:700;font-size:13px;margin-bottom:6px;"># Fundamentals of Programming</div>
+            <div style="color:var(--sub);">Course notes will live here &#8212; lecture summaries, code snippets, and assignment write-ups. This is a placeholder for the real thing once 1A starts.</div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);"><span>&#8627; lectures/</span><span>&#8627; labs/</span><span>&#8627; cheatsheets/</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== BLOG ===================== -->
+  <div id="blog" class="sec">
+    <div style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#9a7fa6 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+        <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">blog.txt &#8212; recent posts</span>
+      </div>
+      <div style="padding:8px 4px;">
+        <a href="#blog" class="blog-entry" style="border-bottom:1px dashed var(--line);">
+          <span class="blog-date" style="font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);">2026-06-12</span>
+          <span class="blog-title" style="font-family:'Work Sans',sans-serif;font-weight:600;font-size:15px;color:var(--ink);">Why I started reading OSTEP this summer</span>
+          <span class="blog-read" style="font-family:'Space Mono',monospace;font-size:11px;color:#9a7fa6;">read &rarr;</span>
+        </a>
+        <a href="#blog" class="blog-entry" style="border-bottom:1px dashed var(--line);">
+          <span class="blog-date" style="font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);">2026-05-28</span>
+          <span class="blog-title" style="font-family:'Work Sans',sans-serif;font-weight:600;font-size:15px;color:var(--ink);">Setting up my C++ + SFML toolchain on macOS</span>
+          <span class="blog-read" style="font-family:'Space Mono',monospace;font-size:11px;color:#9a7fa6;">read &rarr;</span>
+        </a>
+        <a href="#blog" class="blog-entry">
+          <span class="blog-date" style="font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);">2026-05-10</span>
+          <span class="blog-title" style="font-family:'Work Sans',sans-serif;font-weight:600;font-size:15px;color:var(--ink);">Prepping for 1A: what I'm doing before Waterloo</span>
+          <span class="blog-read" style="font-family:'Space Mono',monospace;font-size:11px;color:#9a7fa6;">read &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PHOTOS ===================== -->
+  <div id="photos" class="sec">
+    <div style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);">
+      <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#5c95a1 0 1px,transparent 1px 3px);">
+        <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+        <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">photos &#8212; gallery</span>
+      </div>
+      <div class="photos-grid">
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">cooking</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">painting</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">knitting</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">running</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">campus</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">desk setup</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">books</div>
+        <div style="aspect-ratio:4/3;border:2px solid var(--line);background:repeating-linear-gradient(45deg,var(--field) 0 8px,var(--win) 8px 16px);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;color:var(--sub);">gym</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NOW + CONTACT ===================== -->
+  <div class="bottom-row">
+    <div id="now" class="bottom-col">
+      <div style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);height:100%;">
+        <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#6f837a 0 1px,transparent 1px 3px);">
+          <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+          <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">Now</span>
+        </div>
+        <div style="padding:18px;font-family:'Work Sans',sans-serif;font-size:14px;line-height:1.8;color:var(--ink);">
+          <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--sub);margin-bottom:8px;">// updated June 2026</div>
+          <div>&#9658; Prepping for <strong>Waterloo CompEng 1A</strong></div>
+          <div>&#9658; Reading <strong>OSTEP</strong> &amp; taking notes</div>
+          <div>&#9658; Building a <strong>Tetris</strong> clone in C</div>
+          <div>&#9658; Cooking, painting &amp; morning runs</div>
+        </div>
+      </div>
+    </div>
+    <div id="contact" class="bottom-col">
+      <div style="border:2px solid var(--line);background:var(--win);box-shadow:5px 5px 0 rgba(0,0,0,.18);height:100%;">
+        <div class="win-title" style="border-bottom:2px solid var(--line);background:repeating-linear-gradient(to bottom,#c0936f 0 1px,transparent 1px 3px);">
+          <span style="width:13px;height:13px;border:2px solid var(--line);background:var(--win);display:inline-block;box-shadow:1px 1px 0 rgba(0,0,0,.15);"></span>
+          <span class="win-title-label" style="background:var(--win);font-family:'Space Mono',monospace;font-weight:700;font-size:12px;color:var(--ink);">Contact &amp; Resume</span>
+        </div>
+        <div style="padding:18px;">
+          <div style="font-family:'Work Sans',sans-serif;font-size:14px;color:var(--ink);margin-bottom:14px;">Let's connect &#8212; I love meeting new people.</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="https://github.com/dnsva" style="display:flex;align-items:center;gap:10px;border:2px solid var(--line);border-radius:8px;background:var(--field);padding:8px 12px;font-family:'Space Mono',monospace;font-size:12px;color:var(--ink);box-shadow:2px 2px 0 rgba(0,0,0,.14);"><span style="color:#5c95a1;">&#9654;</span> github.com/dnsva</a>
+            <a href="https://www.linkedin.com/in/anna-d-65401b319/" style="display:flex;align-items:center;gap:10px;border:2px solid var(--line);border-radius:8px;background:var(--field);padding:8px 12px;font-family:'Space Mono',monospace;font-size:12px;color:var(--ink);box-shadow:2px 2px 0 rgba(0,0,0,.14);"><span style="color:#6f837a;">&#9654;</span> linkedin.com/in/anna-d</a>
+            <a href="#contact" style="display:flex;align-items:center;gap:10px;border:2px solid var(--line);border-radius:8px;background:var(--ink);padding:8px 12px;font-family:'Space Mono',monospace;font-size:12px;color:var(--win);box-shadow:2px 2px 0 rgba(0,0,0,.2);"><span style="color:#c0936f;">&#9660;</span> download resume.pdf</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== TASKBAR ===================== -->
+  <div class="c" style="margin-top:30px;">
+    <div class="taskbar-inner" style="border:2px solid var(--line);background:var(--win);border-radius:7px;box-shadow:3px 3px 0 rgba(0,0,0,.16);font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);">
+      <span style="font-family:'Silkscreen',monospace;font-size:10px;">anna.os</span>
+      <span style="color:var(--sub);">&copy; 2026 Anna &middot; built with care, not frameworks</span>
+      <a href="#top" style="margin-left:auto;border:2px solid var(--line);border-radius:6px;padding:2px 10px;background:var(--field);color:var(--ink);">&#9650; back to top</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('theme-btn').textContent = isDark ? '☀ Light' : '☾ Dark';
+  }
+
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours(), m = now.getMinutes();
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    document.getElementById('clock').textContent = h + ':' + String(m).padStart(2,'0') + ' ' + ampm;
+  }
+  updateClock();
+  setInterval(updateClock, 10000);
+</script>
 </body>
-
-<script src="script.js"></script> 
+</html>
