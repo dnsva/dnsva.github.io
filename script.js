@@ -2,7 +2,7 @@
 var images = [
   "animal_photos/a.jpg",
   "animal_photos/b.jpg",
-  "animal_photos/c.jpg",
+  "animal_photos/c.png",
   "animal_photos/d.jpg",
   "animal_photos/e.jpg",
   "animal_photos/f.jpg",
